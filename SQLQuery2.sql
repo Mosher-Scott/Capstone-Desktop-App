@@ -1,0 +1,1 @@
+﻿INSERT INTO client_info (streetAddress, city, state, zipcode, phone, email, clientId) VALUES ('563N 450E', 'Springville', 'UT', 84663, '408-250-2517', 'smosher05@gmail.com', 1);

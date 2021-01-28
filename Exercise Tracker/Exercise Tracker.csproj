@@ -88,11 +88,44 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ClientData.cs" />
-    <Compile Include="Forms\Mainmenu.cs">
+    <Compile Include="Classes\DatabaseConnection.cs" />
+    <Compile Include="Classes\Exercise.cs" />
+    <Compile Include="Classes\WorkoutData.cs" />
+    <Compile Include="Forms\ClientManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Mainmenu.Designer.cs">
-      <DependentUpon>Mainmenu.cs</DependentUpon>
+    <Compile Include="Forms\ClientManagement.Designer.cs">
+      <DependentUpon>ClientManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateNewExercise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateNewExercise.Designer.cs">
+      <DependentUpon>CreateNewExercise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExerciseManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExerciseManagement.Designer.cs">
+      <DependentUpon>ExerciseManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrainingSessionManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrainingSessionManagement.Designer.cs">
+      <DependentUpon>TrainingSessionManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewClient.Designer.cs">
+      <DependentUpon>ViewClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RecordWorkout.cs">
       <SubType>Form</SubType>
@@ -102,8 +135,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Mainmenu.resx">
-      <DependentUpon>Mainmenu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ClientManagement.resx">
+      <DependentUpon>ClientManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateNewExercise.resx">
+      <DependentUpon>CreateNewExercise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExerciseManagement.resx">
+      <DependentUpon>ExerciseManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewClient.resx">
+      <DependentUpon>ViewClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RecordWorkout.resx">
       <DependentUpon>RecordWorkout.cs</DependentUpon>

@@ -26,6 +26,7 @@ namespace Exercise_Tracker.Classes
         public static DataTable recordingExercisesTable = new DataTable();
 
         public static Dictionary<int, string> clients = new Dictionary<int, string>();
+        public static Dictionary<int, string> muscleGroups = new Dictionary<int, string>();
 
         #region Queries
         private static string GenerateClientInfoQuery(int id)
@@ -65,21 +66,22 @@ namespace Exercise_Tracker.Classes
         private static string GenerateExerciseListForRecordingQuery(int id)
         {
             return $@"USE exercise_tracker
-                    SELECT e.id AS [ID], e.name AS [Name], '' AS [Sets], '' AS [Reps], '' AS [Weight], '' AS [Time]
+                    SELECT e.id AS [ID], e.name AS [Name], ts.sessionSets AS [Sets], ts.sessionReps AS [Reps], 0 AS [Weight], 0 AS [Time]
                     FROM exercises AS e
                     JOIN session_exercises AS se ON se.exerciseId = e.id
-                    WHERE se.sessionId = 1;";
+                    JOIN training_session AS ts ON ts.id = se.sessionId
+                    WHERE se.sessionId = {id};";
         }
         #endregion
 
 
-        public static SqlConnection ConnectToDatabase()
-        {
-            string connectionString = ConfigurationManager.AppSettings.Get("DbConnectionString");
-            SqlConnection connection = new SqlConnection(connectionString);
+        //public static SqlConnection ConnectToDatabase()
+        //{
+        //    string connectionString = ConfigurationManager.AppSettings.Get("DbConnectionString");
+        //    SqlConnection connection = new SqlConnection(connectionString);
 
-            return connection;
-        }
+        //    return connection;
+        //}
 
         /// <summary>
         /// Gets information from the database, and populates a datatable with the results
@@ -116,7 +118,7 @@ namespace Exercise_Tracker.Classes
 
             }
 
-            SqlConnection connection = ConnectToDatabase();
+            SqlConnection connection = DatabaseConnection.ConnectToDatabase();
 
             try
             {
@@ -139,8 +141,10 @@ namespace Exercise_Tracker.Classes
 
         }
 
-        
-        // Populates a list of all clients in the database
+
+        /// <summary>
+        /// Populates a list of all clients in the database
+        /// </summary>
         public static void GetAllClients()
         {
             var query = "";
@@ -149,7 +153,7 @@ namespace Exercise_Tracker.Classes
             {
                 // SqliteConnection dataDbConnection = Db3File.ConnectToNonObjectDb3File(FormMainMenu.dataDbName);
 
-                SqlConnection connection = ConnectToDatabase();
+                SqlConnection connection = DatabaseConnection.ConnectToDatabase();
 
                 query = "USE exercise_tracker SELECT id, firstName, lastName FROM dbo.client";
                 //query = "SELECT * FROM exercises";
@@ -164,7 +168,7 @@ namespace Exercise_Tracker.Classes
                         var list = new List<ClientData>();
                         while (reader.Read())
                             ClientData.clients.Add(reader.GetInt32(0), $"{reader.GetString(1)} {reader.GetString(2)}");
-                        logger.Info(reader.GetString(1));
+                        //logger.Info(reader.GetString(1));
 
                     }
                 }
@@ -176,6 +180,41 @@ namespace Exercise_Tracker.Classes
             }
 
         }
+
+        ///
+        public static void GetAllMuslceGroups()
+        {
+            var query = "";
+
+            try
+            {
+
+                SqlConnection connection = DatabaseConnection.ConnectToDatabase();
+
+                query = "USE exercise_tracker SELECT id, name FROM dbo.muscle_group";
+                //query = "SELECT * FROM exercises";
+
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        //var list = new List<ClientData>();
+                        while (reader.Read())
+                            ClientData.muscleGroups.Add(reader.GetInt32(0), $"{reader.GetString(1)}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"Error selecting data: {ex.Message}");
+
+            }
+
+        }
+
 
 
     } // end of class

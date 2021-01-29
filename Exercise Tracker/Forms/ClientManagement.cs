@@ -57,6 +57,13 @@ namespace Exercise_Tracker.Forms
             ClientData.GetDataFromDatabase("ClientTrainingSessions", id);
 
             dataGridViewTrainingSessions.DataSource = ClientData.clientTrainingSessionsTable;
+        }
+
+        private int GetClientIdFromDropdown()
+        {
+            int id = Convert.ToInt32(comboBoxClientNames.SelectedValue);
+
+            return id;
 
         }
 
@@ -67,6 +74,15 @@ namespace Exercise_Tracker.Forms
             id = Convert.ToInt32(ClientData.clients.Keys.First());
 
             return id;
+        }
+
+        private void buttonEditClient_Click(object sender, EventArgs e)
+        {
+
+            int clientId = GetClientIdFromDropdown();
+            EditClient form = new EditClient(clientId);
+
+            form.Show();
         }
     }
 }

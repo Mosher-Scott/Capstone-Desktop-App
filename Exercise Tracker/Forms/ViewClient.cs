@@ -50,7 +50,7 @@ namespace Exercise_Tracker
         /// </summary>
         public void PopulateClientDropdown()
         {
-            comboBoxClientNames.DataSource = new BindingSource(ClientData.clients, null);
+            comboBoxClientNames.DataSource = new BindingSource(ClientDataForm.clients, null);
             comboBoxClientNames.DisplayMember = "Value";
             comboBoxClientNames.ValueMember = "Key";
         }
@@ -64,17 +64,17 @@ namespace Exercise_Tracker
             //ClientData.GetClientInfo(id);
 
             // Testing new method
-            ClientData.GetDataFromDatabase("ClientInfo", id);
+            ClientDataForm.GetDataFromDatabase("ClientInfo", id);
 
-            dataGridViewClientDetails.DataSource = ClientData.clientDataResultsTable;
+            dataGridViewClientDetails.DataSource = ClientDataForm.clientDataResultsTable;
 
             // Get a list of training sessions assigned to the client
-            ClientData.GetDataFromDatabase("ClientTrainingSessions", id);
+            ClientDataForm.GetDataFromDatabase("ClientTrainingSessions", id);
 
-            dataGridViewTrainingSessions.DataSource = ClientData.clientTrainingSessionsTable;
+            dataGridViewTrainingSessions.DataSource = ClientDataForm.clientTrainingSessionsTable;
 
             // Populate the dropdown list with the sessions & the IDs
-            comboBoxAssignedTrainingSessions.DataSource = ClientData.clientTrainingSessionsTable;
+            comboBoxAssignedTrainingSessions.DataSource = ClientDataForm.clientTrainingSessionsTable;
             comboBoxAssignedTrainingSessions.DisplayMember = "Name";
             comboBoxAssignedTrainingSessions.ValueMember = "id";
         }
@@ -92,9 +92,9 @@ namespace Exercise_Tracker
                 }
 
                 //ClientData.GetTrainingSessionExercises(id);
-                ClientData.GetDataFromDatabase("GetTrainingSessionExercises", id);
+                ClientDataForm.GetDataFromDatabase("GetTrainingSessionExercises", id);
 
-                dataGridViewSessionExercises.DataSource = ClientData.sessionExercisesTable;
+                dataGridViewSessionExercises.DataSource = ClientDataForm.sessionExercisesTable;
 
             } catch
             {
@@ -108,7 +108,7 @@ namespace Exercise_Tracker
         {
             int id;
 
-            id = Convert.ToInt32(ClientData.clientTrainingSessionsTable.Rows[0][0]);
+            id = Convert.ToInt32(ClientDataForm.clientTrainingSessionsTable.Rows[0][0]);
 
             return id;
         }

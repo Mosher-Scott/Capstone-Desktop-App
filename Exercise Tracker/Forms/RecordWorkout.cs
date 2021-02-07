@@ -33,9 +33,9 @@ namespace Exercise_Tracker.Forms
 
             labelSessionName.Text = sessionName;
 
-            ClientData.GetDataFromDatabase("RecordWorkout", id);
+            ClientDataForm.GetDataFromDatabase("RecordWorkout", id);
             // ClientData.recordingExercisesTable = ClientData.sessionExercisesTable;
-            dataGridViewExercises.DataSource = ClientData.recordingExercisesTable;
+            dataGridViewExercises.DataSource = ClientDataForm.recordingExercisesTable;
 
         }
 
@@ -79,7 +79,7 @@ namespace Exercise_Tracker.Forms
             }
 
             // Run query to insert new training sesion into the database (needs a new table). Requires user id/session id
-            int workoutSessionId = WorkoutData.InsertSessionIntoDatabase(clientId, sessionId);
+            int workoutSessionId = WorkoutHistory.InsertSessionIntoDatabase(clientId, sessionId);
 
             // Check the value of the session ID to see it was inserted correctly
             if (workoutSessionId == -99)
@@ -89,7 +89,7 @@ namespace Exercise_Tracker.Forms
             }
 
             // TODO: Need to handle errors
-            foreach (DataRow row in ClientData.recordingExercisesTable.Rows)
+            foreach (DataRow row in ClientDataForm.recordingExercisesTable.Rows)
             {
                 int exerciseId = 0;
                 int sets = 0;
@@ -110,7 +110,7 @@ namespace Exercise_Tracker.Forms
                 }
 
                 // Get the result of inserting the data into the client_workout_history_exercises table
-                int insertValue = WorkoutData.InsertExerciseIntoHistory(workoutSessionId, exerciseId, sets, reps, weight, time);
+                int insertValue = WorkoutHistory.InsertExerciseIntoHistory(workoutSessionId, exerciseId, sets, reps, weight, time);
                 
                 if (insertValue == -99)
                 {
@@ -132,7 +132,7 @@ namespace Exercise_Tracker.Forms
             bool everythingGood = true;
 
             // TODO: Use that training session id, and insert the data below
-            foreach (DataRow row in ClientData.recordingExercisesTable.Rows)
+            foreach (DataRow row in ClientDataForm.recordingExercisesTable.Rows)
             {
                 int exerciseId;
                 int sets;

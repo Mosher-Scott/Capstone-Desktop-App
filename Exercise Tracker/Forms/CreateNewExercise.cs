@@ -17,14 +17,17 @@ namespace Exercise_Tracker.Forms
         {
             InitializeComponent();
 
-            ClientData.GetAllMuslceGroups();
+
+            //ClientDataForm.GetAllMuscleGroups();
 
             PopulateMuscleGroupDropdown();
+            
         }
 
         private void PopulateMuscleGroupDropdown()
         {
-            comboBoxMuscleGroups.DataSource = new BindingSource(ClientData.muscleGroups, null);
+
+            comboBoxMuscleGroups.DataSource = new BindingSource(MuscleGroup.muscleGroupDictionary, null);
             comboBoxMuscleGroups.DisplayMember = "Value";
             comboBoxMuscleGroups.ValueMember = "Key";
         }
@@ -32,10 +35,11 @@ namespace Exercise_Tracker.Forms
         private void buttonSave_Click(object sender, EventArgs e)
         {
             string name = textBoxName.Text;
-            int id = Convert.ToInt32(comboBoxMuscleGroups.SelectedValue);
+            string muscleGroupId = comboBoxMuscleGroups.SelectedValue.ToString();
             string instructions = textBoxInstructionInput.Text;
+            string active = checkBoxActive.Checked.ToString() ;
 
-            Exercise newExercise = new Exercise(name, id, instructions);
+            Exercise newExercise = new Exercise(name, muscleGroupId, instructions, active);
 
             int result = newExercise.InsertIntoDatabase();
 
@@ -47,6 +51,11 @@ namespace Exercise_Tracker.Forms
                 MessageBox.Show($"Successfully inserted {name} into the system");
             }
             
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

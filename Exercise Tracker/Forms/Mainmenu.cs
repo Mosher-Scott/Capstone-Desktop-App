@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,15 @@ namespace Exercise_Tracker.Forms
         public FormStartingMenu()
         {
             InitializeComponent();
-            ClientData.GetAllClients();
+            ClientDataForm.GetAllClients();
+
+            Thread muscleGroups = new Thread(() => MuscleGroup.GetMusclegroups());
+            Thread exercises = new Thread(() => Exercise.GetExercises());
+
+            exercises.Start();
+
+            muscleGroups.Start();
+
         }
 
         private void buttonViewClients_Click(object sender, EventArgs e)
@@ -34,6 +43,13 @@ namespace Exercise_Tracker.Forms
         private void buttonClientManagement_Click(object sender, EventArgs e)
         {
             ClientManagement form = new ClientManagement();
+            form.Show();
+        }
+
+        private void buttonExerciseManagement_Click(object sender, EventArgs e)
+        {
+            ExerciseManagement form = new ExerciseManagement();
+
             form.Show();
         }
     }

@@ -25,7 +25,8 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         public void PopulateClientDropdown()
         {
-            comboBoxClientNames.DataSource = new BindingSource(ClientData.clients, null);
+            // comboBoxClientNames.DataSource = new BindingSource(ClientDataForm.clients, null);
+            comboBoxClientNames.DataSource = new BindingSource(ClientDataForm.clients, null);
             comboBoxClientNames.DisplayMember = "Value";
             comboBoxClientNames.ValueMember = "Key";
         }
@@ -49,14 +50,21 @@ namespace Exercise_Tracker.Forms
             //ClientData.GetClientInfo(id);
 
             // Testing new method
-            ClientData.GetDataFromDatabase("ClientInfo", id);
+            ClientDataForm.GetDataFromDatabase("ClientInfo", id);
 
-            dataGridViewClientDetails.DataSource = ClientData.clientDataResultsTable;
+            dataGridViewClientDetails.DataSource = ClientDataForm.clientDataResultsTable;
 
             // Get a list of training sessions assigned to the client
-            ClientData.GetDataFromDatabase("ClientTrainingSessions", id);
+            ClientDataForm.GetDataFromDatabase("ClientTrainingSessions", id);
 
-            dataGridViewTrainingSessions.DataSource = ClientData.clientTrainingSessionsTable;
+            dataGridViewTrainingSessions.DataSource = ClientDataForm.clientTrainingSessionsTable;
+        }
+
+        private int GetClientIdFromDropdown()
+        {
+            int id = Convert.ToInt32(comboBoxClientNames.SelectedValue);
+
+            return id;
 
         }
 
@@ -64,9 +72,18 @@ namespace Exercise_Tracker.Forms
         {
             int id;
 
-            id = Convert.ToInt32(ClientData.clients.Keys.First());
+            id = Convert.ToInt32(ClientDataForm.clients.Keys.First());
 
             return id;
+        }
+
+        private void buttonEditClient_Click(object sender, EventArgs e)
+        {
+
+            int clientId = GetClientIdFromDropdown();
+            EditClient form = new EditClient(clientId);
+
+            form.Show();
         }
     }
 }

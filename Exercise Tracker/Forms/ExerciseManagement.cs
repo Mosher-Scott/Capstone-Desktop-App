@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exercise_Tracker.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,37 @@ namespace Exercise_Tracker.Forms
         public ExerciseManagement()
         {
             InitializeComponent();
+            PopulateDropdownMenu();
+        }
+
+        private void PopulateDropdownMenu()
+        {
+            comboBoxExercises.DataSource = new BindingSource(Exercise.exerciseListForDropdown, null);
+            comboBoxExercises.DisplayMember = "Value";
+            comboBoxExercises.ValueMember = "Key";
         }
 
         private void buttonAddNewExercise_Click(object sender, EventArgs e)
         {
             CreateNewExercise form = new CreateNewExercise();
             form.Show();
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonAddNew_Click(object sender, EventArgs e)
+        {
+            CreateNewExercise form = new CreateNewExercise();
+
+            form.Show();
+        }
+
+        private void buttonEditExercise_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

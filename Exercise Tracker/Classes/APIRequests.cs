@@ -28,6 +28,9 @@ namespace Exercise_Tracker.Classes
 
         }
 
+        /// <summary>
+        /// Gets an authorization token from the service to access the endpoints
+        /// </summary>
         public void GetAuthToken()
         {
 
@@ -52,14 +55,19 @@ namespace Exercise_Tracker.Classes
             try
             {
                 responseFromSite = JsonConvert.DeserializeObject<SecureToken>(response.Content);
-            } catch
+            } catch (Exception ex)
             {
-
+                logger.Info($"Error getting token. {ex.Message}");
             }
             
             savedToken = responseFromSite;
         }
 
+        /// <summary>
+        /// Generic function to get data from the API endpoints.  Returns a JSON string
+        /// </summary>
+        /// <param name="url">URL of he website you want to access</param>
+        /// <returns></returns>
         public string GetWebsiteData(string url)
         {
             GetAuthToken();
@@ -76,6 +84,9 @@ namespace Exercise_Tracker.Classes
         }
     } // end of class
 
+    /// <summary>
+    /// Holds the secure token data that is used for authentication
+    /// </summary>
     public class SecureToken
     {
         public string access_Token { get; set; }

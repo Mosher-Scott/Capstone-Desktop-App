@@ -28,6 +28,9 @@ namespace Exercise_Tracker.Classes
             muscle_group_details = nameFromJson;
         }
 
+        /// <summary>
+        /// Creates and gets information from the muscle group endpoint.  Then calls ParseWebResponse() to clean them
+        /// </summary>
         public static void GetMusclegroups()
         {
             muscleGroupDictionary.Add("0", "Choose Muscle Group");
@@ -39,6 +42,10 @@ namespace Exercise_Tracker.Classes
 
         }
 
+        /// <summary>
+        /// Parses the response from the API about the muscle groups
+        /// </summary>
+        /// <param name="response">Response from the HTTP request as a JSON string</param>
         public static void ParseWebResponse(string response)
         {
             // Try something else

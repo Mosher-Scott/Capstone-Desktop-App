@@ -68,6 +68,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonClientManagement
             // 
+            this.buttonClientManagement.Enabled = false;
             this.buttonClientManagement.Location = new System.Drawing.Point(71, 61);
             this.buttonClientManagement.Name = "buttonClientManagement";
             this.buttonClientManagement.Size = new System.Drawing.Size(212, 133);

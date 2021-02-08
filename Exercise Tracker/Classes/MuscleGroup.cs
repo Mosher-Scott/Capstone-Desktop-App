@@ -19,7 +19,7 @@ namespace Exercise_Tracker.Classes
         public int id {get; set;}
         public string muscle_group_details { get; set; }
 
-       public static  Dictionary<string, string> muscleGroupDictionary = new Dictionary<string, string>();
+        public static  Dictionary<string, string> muscleGroupDictionary = new Dictionary<string, string>();
 
 
         public void SetItem(int idFromJson, string nameFromJson)

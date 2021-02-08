@@ -29,9 +29,7 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelClientInfo = new System.Windows.Forms.Label();
             this.buttonGetClientInfo = new System.Windows.Forms.Button();
-            this.dataGridViewClientDetails = new System.Windows.Forms.DataGridView();
             this.labelClientNames = new System.Windows.Forms.Label();
             this.comboBoxClientNames = new System.Windows.Forms.ComboBox();
             this.labelClientTrainingSessions = new System.Windows.Forms.Label();
@@ -44,27 +42,36 @@ namespace Exercise_Tracker.Forms
             this.buttonAddSession = new System.Windows.Forms.Button();
             this.buttonDeleteWorkout = new System.Windows.Forms.Button();
             this.buttonEditWorkout = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientDetails)).BeginInit();
+            this.groupBoxClientDetails = new System.Windows.Forms.GroupBox();
+            this.labelStateText = new System.Windows.Forms.Label();
+            this.labelState = new System.Windows.Forms.Label();
+            this.labelActiveText = new System.Windows.Forms.Label();
+            this.labelActive = new System.Windows.Forms.Label();
+            this.labelRegistrationDateText = new System.Windows.Forms.Label();
+            this.labelRegistrationDate = new System.Windows.Forms.Label();
+            this.labelEmailText = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelZipCodeText = new System.Windows.Forms.Label();
+            this.labelZipCode = new System.Windows.Forms.Label();
+            this.labelCityText = new System.Windows.Forms.Label();
+            this.labelCity = new System.Windows.Forms.Label();
+            this.labelAddressText = new System.Windows.Forms.Label();
+            this.labelAddress = new System.Windows.Forms.Label();
+            this.labelLastNameText = new System.Windows.Forms.Label();
+            this.labelLastName = new System.Windows.Forms.Label();
+            this.labelFirstNameText = new System.Windows.Forms.Label();
+            this.labelClientFirstName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrainingSessions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkoutHistory)).BeginInit();
+            this.groupBoxClientDetails.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelClientInfo
-            // 
-            this.labelClientInfo.AutoSize = true;
-            this.labelClientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientInfo.Location = new System.Drawing.Point(31, 191);
-            this.labelClientInfo.Name = "labelClientInfo";
-            this.labelClientInfo.Size = new System.Drawing.Size(154, 32);
-            this.labelClientInfo.TabIndex = 10;
-            this.labelClientInfo.Text = "Client Info";
             // 
             // buttonGetClientInfo
             // 
             this.buttonGetClientInfo.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonGetClientInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonGetClientInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGetClientInfo.Location = new System.Drawing.Point(966, 71);
+            this.buttonGetClientInfo.Location = new System.Drawing.Point(1710, 418);
             this.buttonGetClientInfo.Name = "buttonGetClientInfo";
             this.buttonGetClientInfo.Size = new System.Drawing.Size(164, 76);
             this.buttonGetClientInfo.TabIndex = 9;
@@ -72,20 +79,6 @@ namespace Exercise_Tracker.Forms
             this.buttonGetClientInfo.UseVisualStyleBackColor = false;
             this.buttonGetClientInfo.Visible = false;
             this.buttonGetClientInfo.Click += new System.EventHandler(this.buttonGetClientInfo_Click);
-            // 
-            // dataGridViewClientDetails
-            // 
-            this.dataGridViewClientDetails.AllowUserToAddRows = false;
-            this.dataGridViewClientDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewClientDetails.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewClientDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientDetails.Location = new System.Drawing.Point(31, 229);
-            this.dataGridViewClientDetails.Name = "dataGridViewClientDetails";
-            this.dataGridViewClientDetails.ReadOnly = true;
-            this.dataGridViewClientDetails.RowHeadersWidth = 102;
-            this.dataGridViewClientDetails.RowTemplate.Height = 40;
-            this.dataGridViewClientDetails.Size = new System.Drawing.Size(2076, 177);
-            this.dataGridViewClientDetails.TabIndex = 8;
             // 
             // labelClientNames
             // 
@@ -110,7 +103,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelClientTrainingSessions.AutoSize = true;
             this.labelClientTrainingSessions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientTrainingSessions.Location = new System.Drawing.Point(31, 583);
+            this.labelClientTrainingSessions.Location = new System.Drawing.Point(25, 754);
             this.labelClientTrainingSessions.Name = "labelClientTrainingSessions";
             this.labelClientTrainingSessions.Size = new System.Drawing.Size(393, 32);
             this.labelClientTrainingSessions.TabIndex = 12;
@@ -123,7 +116,7 @@ namespace Exercise_Tracker.Forms
             this.dataGridViewTrainingSessions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewTrainingSessions.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTrainingSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTrainingSessions.Location = new System.Drawing.Point(31, 641);
+            this.dataGridViewTrainingSessions.Location = new System.Drawing.Point(25, 812);
             this.dataGridViewTrainingSessions.Name = "dataGridViewTrainingSessions";
             this.dataGridViewTrainingSessions.ReadOnly = true;
             this.dataGridViewTrainingSessions.RowHeadersWidth = 102;
@@ -136,7 +129,7 @@ namespace Exercise_Tracker.Forms
             this.buttonEditClient.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonEditClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonEditClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEditClient.Location = new System.Drawing.Point(37, 412);
+            this.buttonEditClient.Location = new System.Drawing.Point(31, 676);
             this.buttonEditClient.Name = "buttonEditClient";
             this.buttonEditClient.Size = new System.Drawing.Size(164, 76);
             this.buttonEditClient.TabIndex = 13;
@@ -149,12 +142,13 @@ namespace Exercise_Tracker.Forms
             this.buttonDeleteClient.BackColor = System.Drawing.Color.PaleVioletRed;
             this.buttonDeleteClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteClient.Location = new System.Drawing.Point(228, 412);
+            this.buttonDeleteClient.Location = new System.Drawing.Point(221, 675);
             this.buttonDeleteClient.Name = "buttonDeleteClient";
             this.buttonDeleteClient.Size = new System.Drawing.Size(210, 76);
             this.buttonDeleteClient.TabIndex = 14;
             this.buttonDeleteClient.Text = "Delete Client";
             this.buttonDeleteClient.UseVisualStyleBackColor = false;
+            this.buttonDeleteClient.Click += new System.EventHandler(this.buttonDeleteClient_Click);
             // 
             // dataGridViewWorkoutHistory
             // 
@@ -228,12 +222,212 @@ namespace Exercise_Tracker.Forms
             this.buttonEditWorkout.Text = "Edit Workout";
             this.buttonEditWorkout.UseVisualStyleBackColor = false;
             // 
+            // groupBoxClientDetails
+            // 
+            this.groupBoxClientDetails.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBoxClientDetails.Controls.Add(this.labelStateText);
+            this.groupBoxClientDetails.Controls.Add(this.labelState);
+            this.groupBoxClientDetails.Controls.Add(this.labelActiveText);
+            this.groupBoxClientDetails.Controls.Add(this.labelActive);
+            this.groupBoxClientDetails.Controls.Add(this.labelRegistrationDateText);
+            this.groupBoxClientDetails.Controls.Add(this.labelRegistrationDate);
+            this.groupBoxClientDetails.Controls.Add(this.labelEmailText);
+            this.groupBoxClientDetails.Controls.Add(this.labelEmail);
+            this.groupBoxClientDetails.Controls.Add(this.labelZipCodeText);
+            this.groupBoxClientDetails.Controls.Add(this.labelZipCode);
+            this.groupBoxClientDetails.Controls.Add(this.labelCityText);
+            this.groupBoxClientDetails.Controls.Add(this.labelCity);
+            this.groupBoxClientDetails.Controls.Add(this.labelAddressText);
+            this.groupBoxClientDetails.Controls.Add(this.labelAddress);
+            this.groupBoxClientDetails.Controls.Add(this.labelLastNameText);
+            this.groupBoxClientDetails.Controls.Add(this.labelLastName);
+            this.groupBoxClientDetails.Controls.Add(this.labelFirstNameText);
+            this.groupBoxClientDetails.Controls.Add(this.labelClientFirstName);
+            this.groupBoxClientDetails.Location = new System.Drawing.Point(31, 189);
+            this.groupBoxClientDetails.Name = "groupBoxClientDetails";
+            this.groupBoxClientDetails.Size = new System.Drawing.Size(941, 481);
+            this.groupBoxClientDetails.TabIndex = 21;
+            this.groupBoxClientDetails.TabStop = false;
+            this.groupBoxClientDetails.Text = "Client Info";
+            // 
+            // labelStateText
+            // 
+            this.labelStateText.AutoSize = true;
+            this.labelStateText.Location = new System.Drawing.Point(184, 238);
+            this.labelStateText.Name = "labelStateText";
+            this.labelStateText.Size = new System.Drawing.Size(92, 32);
+            this.labelStateText.TabIndex = 17;
+            this.labelStateText.Text = "           ";
+            // 
+            // labelState
+            // 
+            this.labelState.AutoSize = true;
+            this.labelState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelState.Location = new System.Drawing.Point(82, 238);
+            this.labelState.Name = "labelState";
+            this.labelState.Size = new System.Drawing.Size(96, 32);
+            this.labelState.TabIndex = 16;
+            this.labelState.Text = "State:";
+            // 
+            // labelActiveText
+            // 
+            this.labelActiveText.AutoSize = true;
+            this.labelActiveText.Location = new System.Drawing.Point(184, 430);
+            this.labelActiveText.Name = "labelActiveText";
+            this.labelActiveText.Size = new System.Drawing.Size(106, 32);
+            this.labelActiveText.TabIndex = 15;
+            this.labelActiveText.Text = "             ";
+            // 
+            // labelActive
+            // 
+            this.labelActive.AutoSize = true;
+            this.labelActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActive.Location = new System.Drawing.Point(70, 430);
+            this.labelActive.Name = "labelActive";
+            this.labelActive.Size = new System.Drawing.Size(108, 32);
+            this.labelActive.TabIndex = 14;
+            this.labelActive.Text = "Active:";
+            // 
+            // labelRegistrationDateText
+            // 
+            this.labelRegistrationDateText.AutoSize = true;
+            this.labelRegistrationDateText.Location = new System.Drawing.Point(184, 382);
+            this.labelRegistrationDateText.Name = "labelRegistrationDateText";
+            this.labelRegistrationDateText.Size = new System.Drawing.Size(78, 32);
+            this.labelRegistrationDateText.TabIndex = 13;
+            this.labelRegistrationDateText.Text = "         ";
+            // 
+            // labelRegistrationDate
+            // 
+            this.labelRegistrationDate.AutoSize = true;
+            this.labelRegistrationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegistrationDate.Location = new System.Drawing.Point(27, 382);
+            this.labelRegistrationDate.Name = "labelRegistrationDate";
+            this.labelRegistrationDate.Size = new System.Drawing.Size(151, 32);
+            this.labelRegistrationDate.TabIndex = 12;
+            this.labelRegistrationDate.Text = "Reg Date:";
+            // 
+            // labelEmailText
+            // 
+            this.labelEmailText.AutoSize = true;
+            this.labelEmailText.Location = new System.Drawing.Point(184, 334);
+            this.labelEmailText.Name = "labelEmailText";
+            this.labelEmailText.Size = new System.Drawing.Size(85, 32);
+            this.labelEmailText.TabIndex = 11;
+            this.labelEmailText.Text = "          ";
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Location = new System.Drawing.Point(77, 334);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(101, 32);
+            this.labelEmail.TabIndex = 10;
+            this.labelEmail.Text = "Email:";
+            // 
+            // labelZipCodeText
+            // 
+            this.labelZipCodeText.AutoSize = true;
+            this.labelZipCodeText.Location = new System.Drawing.Point(184, 286);
+            this.labelZipCodeText.Name = "labelZipCodeText";
+            this.labelZipCodeText.Size = new System.Drawing.Size(99, 32);
+            this.labelZipCodeText.TabIndex = 9;
+            this.labelZipCodeText.Text = "            ";
+            // 
+            // labelZipCode
+            // 
+            this.labelZipCode.AutoSize = true;
+            this.labelZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelZipCode.Location = new System.Drawing.Point(45, 286);
+            this.labelZipCode.Name = "labelZipCode";
+            this.labelZipCode.Size = new System.Drawing.Size(133, 32);
+            this.labelZipCode.TabIndex = 8;
+            this.labelZipCode.Text = "Zipcode:";
+            // 
+            // labelCityText
+            // 
+            this.labelCityText.AutoSize = true;
+            this.labelCityText.Location = new System.Drawing.Point(184, 190);
+            this.labelCityText.Name = "labelCityText";
+            this.labelCityText.Size = new System.Drawing.Size(106, 32);
+            this.labelCityText.TabIndex = 7;
+            this.labelCityText.Text = "             ";
+            // 
+            // labelCity
+            // 
+            this.labelCity.AutoSize = true;
+            this.labelCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCity.Location = new System.Drawing.Point(101, 190);
+            this.labelCity.Name = "labelCity";
+            this.labelCity.Size = new System.Drawing.Size(77, 32);
+            this.labelCity.TabIndex = 6;
+            this.labelCity.Text = "City:";
+            // 
+            // labelAddressText
+            // 
+            this.labelAddressText.AutoSize = true;
+            this.labelAddressText.Location = new System.Drawing.Point(184, 142);
+            this.labelAddressText.Name = "labelAddressText";
+            this.labelAddressText.Size = new System.Drawing.Size(99, 32);
+            this.labelAddressText.TabIndex = 5;
+            this.labelAddressText.Text = "            ";
+            // 
+            // labelAddress
+            // 
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddress.Location = new System.Drawing.Point(43, 142);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(135, 32);
+            this.labelAddress.TabIndex = 4;
+            this.labelAddress.Text = "Address:";
+            // 
+            // labelLastNameText
+            // 
+            this.labelLastNameText.AutoSize = true;
+            this.labelLastNameText.Location = new System.Drawing.Point(184, 94);
+            this.labelLastNameText.Name = "labelLastNameText";
+            this.labelLastNameText.Size = new System.Drawing.Size(120, 32);
+            this.labelLastNameText.TabIndex = 3;
+            this.labelLastNameText.Text = "               ";
+            // 
+            // labelLastName
+            // 
+            this.labelLastName.AutoSize = true;
+            this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastName.Location = new System.Drawing.Point(9, 94);
+            this.labelLastName.Name = "labelLastName";
+            this.labelLastName.Size = new System.Drawing.Size(169, 32);
+            this.labelLastName.TabIndex = 2;
+            this.labelLastName.Text = "Last Name:";
+            // 
+            // labelFirstNameText
+            // 
+            this.labelFirstNameText.AutoSize = true;
+            this.labelFirstNameText.Location = new System.Drawing.Point(184, 46);
+            this.labelFirstNameText.Name = "labelFirstNameText";
+            this.labelFirstNameText.Size = new System.Drawing.Size(36, 32);
+            this.labelFirstNameText.TabIndex = 1;
+            this.labelFirstNameText.Text = "   ";
+            // 
+            // labelClientFirstName
+            // 
+            this.labelClientFirstName.AutoSize = true;
+            this.labelClientFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClientFirstName.Location = new System.Drawing.Point(7, 46);
+            this.labelClientFirstName.Name = "labelClientFirstName";
+            this.labelClientFirstName.Size = new System.Drawing.Size(171, 32);
+            this.labelClientFirstName.TabIndex = 0;
+            this.labelClientFirstName.Text = "First Name:";
+            // 
             // ClientManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(2425, 2113);
+            this.Controls.Add(this.groupBoxClientDetails);
             this.Controls.Add(this.buttonDeleteWorkout);
             this.Controls.Add(this.buttonEditWorkout);
             this.Controls.Add(this.buttonDeleteSession);
@@ -244,26 +438,22 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.buttonEditClient);
             this.Controls.Add(this.labelClientTrainingSessions);
             this.Controls.Add(this.dataGridViewTrainingSessions);
-            this.Controls.Add(this.labelClientInfo);
             this.Controls.Add(this.buttonGetClientInfo);
-            this.Controls.Add(this.dataGridViewClientDetails);
             this.Controls.Add(this.labelClientNames);
             this.Controls.Add(this.comboBoxClientNames);
             this.Name = "ClientManagement";
             this.Text = "ClientManagement";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrainingSessions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkoutHistory)).EndInit();
+            this.groupBoxClientDetails.ResumeLayout(false);
+            this.groupBoxClientDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelClientInfo;
         private System.Windows.Forms.Button buttonGetClientInfo;
-        private System.Windows.Forms.DataGridView dataGridViewClientDetails;
         private System.Windows.Forms.Label labelClientNames;
         private System.Windows.Forms.ComboBox comboBoxClientNames;
         private System.Windows.Forms.Label labelClientTrainingSessions;
@@ -276,5 +466,24 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Button buttonAddSession;
         private System.Windows.Forms.Button buttonDeleteWorkout;
         private System.Windows.Forms.Button buttonEditWorkout;
+        private System.Windows.Forms.GroupBox groupBoxClientDetails;
+        private System.Windows.Forms.Label labelLastNameText;
+        private System.Windows.Forms.Label labelLastName;
+        private System.Windows.Forms.Label labelFirstNameText;
+        private System.Windows.Forms.Label labelClientFirstName;
+        private System.Windows.Forms.Label labelAddressText;
+        private System.Windows.Forms.Label labelAddress;
+        private System.Windows.Forms.Label labelZipCodeText;
+        private System.Windows.Forms.Label labelZipCode;
+        private System.Windows.Forms.Label labelCityText;
+        private System.Windows.Forms.Label labelCity;
+        private System.Windows.Forms.Label labelEmailText;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelActiveText;
+        private System.Windows.Forms.Label labelActive;
+        private System.Windows.Forms.Label labelRegistrationDateText;
+        private System.Windows.Forms.Label labelRegistrationDate;
+        private System.Windows.Forms.Label labelStateText;
+        private System.Windows.Forms.Label labelState;
     }
 }

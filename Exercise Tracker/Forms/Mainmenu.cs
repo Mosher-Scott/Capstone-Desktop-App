@@ -17,14 +17,22 @@ namespace Exercise_Tracker.Forms
         public FormStartingMenu()
         {
             InitializeComponent();
-            ClientDataForm.GetAllClients();
+            //ClientDataForm.GetAllClients();
+
 
             Thread muscleGroups = new Thread(() => MuscleGroup.GetMusclegroups());
             Thread exercises = new Thread(() => Exercise.GetExercises());
+            Thread clients = new Thread(() => Client.GetClients());
 
             exercises.Start();
-
             muscleGroups.Start();
+            clients.Start();
+
+            exercises.Join();
+            muscleGroups.Join();
+            clients.Join();
+
+            buttonClientManagement.Enabled = true;
 
         }
 

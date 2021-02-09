@@ -47,6 +47,33 @@ namespace Exercise_Tracker.Classes
             email = userEmail;
             registration_date = userRegDate;
         }
+        
+        /// <summary>
+        /// Used or updating a client's data
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="fName"></param>
+        /// <param name="lName"></param>
+        /// <param name="userActive"></param>
+        /// <param name="userAddress"></param>
+        /// <param name="userCity"></param>
+        /// <param name="userState"></param>
+        /// <param name="userZipcode"></param>
+        /// <param name="userPhone"></param>
+        /// <param name="userEmail"></param>
+        public Client(string clientId, string fName, string lName, string userActive, string userAddress, string userCity, string userState, string userZipcode, string userPhone, string userEmail)
+        {
+            client_id = clientId;
+            firstName = fName;
+            lastName = lName;
+            client_active_flag = userActive;
+            address = userAddress;
+            city = userCity;
+            state = userState;
+            zipcode = userZipcode;
+            phone = userPhone;
+            email = userEmail;
+        }
 
         /// <summary>
         /// Gets client information from the API

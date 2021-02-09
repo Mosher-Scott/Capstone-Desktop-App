@@ -82,6 +82,23 @@ namespace Exercise_Tracker.Classes
 
             return content;
         }
+
+        public string SendPostRequest(string url, string jsonData)
+        {
+            GetAuthToken();
+
+            var client = new RestClient("http://localhost:80/clients/");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.PATCH);
+            request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json", $"{jsonData}", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+        }
+
     } // end of class
 
     /// <summary>

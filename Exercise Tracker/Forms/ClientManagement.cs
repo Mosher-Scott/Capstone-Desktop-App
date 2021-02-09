@@ -13,6 +13,19 @@ namespace Exercise_Tracker.Forms
 {
     public partial class ClientManagement : Form
     {
+
+        public string firstName;
+        public string lastName;
+        public string address;
+        public string city;
+        public string zipCode;
+        public string email;
+        public string state;
+        public string registrationDate;
+        public string active;
+        public string phone;
+
+
         public ClientManagement()
         {
             InitializeComponent();
@@ -62,8 +75,20 @@ namespace Exercise_Tracker.Forms
                     labelZipCodeText.Text = Client.listOfClients[i].zipcode;
                     labelEmailText.Text = Client.listOfClients[i].email;
                     labelStateText.Text = Client.listOfClients[i].state;
+                    labelPhoneText.Text = Client.listOfClients[i].phone;
                     labelRegistrationDateText.Text = Client.listOfClients[i].registration_date;
                     labelActiveText.Text = Client.listOfClients[i].client_active_flag;
+
+                    firstName = Client.listOfClients[i].firstName;
+                    lastName = Client.listOfClients[i].lastName;
+                    address = Client.listOfClients[i].address;
+                    city = Client.listOfClients[i].city;
+                    zipCode = Client.listOfClients[i].zipcode;
+                    email = Client.listOfClients[i].email;
+                    state = Client.listOfClients[i].state;
+                    phone = Client.listOfClients[i].phone;
+                    registrationDate = Client.listOfClients[i].registration_date;
+                    active = Client.listOfClients[i].client_active_flag;
 
                 }
             }
@@ -95,7 +120,10 @@ namespace Exercise_Tracker.Forms
         {
 
             int clientId = GetClientIdFromDropdown();
-            EditClient form = new EditClient(clientId);
+
+            
+            // Send the client details to be edited
+            EditClientDetails form = new EditClientDetails(clientId, firstName, lastName, address, city, state, zipCode, phone, email, active);
 
             form.Show();
         }

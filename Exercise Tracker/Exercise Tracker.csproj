@@ -137,11 +137,11 @@
     <Compile Include="Forms\CreateNewExercise.Designer.cs">
       <DependentUpon>CreateNewExercise.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditClient.cs">
+    <Compile Include="Forms\EditClientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditClient.Designer.cs">
-      <DependentUpon>EditClient.cs</DependentUpon>
+    <Compile Include="Forms\EditClientDetails.Designer.cs">
+      <DependentUpon>EditClientDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ExerciseManagement.cs">
       <SubType>Form</SubType>
@@ -184,8 +184,8 @@
     <EmbeddedResource Include="Forms\CreateNewExercise.resx">
       <DependentUpon>CreateNewExercise.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditClient.resx">
-      <DependentUpon>EditClient.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditClientDetails.resx">
+      <DependentUpon>EditClientDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExerciseManagement.resx">
       <DependentUpon>ExerciseManagement.cs</DependentUpon>

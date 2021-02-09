@@ -29,7 +29,6 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonGetClientInfo = new System.Windows.Forms.Button();
             this.labelClientNames = new System.Windows.Forms.Label();
             this.comboBoxClientNames = new System.Windows.Forms.ComboBox();
             this.labelClientTrainingSessions = new System.Windows.Forms.Label();
@@ -61,24 +60,12 @@ namespace Exercise_Tracker.Forms
             this.labelLastName = new System.Windows.Forms.Label();
             this.labelFirstNameText = new System.Windows.Forms.Label();
             this.labelClientFirstName = new System.Windows.Forms.Label();
+            this.labelPhoneText = new System.Windows.Forms.Label();
+            this.labelPhone = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrainingSessions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkoutHistory)).BeginInit();
             this.groupBoxClientDetails.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonGetClientInfo
-            // 
-            this.buttonGetClientInfo.BackColor = System.Drawing.Color.YellowGreen;
-            this.buttonGetClientInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonGetClientInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGetClientInfo.Location = new System.Drawing.Point(1710, 418);
-            this.buttonGetClientInfo.Name = "buttonGetClientInfo";
-            this.buttonGetClientInfo.Size = new System.Drawing.Size(164, 76);
-            this.buttonGetClientInfo.TabIndex = 9;
-            this.buttonGetClientInfo.Text = "Get Info";
-            this.buttonGetClientInfo.UseVisualStyleBackColor = false;
-            this.buttonGetClientInfo.Visible = false;
-            this.buttonGetClientInfo.Click += new System.EventHandler(this.buttonGetClientInfo_Click);
             // 
             // labelClientNames
             // 
@@ -103,7 +90,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelClientTrainingSessions.AutoSize = true;
             this.labelClientTrainingSessions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientTrainingSessions.Location = new System.Drawing.Point(25, 754);
+            this.labelClientTrainingSessions.Location = new System.Drawing.Point(25, 868);
             this.labelClientTrainingSessions.Name = "labelClientTrainingSessions";
             this.labelClientTrainingSessions.Size = new System.Drawing.Size(393, 32);
             this.labelClientTrainingSessions.TabIndex = 12;
@@ -116,7 +103,7 @@ namespace Exercise_Tracker.Forms
             this.dataGridViewTrainingSessions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewTrainingSessions.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTrainingSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTrainingSessions.Location = new System.Drawing.Point(25, 812);
+            this.dataGridViewTrainingSessions.Location = new System.Drawing.Point(31, 916);
             this.dataGridViewTrainingSessions.Name = "dataGridViewTrainingSessions";
             this.dataGridViewTrainingSessions.ReadOnly = true;
             this.dataGridViewTrainingSessions.RowHeadersWidth = 102;
@@ -129,7 +116,7 @@ namespace Exercise_Tracker.Forms
             this.buttonEditClient.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonEditClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonEditClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEditClient.Location = new System.Drawing.Point(31, 676);
+            this.buttonEditClient.Location = new System.Drawing.Point(31, 742);
             this.buttonEditClient.Name = "buttonEditClient";
             this.buttonEditClient.Size = new System.Drawing.Size(164, 76);
             this.buttonEditClient.TabIndex = 13;
@@ -142,7 +129,7 @@ namespace Exercise_Tracker.Forms
             this.buttonDeleteClient.BackColor = System.Drawing.Color.PaleVioletRed;
             this.buttonDeleteClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteClient.Location = new System.Drawing.Point(221, 675);
+            this.buttonDeleteClient.Location = new System.Drawing.Point(221, 741);
             this.buttonDeleteClient.Name = "buttonDeleteClient";
             this.buttonDeleteClient.Size = new System.Drawing.Size(210, 76);
             this.buttonDeleteClient.TabIndex = 14;
@@ -225,6 +212,8 @@ namespace Exercise_Tracker.Forms
             // groupBoxClientDetails
             // 
             this.groupBoxClientDetails.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBoxClientDetails.Controls.Add(this.labelPhoneText);
+            this.groupBoxClientDetails.Controls.Add(this.labelPhone);
             this.groupBoxClientDetails.Controls.Add(this.labelStateText);
             this.groupBoxClientDetails.Controls.Add(this.labelState);
             this.groupBoxClientDetails.Controls.Add(this.labelActiveText);
@@ -245,7 +234,7 @@ namespace Exercise_Tracker.Forms
             this.groupBoxClientDetails.Controls.Add(this.labelClientFirstName);
             this.groupBoxClientDetails.Location = new System.Drawing.Point(31, 189);
             this.groupBoxClientDetails.Name = "groupBoxClientDetails";
-            this.groupBoxClientDetails.Size = new System.Drawing.Size(941, 481);
+            this.groupBoxClientDetails.Size = new System.Drawing.Size(941, 546);
             this.groupBoxClientDetails.TabIndex = 21;
             this.groupBoxClientDetails.TabStop = false;
             this.groupBoxClientDetails.Text = "Client Info";
@@ -272,7 +261,7 @@ namespace Exercise_Tracker.Forms
             // labelActiveText
             // 
             this.labelActiveText.AutoSize = true;
-            this.labelActiveText.Location = new System.Drawing.Point(184, 430);
+            this.labelActiveText.Location = new System.Drawing.Point(184, 491);
             this.labelActiveText.Name = "labelActiveText";
             this.labelActiveText.Size = new System.Drawing.Size(106, 32);
             this.labelActiveText.TabIndex = 15;
@@ -282,7 +271,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelActive.AutoSize = true;
             this.labelActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActive.Location = new System.Drawing.Point(70, 430);
+            this.labelActive.Location = new System.Drawing.Point(70, 491);
             this.labelActive.Name = "labelActive";
             this.labelActive.Size = new System.Drawing.Size(108, 32);
             this.labelActive.TabIndex = 14;
@@ -291,7 +280,7 @@ namespace Exercise_Tracker.Forms
             // labelRegistrationDateText
             // 
             this.labelRegistrationDateText.AutoSize = true;
-            this.labelRegistrationDateText.Location = new System.Drawing.Point(184, 382);
+            this.labelRegistrationDateText.Location = new System.Drawing.Point(184, 443);
             this.labelRegistrationDateText.Name = "labelRegistrationDateText";
             this.labelRegistrationDateText.Size = new System.Drawing.Size(78, 32);
             this.labelRegistrationDateText.TabIndex = 13;
@@ -301,7 +290,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelRegistrationDate.AutoSize = true;
             this.labelRegistrationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegistrationDate.Location = new System.Drawing.Point(27, 382);
+            this.labelRegistrationDate.Location = new System.Drawing.Point(27, 443);
             this.labelRegistrationDate.Name = "labelRegistrationDate";
             this.labelRegistrationDate.Size = new System.Drawing.Size(151, 32);
             this.labelRegistrationDate.TabIndex = 12;
@@ -421,12 +410,31 @@ namespace Exercise_Tracker.Forms
             this.labelClientFirstName.TabIndex = 0;
             this.labelClientFirstName.Text = "First Name:";
             // 
+            // labelPhoneText
+            // 
+            this.labelPhoneText.AutoSize = true;
+            this.labelPhoneText.Location = new System.Drawing.Point(180, 389);
+            this.labelPhoneText.Name = "labelPhoneText";
+            this.labelPhoneText.Size = new System.Drawing.Size(85, 32);
+            this.labelPhoneText.TabIndex = 19;
+            this.labelPhoneText.Text = "          ";
+            // 
+            // labelPhone
+            // 
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhone.Location = new System.Drawing.Point(66, 389);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(112, 32);
+            this.labelPhone.TabIndex = 18;
+            this.labelPhone.Text = "Phone:";
+            // 
             // ClientManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(2425, 2113);
+            this.ClientSize = new System.Drawing.Size(2425, 2108);
             this.Controls.Add(this.groupBoxClientDetails);
             this.Controls.Add(this.buttonDeleteWorkout);
             this.Controls.Add(this.buttonEditWorkout);
@@ -438,7 +446,6 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.buttonEditClient);
             this.Controls.Add(this.labelClientTrainingSessions);
             this.Controls.Add(this.dataGridViewTrainingSessions);
-            this.Controls.Add(this.buttonGetClientInfo);
             this.Controls.Add(this.labelClientNames);
             this.Controls.Add(this.comboBoxClientNames);
             this.Name = "ClientManagement";
@@ -453,7 +460,6 @@ namespace Exercise_Tracker.Forms
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonGetClientInfo;
         private System.Windows.Forms.Label labelClientNames;
         private System.Windows.Forms.ComboBox comboBoxClientNames;
         private System.Windows.Forms.Label labelClientTrainingSessions;
@@ -485,5 +491,7 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Label labelRegistrationDate;
         private System.Windows.Forms.Label labelStateText;
         private System.Windows.Forms.Label labelState;
+        private System.Windows.Forms.Label labelPhoneText;
+        private System.Windows.Forms.Label labelPhone;
     }
 }

@@ -29,7 +29,7 @@ namespace Exercise_Tracker.Forms
         public ClientManagement()
         {
             InitializeComponent();
-           // ClientData.GetAllClients();
+
             PopulateClientDropdown();
         }
 
@@ -45,7 +45,7 @@ namespace Exercise_Tracker.Forms
         }
 
         /// <summary>
-        ///  Gets data when the user picks a value from the dropdown list
+        ///  Gets data for the client by clientID when the user picks a client from the dropdown list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -62,41 +62,47 @@ namespace Exercise_Tracker.Forms
                 id = 0;
             }
 
-
-            // Loop through the array of objects and see which one matches
-            for (int i = 0; i < Client.listOfClients.Count; i++)
+            if (id != 0)
             {
-                if (Client.listOfClients[i].client_id == id.ToString())
+                // Loop through the array of objects and see which one matches
+                for (int i = 0; i < Client.listOfClients.Count; i++)
                 {
-                    labelFirstNameText.Text = Client.listOfClients[i].firstName;
-                    labelLastNameText.Text = Client.listOfClients[i].lastName;
-                    labelAddressText.Text = Client.listOfClients[i].address;
-                    labelCityText.Text = Client.listOfClients[i].city;
-                    labelZipCodeText.Text = Client.listOfClients[i].zipcode;
-                    labelEmailText.Text = Client.listOfClients[i].email;
-                    labelStateText.Text = Client.listOfClients[i].state;
-                    labelPhoneText.Text = Client.listOfClients[i].phone;
-                    labelRegistrationDateText.Text = Client.listOfClients[i].registration_date;
-                    labelActiveText.Text = Client.listOfClients[i].client_active_flag;
+                    if (Client.listOfClients[i].client_id == id.ToString())
+                    {
+                        labelFirstNameText.Text = Client.listOfClients[i].firstName;
+                        labelLastNameText.Text = Client.listOfClients[i].lastName;
+                        labelAddressText.Text = Client.listOfClients[i].address;
+                        labelCityText.Text = Client.listOfClients[i].city;
+                        labelZipCodeText.Text = Client.listOfClients[i].zipcode;
+                        labelEmailText.Text = Client.listOfClients[i].email;
+                        labelStateText.Text = Client.listOfClients[i].state;
+                        labelPhoneText.Text = Client.listOfClients[i].phone;
+                        labelRegistrationDateText.Text = Client.listOfClients[i].registration_date;
+                        labelActiveText.Text = Client.listOfClients[i].client_active_flag;
 
-                    firstName = Client.listOfClients[i].firstName;
-                    lastName = Client.listOfClients[i].lastName;
-                    address = Client.listOfClients[i].address;
-                    city = Client.listOfClients[i].city;
-                    zipCode = Client.listOfClients[i].zipcode;
-                    email = Client.listOfClients[i].email;
-                    state = Client.listOfClients[i].state;
-                    phone = Client.listOfClients[i].phone;
-                    registrationDate = Client.listOfClients[i].registration_date;
-                    active = Client.listOfClients[i].client_active_flag;
+                        firstName = Client.listOfClients[i].firstName;
+                        lastName = Client.listOfClients[i].lastName;
+                        address = Client.listOfClients[i].address;
+                        city = Client.listOfClients[i].city;
+                        zipCode = Client.listOfClients[i].zipcode;
+                        email = Client.listOfClients[i].email;
+                        state = Client.listOfClients[i].state;
+                        phone = Client.listOfClients[i].phone;
+                        registrationDate = Client.listOfClients[i].registration_date;
+                        active = Client.listOfClients[i].client_active_flag;
 
+                    }
                 }
+
+
+                // Get a list of training sessions assigned to the client
+                GetClientTrainingSessions(id);
+
+                dataGridViewTrainingSessions.DataSource = TrainingSession.listOfTrainingSessions;
+
+                // Get the workout history for the client as well
             }
 
-
-            // Get a list of training sessions assigned to the client
-            
-            // Get the workout history for the client as well
         }
 
         // Gets the int from the dropdown for the given client
@@ -107,31 +113,38 @@ namespace Exercise_Tracker.Forms
             return id;
         }
 
-        private int GetFirstIdFromClientDataTable()
-        {
-            int id;
-
-            id = Convert.ToInt32(ClientDataForm.clients.Keys.First());
-
-            return id;
-        }
-
+        /// <summary>
+        /// Called when the user clicks the "Edit" button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonEditClient_Click(object sender, EventArgs e)
         {
 
             int clientId = GetClientIdFromDropdown();
 
-            
-            // Send the client details to be edited
-            EditClientDetails form = new EditClientDetails(clientId, firstName, lastName, address, city, state, zipCode, phone, email, active);
+            if (clientId != 0)
+            {
+                // Send the client details to be edited
+                EditClientDetails form = new EditClientDetails(clientId, firstName, lastName, address, city, state, zipCode, phone, email, active);
 
-            form.Show();
+                form.Show();
+            }
+
         }
 
         private void buttonDeleteClient_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void GetClientTrainingSessions(int id)
+        {
+            Client.GetClientTrainingSessions(id);
+
+        }
+
+
 
     }
 }

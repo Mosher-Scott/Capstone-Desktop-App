@@ -95,7 +95,7 @@ namespace Exercise_Tracker.Classes
         /// <param name="response">JSON string that needs to be parsed.</param>
         public static void ParseWebResponse(string response)
         {
-            logger.Info(response);
+  
 
             // Try something else
             var doc = JsonDocument.Parse(response);
@@ -134,6 +134,19 @@ namespace Exercise_Tracker.Classes
                 listOfClients.Add(person);
 
             }
+
+        }
+
+        public static void GetClientTrainingSessions(int clientId)
+        {
+            APIRequests request = new APIRequests();
+
+            // Use the singleClientDetailEndpoint endpoint, and append {id}/trainingsessions to the URL
+            string url = $"{request.singleClientDetailEndpoint}{clientId}/trainingsessions";
+
+            var response = request.GetWebsiteData(url);
+
+            TrainingSession.ParseTrainingSessionData(response);
 
         }
 

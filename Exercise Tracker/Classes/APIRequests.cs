@@ -18,6 +18,8 @@ namespace Exercise_Tracker.Classes
         public string allClientDetailsEndpoint = "https://frozen-meadow-69055.herokuapp.com/clients";
         public string singleClientDetailEndpoint = "https://frozen-meadow-69055.herokuapp.com/clients/";
 
+        public string TESTsingleClientDetailEndpoint = "http://localhost:80/clients/";
+
         public string allMuscleGroupsEndpoint = "https://frozen-meadow-69055.herokuapp.com/musclegroups";
         public string allTrainingSessionsEndpoint = "https://frozen-meadow-69055.herokuapp.com/trainingsessions";
 
@@ -71,6 +73,11 @@ namespace Exercise_Tracker.Classes
         public string GetWebsiteData(string url)
         {
             GetAuthToken();
+
+            if(savedToken.access_Token == null)
+            {
+                return "([{data: \"Could not get auth token\"}])";
+            }
 
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);

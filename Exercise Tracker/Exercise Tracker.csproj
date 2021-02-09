@@ -116,7 +116,7 @@
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Exercise.cs" />
     <Compile Include="Classes\MuscleGroup.cs" />
-    <Compile Include="Classes\TrainingSessions.cs" />
+    <Compile Include="Classes\TrainingSession.cs" />
     <Compile Include="Classes\WorkoutData.cs" />
     <Compile Include="Classes\WorkoutHistory.cs" />
     <Compile Include="Forms\AddNewTrainingSession.cs">

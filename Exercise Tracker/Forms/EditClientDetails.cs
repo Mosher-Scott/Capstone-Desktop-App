@@ -15,7 +15,17 @@ namespace Exercise_Tracker.Forms
 {
     public partial class EditClientDetails : Form
     {
-        
+        public string origclientId;
+        public string origfirstName;
+        public string origlastName;
+        public string origaddress;
+        public string origcity;
+        public string origzipCode;
+        public string origemail;
+        public string origstate;
+        public string origactive;
+        public string origphone;
+
         public EditClientDetails()
         {
             InitializeComponent();
@@ -34,6 +44,16 @@ namespace Exercise_Tracker.Forms
             textBoxZipCode.Text = zipCode;
             textBoxPhone.Text = phone;
             textBoxEmail.Text = email;
+
+            // Save the original values
+            origfirstName = firstName;
+            origlastName = lastname;
+            origaddress = address;
+            origcity = city;
+            origstate = state;
+            origzipCode = zipCode;
+            origphone = phone;
+            origemail = email;
 
             if (active == "True")
             {
@@ -60,11 +80,21 @@ namespace Exercise_Tracker.Forms
             string active = checkBoxActive.Checked.ToString();
             string phone = textBoxPhone.Text;
 
+            // TODO:  Compare old values and new values.  If changed, add to an array and convert it to json to send
             Client client = new Client(clientId, firstName, lastName, active, address, city, state, zipCode, phone, email);
 
             string clientAsJson = JsonConvert.SerializeObject(client);
 
-            MessageBox.Show(clientAsJson);
+            // MessageBox.Show(clientAsJson);
+
+            APIRequests request = new APIRequests();
+
+            string url = $"{request.singleClientDetailEndpoint}{clientId}";
+
+            string response = request.SendPostRequest(url, clientAsJson);
+
+            MessageBox.Show(response);
+
         }
     }
 }

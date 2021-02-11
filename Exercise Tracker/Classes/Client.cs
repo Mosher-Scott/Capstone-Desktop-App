@@ -17,7 +17,7 @@ namespace Exercise_Tracker.Classes
         public string firstName { get; set; }
         public string lastName { get; set; }
 
-        public string client_active_flag { get; set; }
+        public string active { get; set; }
         public string address { get; set; }
         public string city { get; set; }
         public string state { get; set; }
@@ -30,6 +30,8 @@ namespace Exercise_Tracker.Classes
 
         public static List<Client> listOfClients = new List<Client>();
 
+        public static List<Workout> listOfClientWorkouts = new List<Workout>();
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -38,7 +40,7 @@ namespace Exercise_Tracker.Classes
             client_id = clientId;
             firstName = fName;
             lastName = lName;
-            client_active_flag = userActive;
+            active = userActive;
             address = userAddress;
             city = userCity;
             state = userState;
@@ -66,7 +68,7 @@ namespace Exercise_Tracker.Classes
             client_id = clientId;
             firstName = fName;
             lastName = lName;
-            client_active_flag = userActive;
+            active = userActive;
             address = userAddress;
             city = userCity;
             state = userState;
@@ -95,45 +97,51 @@ namespace Exercise_Tracker.Classes
         /// <param name="response">JSON string that needs to be parsed.</param>
         public static void ParseWebResponse(string response)
         {
-  
 
-            // Try something else
-            var doc = JsonDocument.Parse(response);
-            JsonElement root = doc.RootElement;
-
-            //var groups = root.EnumerateArray();
-
-            //var u1 = root[0];
-            //var u2 = root[1];
-
-            for (int i = 0; i < root.GetArrayLength(); i++)
+            if (response == "")
             {
-                // Get data for the dropdown list
-                string clientId = root[i].GetProperty("client_id").ToString();
-                string name = $"{root[i].GetProperty("firstname").ToString()} {root[i].GetProperty("lastname").ToString()}";
-
-                string firstName = root[i].GetProperty("firstname").ToString();
-                string lastName = root[i].GetProperty("lastname").ToString();
-                string active = root[i].GetProperty("active").ToString();
-                string address = root[i].GetProperty("streetaddress").ToString();
-                string city = root[i].GetProperty("city").ToString();
-                string state = root[i].GetProperty("state").ToString();
-                string zipCode = root[i].GetProperty("zipcode").ToString();
-                string phone = root[i].GetProperty("phone").ToString();
-                string email = root[i].GetProperty("email").ToString();
-
-                DateTime regDate = DateTime.Parse(root[i].GetProperty("registrationdate").ToString());
-                string registrationDate = regDate.Date.ToString("MM-dd-yyyy");
-
-                // Add client info to the dropdown list
-                clientDictionaryForDropdown.Add(clientId, name);
-
-                // Add client to the list
-                Client person = new Client(clientId, firstName, lastName, active, address, city, state, zipCode, phone, email, registrationDate);
-
-                listOfClients.Add(person);
-
+                // TODO: Handle this case
             }
+            else {
+                // Try something else
+                var doc = JsonDocument.Parse(response);
+                JsonElement root = doc.RootElement;
+
+                //var groups = root.EnumerateArray();
+
+                //var u1 = root[0];
+                //var u2 = root[1];
+
+                for (int i = 0; i < root.GetArrayLength(); i++)
+                {
+                    // Get data for the dropdown list
+                    string clientId = root[i].GetProperty("client_id").ToString();
+                    string name = $"{root[i].GetProperty("firstname").ToString()} {root[i].GetProperty("lastname").ToString()}";
+
+                    string firstName = root[i].GetProperty("firstname").ToString();
+                    string lastName = root[i].GetProperty("lastname").ToString();
+                    string active = root[i].GetProperty("active").ToString();
+                    string address = root[i].GetProperty("streetaddress").ToString();
+                    string city = root[i].GetProperty("city").ToString();
+                    string state = root[i].GetProperty("state").ToString();
+                    string zipCode = root[i].GetProperty("zipcode").ToString();
+                    string phone = root[i].GetProperty("phone").ToString();
+                    string email = root[i].GetProperty("email").ToString();
+
+                    DateTime regDate = DateTime.Parse(root[i].GetProperty("registrationdate").ToString());
+                    string registrationDate = regDate.Date.ToString("MM-dd-yyyy");
+
+                    // Add client info to the dropdown list
+                    clientDictionaryForDropdown.Add(clientId, name);
+
+                    // Add client to the list
+                    Client person = new Client(clientId, firstName, lastName, active, address, city, state, zipCode, phone, email, registrationDate);
+
+                    listOfClients.Add(person);
+
+                }
+            }
+            
 
         }
 
@@ -148,6 +156,12 @@ namespace Exercise_Tracker.Classes
 
             TrainingSession.ParseTrainingSessionData(response);
 
+        }
+
+        public static void GetWorkoutHistory(int clientId)
+        {
+            Workout.GetWorkoutHistoryForClient(clientId);
+            
         }
 
     } // end of class

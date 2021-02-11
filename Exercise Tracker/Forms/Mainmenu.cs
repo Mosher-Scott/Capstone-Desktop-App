@@ -17,8 +17,9 @@ namespace Exercise_Tracker.Forms
         public FormStartingMenu()
         {
             InitializeComponent();
-            //ClientDataForm.GetAllClients();
 
+            // For testing
+            //Workout.GetWorkoutHistoryForClient(1);
 
             Thread muscleGroups = new Thread(() => MuscleGroup.GetMusclegroups());
             Thread exercises = new Thread(() => Exercise.GetExercises());
@@ -38,7 +39,7 @@ namespace Exercise_Tracker.Forms
 
         private void buttonViewClients_Click(object sender, EventArgs e)
         {
-            FormViewClient form = new FormViewClient();
+            test form = new test();
             form.Show();
         }
 

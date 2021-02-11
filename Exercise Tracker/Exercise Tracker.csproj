@@ -117,6 +117,7 @@
     <Compile Include="Classes\Exercise.cs" />
     <Compile Include="Classes\MuscleGroup.cs" />
     <Compile Include="Classes\TrainingSession.cs" />
+    <Compile Include="Classes\Workout.cs" />
     <Compile Include="Classes\WorkoutData.cs" />
     <Compile Include="Classes\WorkoutHistory.cs" />
     <Compile Include="Forms\AddNewTrainingSession.cs">
@@ -155,6 +156,12 @@
     <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TrainingSessionManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TrainingSessionManagement.resx">
       <DependentUpon>TrainingSessionManagement.cs</DependentUpon>

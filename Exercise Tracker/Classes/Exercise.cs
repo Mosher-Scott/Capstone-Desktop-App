@@ -110,35 +110,41 @@ namespace Exercise_Tracker.Classes
         /// <param name="response">A string of JSON data</param>
         public static void ParseWebResponse(string response)
         {
-            // Try something else
-            var doc = JsonDocument.Parse(response);
-            JsonElement root = doc.RootElement;
-
-            var groups = root.EnumerateArray();
-
-            var u1 = root[0];
-            var u2 = root[1];
-
-            for (int i = 0; i < root.GetArrayLength(); i++)
+            if(response == "")
             {
-                string exerciseId = root[i].GetProperty("exercise_id").ToString();
-                string name = root[i].GetProperty("name").ToString();
-                string instruction = root[i].GetProperty("instruction").ToString();
-                string active = root[i].GetProperty("active").ToString();
-                string muscleGroupId = root[i].GetProperty("muscle_group_id").ToString();
-                string muscleGroupName = root[i].GetProperty("muscle_group_name").ToString();
-                //logger.Error($"{itemId}, {name}, {instruction}, {active}");
+                // TODO: Handle this
+            } else
+            {
 
-                // Add to the dictionary to populate the dropdown lists
-                exerciseListForDropdown.Add(exerciseId, name);
+                // Try something else
+                var doc = JsonDocument.Parse(response);
+                JsonElement root = doc.RootElement;
 
-                // Create an Exercise, and add it to the list
-                Exercise newExercise = new Exercise(exerciseId, name, muscleGroupId, muscleGroupName, instruction, active);
+                var groups = root.EnumerateArray();
 
-                exerciseList.Add(newExercise);
+                var u1 = root[0];
+                var u2 = root[1];
 
+                for (int i = 0; i < root.GetArrayLength(); i++)
+                {
+                    string exerciseId = root[i].GetProperty("exercise_id").ToString();
+                    string name = root[i].GetProperty("name").ToString();
+                    string instruction = root[i].GetProperty("instruction").ToString();
+                    string active = root[i].GetProperty("active").ToString();
+                    string muscleGroupId = root[i].GetProperty("muscle_group_id").ToString();
+                    string muscleGroupName = root[i].GetProperty("muscle_group_name").ToString();
+                    //logger.Error($"{itemId}, {name}, {instruction}, {active}");
+
+                    // Add to the dictionary to populate the dropdown lists
+                    exerciseListForDropdown.Add(exerciseId, name);
+
+                    // Create an Exercise, and add it to the list
+                    Exercise newExercise = new Exercise(exerciseId, name, muscleGroupId, muscleGroupName, instruction, active);
+
+                    exerciseList.Add(newExercise);
+
+                }
             }
-
         }
 
     } // End of class

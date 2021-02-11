@@ -43,7 +43,6 @@ namespace Exercise_Tracker.Forms
             this.buttonViewClients.TabIndex = 0;
             this.buttonViewClients.Text = "View Client Workouts";
             this.buttonViewClients.UseVisualStyleBackColor = true;
-            this.buttonViewClients.Visible = false;
             this.buttonViewClients.Click += new System.EventHandler(this.buttonViewClients_Click);
             // 
             // buttonExerciseManagement

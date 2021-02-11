@@ -5,6 +5,7 @@ using Newtonsoft.Json.Schema;
 using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 namespace Test_App
 {
@@ -14,7 +15,8 @@ namespace Test_App
         {
 
             //stuff();
-            testEndpoint();
+            //testEndpoint();
+            Workouts();
         }
 
         public static void testEndpoint()
@@ -22,7 +24,7 @@ namespace Test_App
             Console.WriteLine("Now checking endpoint");
             APIRequests token = new APIRequests();
 
-            string jsonData = token.GetWebsiteData("https://frozen-meadow-69055.herokuapp.com/exercises");
+            string jsonData = token.GetWebsiteData("https://frozen-meadow-69055.herokuapp.com/clients/1/workouthistory");
 
 
             try
@@ -86,6 +88,11 @@ namespace Test_App
             Console.WriteLine(" ");
 
             Console.WriteLine(body);
+        }
+
+        public static void Workouts()
+        {
+            Workout.GetWorkoutHistoryForClient(1);
         }
     }
 }

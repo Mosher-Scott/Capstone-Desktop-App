@@ -48,22 +48,30 @@ namespace Exercise_Tracker.Classes
         /// <param name="response">Response from the HTTP request as a JSON string</param>
         public static void ParseWebResponse(string response)
         {
-            // Try something else
-            var doc = JsonDocument.Parse(response);
-            JsonElement root = doc.RootElement;
 
-            var groups = root.EnumerateArray();
-
-            var u1 = root[0];
-            var u2 = root[1];
-
-            for (int i = 0; i < root.GetArrayLength(); i++)
+            if (response == "")
             {
-                string itemId = root[i].GetProperty("id").ToString();
-                string name = root[i].GetProperty("muscle_group_details").ToString();
+                // TODO: Handle this case
+            } else
+            {
+                // Try something else
+                var doc = JsonDocument.Parse(response);
+                JsonElement root = doc.RootElement;
 
-                muscleGroupDictionary.Add(itemId, name);
+                var groups = root.EnumerateArray();
+
+                var u1 = root[0];
+                var u2 = root[1];
+
+                for (int i = 0; i < root.GetArrayLength(); i++)
+                {
+                    string itemId = root[i].GetProperty("id").ToString();
+                    string name = root[i].GetProperty("muscle_group_details").ToString();
+
+                    muscleGroupDictionary.Add(itemId, name);
+                }
             }
+            
 
         }
 

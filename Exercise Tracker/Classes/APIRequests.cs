@@ -15,15 +15,19 @@ namespace Exercise_Tracker.Classes
         public static Logger logger = LogManager.GetCurrentClassLogger();
         public SecureToken savedToken;
 
-        public string allClientDetailsEndpoint = "https://frozen-meadow-69055.herokuapp.com/clients";
-        public string singleClientDetailEndpoint = "https://frozen-meadow-69055.herokuapp.com/clients/";
+        private static string devEnvironment = "http://localhost:80";
+        private static string liveEnvironment = "https://frozen-meadow-69055.herokuapp.com";
 
-        public string TESTsingleClientDetailEndpoint = "http://localhost:80/clients/";
+        private static string environment = devEnvironment;
 
-        public string allMuscleGroupsEndpoint = "https://frozen-meadow-69055.herokuapp.com/musclegroups";
-        public string allTrainingSessionsEndpoint = "https://frozen-meadow-69055.herokuapp.com/trainingsessions";
+        public string allClientDetailsEndpoint = $"{environment}/clients";
 
-        public string allExercisesEndpoint = "https://frozen-meadow-69055.herokuapp.com/exercises";
+        public string singleClientDetailEndpoint = $"{environment}/clients/";
+
+        public string allMuscleGroupsEndpoint = $"{environment}/musclegroups";
+        public string allTrainingSessionsEndpoint = $"{environment}/trainingsessions";
+
+        public string allExercisesEndpoint = $"{environment}/exercises";
 
         public APIRequests()
         {

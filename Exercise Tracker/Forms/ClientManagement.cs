@@ -29,8 +29,11 @@ namespace Exercise_Tracker.Forms
         public ClientManagement()
         {
             InitializeComponent();
+            // this.AutoScaleMode = AutoScaleMode.None;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
             PopulateClientDropdown();
+          
         }
 
         /// <summary>
@@ -51,6 +54,12 @@ namespace Exercise_Tracker.Forms
         /// <param name="e"></param>
         private void buttonGetClientInfo_Click(object sender, EventArgs e)
         {
+            // Clear the lists
+            TrainingSession.listOfTrainingSessions.Clear();
+            Workout.listOfWorkouts.Clear();
+
+            dataGridViewTrainingSessions.DataSource = null;
+            dataGridViewWorkoutHistory.DataSource = null;
 
             int id;
             try
@@ -78,7 +87,7 @@ namespace Exercise_Tracker.Forms
                         labelStateText.Text = Client.listOfClients[i].state;
                         labelPhoneText.Text = Client.listOfClients[i].phone;
                         labelRegistrationDateText.Text = Client.listOfClients[i].registration_date;
-                        labelActiveText.Text = Client.listOfClients[i].client_active_flag;
+                        labelActiveText.Text = Client.listOfClients[i].active;
 
                         firstName = Client.listOfClients[i].firstName;
                         lastName = Client.listOfClients[i].lastName;
@@ -89,7 +98,7 @@ namespace Exercise_Tracker.Forms
                         state = Client.listOfClients[i].state;
                         phone = Client.listOfClients[i].phone;
                         registrationDate = Client.listOfClients[i].registration_date;
-                        active = Client.listOfClients[i].client_active_flag;
+                        active = Client.listOfClients[i].active;
 
                     }
                 }
@@ -101,6 +110,10 @@ namespace Exercise_Tracker.Forms
                 dataGridViewTrainingSessions.DataSource = TrainingSession.listOfTrainingSessions;
 
                 // Get the workout history for the client as well
+                Client.GetWorkoutHistory(id);
+
+                dataGridViewWorkoutHistory.DataSource = Workout.listOfWorkouts;
+
             }
 
         }
@@ -129,13 +142,21 @@ namespace Exercise_Tracker.Forms
                 EditClientDetails form = new EditClientDetails(clientId, firstName, lastName, address, city, state, zipCode, phone, email, active);
 
                 form.Show();
+            } else
+            {
+                MessageBox.Show("Please pick a client");
             }
 
         }
 
         private void buttonDeleteClient_Click(object sender, EventArgs e)
         {
+            int clientId = GetClientIdFromDropdown();
 
+            if (clientId != 0)
+            {
+
+            }
         }
 
         private void GetClientTrainingSessions(int id)

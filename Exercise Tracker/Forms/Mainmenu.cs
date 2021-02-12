@@ -40,6 +40,7 @@ namespace Exercise_Tracker.Forms
             buttonClientManagement.BackColor = Color.Bisque;
             buttonClientManagement.Enabled = true;
             buttonExerciseManagement.BackColor = Color.Bisque;
+            buttonExerciseManagement.Enabled = true;
             buttonSessionManagement.Enabled = true;
             buttonSessionManagement.BackColor = Color.Bisque;
 

@@ -29,6 +29,7 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStartingMenu));
             this.buttonViewClients = new System.Windows.Forms.Button();
             this.buttonExerciseManagement = new System.Windows.Forms.Button();
             this.buttonSessionManagement = new System.Windows.Forms.Button();
@@ -48,7 +49,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonExerciseManagement
             // 
-            this.buttonExerciseManagement.BackColor = System.Drawing.Color.LightSalmon;
+            this.buttonExerciseManagement.BackColor = System.Drawing.Color.Snow;
             this.buttonExerciseManagement.Enabled = false;
             this.buttonExerciseManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExerciseManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -98,8 +99,9 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.buttonSessionManagement);
             this.Controls.Add(this.buttonExerciseManagement);
             this.Controls.Add(this.buttonViewClients);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStartingMenu";
-            this.Text = "MainMenu";
+            this.Text = "Main Menu";
             this.ResumeLayout(false);
 
         }

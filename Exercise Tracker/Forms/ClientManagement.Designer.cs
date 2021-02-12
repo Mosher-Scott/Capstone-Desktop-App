@@ -29,6 +29,7 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientManagement));
             this.labelClientNames = new System.Windows.Forms.Label();
             this.comboBoxClientNames = new System.Windows.Forms.ComboBox();
             this.labelClientTrainingSessions = new System.Windows.Forms.Label();
@@ -116,7 +117,7 @@ namespace Exercise_Tracker.Forms
             this.buttonEditClient.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonEditClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonEditClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEditClient.Location = new System.Drawing.Point(39, 724);
+            this.buttonEditClient.Location = new System.Drawing.Point(39, 738);
             this.buttonEditClient.Name = "buttonEditClient";
             this.buttonEditClient.Size = new System.Drawing.Size(164, 76);
             this.buttonEditClient.TabIndex = 13;
@@ -129,7 +130,7 @@ namespace Exercise_Tracker.Forms
             this.buttonDeleteClient.BackColor = System.Drawing.Color.PaleVioletRed;
             this.buttonDeleteClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteClient.Location = new System.Drawing.Point(229, 723);
+            this.buttonDeleteClient.Location = new System.Drawing.Point(229, 737);
             this.buttonDeleteClient.Name = "buttonDeleteClient";
             this.buttonDeleteClient.Size = new System.Drawing.Size(210, 76);
             this.buttonDeleteClient.TabIndex = 14;
@@ -189,7 +190,7 @@ namespace Exercise_Tracker.Forms
             // 
             // groupBoxClientDetails
             // 
-            this.groupBoxClientDetails.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBoxClientDetails.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxClientDetails.Controls.Add(this.labelPhoneText);
             this.groupBoxClientDetails.Controls.Add(this.labelPhone);
             this.groupBoxClientDetails.Controls.Add(this.labelStateText);
@@ -412,7 +413,7 @@ namespace Exercise_Tracker.Forms
             this.buttonRefreshClient.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonRefreshClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRefreshClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRefreshClient.Location = new System.Drawing.Point(471, 723);
+            this.buttonRefreshClient.Location = new System.Drawing.Point(471, 737);
             this.buttonRefreshClient.Name = "buttonRefreshClient";
             this.buttonRefreshClient.Size = new System.Drawing.Size(164, 76);
             this.buttonRefreshClient.TabIndex = 22;
@@ -438,6 +439,7 @@ namespace Exercise_Tracker.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(2450, 1868);
             this.Controls.Add(this.buttonModifyAssignedSessions);
             this.Controls.Add(this.buttonRefreshClient);
@@ -453,8 +455,9 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.labelClientNames);
             this.Controls.Add(this.comboBoxClientNames);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientManagement";
-            this.Text = "ClientManagement";
+            this.Text = "Client Management";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrainingSessions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkoutHistory)).EndInit();
             this.groupBoxClientDetails.ResumeLayout(false);

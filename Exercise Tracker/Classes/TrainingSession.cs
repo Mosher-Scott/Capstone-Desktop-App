@@ -54,28 +54,35 @@ namespace Exercise_Tracker.Classes
         {
             dynamic trainingSessions = JsonConvert.DeserializeObject(response);
 
-            logger.Info(trainingSessions);
-            // TODO: Handle different responses
-
-            // Loop through each workout, such as id, name, description, etc
-            foreach (var item in trainingSessions)
+            if (trainingSessions is null)
             {
-                // Training Session Details
-                //logger.Info(item);
-                string id = item["session_id"].ToString();
-                string name = item["sessionname"].ToString();
-                string description = item["sessiondescription"].ToString();
-                string reps = item["sessionsets"].ToString();
-                string sets = item["sessionreps"].ToString();
-                string active = item["active"].ToString();
 
-                TrainingSession trainingSession = new TrainingSession(id, name, description, sets, reps, active);
+            } else
+            {
+                // logger.Info(trainingSessions);
+                // TODO: Handle different responses
 
-                TrainingSession.listOfAllTrainingSessions.Add(trainingSession);
+                // Loop through each workout, such as id, name, description, etc
+                foreach (var item in trainingSessions)
+                {
+                    // Training Session Details
+                    //logger.Info(item);
+                    string id = item["session_id"].ToString();
+                    string name = item["sessionname"].ToString();
+                    string description = item["sessiondescription"].ToString();
+                    string reps = item["sessionsets"].ToString();
+                    string sets = item["sessionreps"].ToString();
+                    string active = item["active"].ToString();
+
+                    TrainingSession trainingSession = new TrainingSession(id, name, description, sets, reps, active);
+
+                    TrainingSession.listOfAllTrainingSessions.Add(trainingSession);
 
 
-                // Add names and ID's to the dropdown list
-                TrainingSession.trainingSessionDictionaryForDropdown.Add(id, name);
+                    // Add names and ID's to the dropdown list
+                    TrainingSession.trainingSessionDictionaryForDropdown.Add(id, name);
+                }
+            
             }
 
         }

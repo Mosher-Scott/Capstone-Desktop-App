@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using NLog;
 
 namespace Exercise_Tracker.Classes
@@ -22,6 +23,12 @@ namespace Exercise_Tracker.Classes
 
         public static List<TrainingSession> listOfTrainingSessions = new List<TrainingSession>();
 
+        public static List<TrainingSession> listOfAllTrainingSessions = new List<TrainingSession>();
+
+
+        public static Dictionary<string, string> trainingSessionDictionaryForDropdown = new Dictionary<string, string>();
+
+
         public TrainingSession(string id, string name, string description, string sets, string reps, string active)
         {
             sessionId = id;
@@ -32,15 +39,56 @@ namespace Exercise_Tracker.Classes
             this.active = active;
         }
 
+        public static void GetAllTrainingSessions()
+        {
+            APIRequests request = new APIRequests();
+
+            trainingSessionDictionaryForDropdown.Add("0", "Choose Training Session");
+
+            string response = request.GetWebsiteData(request.allTrainingSessionsEndpoint);
+
+            ParseWebResponseToAddToDictionary(response);
+        }
+
+        private static void ParseWebResponseToAddToDictionary(string response)
+        {
+            dynamic trainingSessions = JsonConvert.DeserializeObject(response);
+
+            logger.Info(trainingSessions);
+            // TODO: Handle different responses
+
+            // Loop through each workout, such as id, name, description, etc
+            foreach (var item in trainingSessions)
+            {
+                // Training Session Details
+                //logger.Info(item);
+                string id = item["session_id"].ToString();
+                string name = item["sessionname"].ToString();
+                string description = item["sessiondescription"].ToString();
+                string reps = item["sessionsets"].ToString();
+                string sets = item["sessionreps"].ToString();
+                string active = item["active"].ToString();
+
+                TrainingSession trainingSession = new TrainingSession(id, name, description, sets, reps, active);
+
+                TrainingSession.listOfAllTrainingSessions.Add(trainingSession);
+
+
+                // Add names and ID's to the dropdown list
+                TrainingSession.trainingSessionDictionaryForDropdown.Add(id, name);
+            }
+
+        }
+
 
         public static void ParseTrainingSessionData(string jsondata)
         {
-            logger.Info(jsondata);
+            // logger.Info(jsondata);
 
             var doc = JsonDocument.Parse(jsondata);
             JsonElement root = doc.RootElement;
 
-            var thing1 = root[0];
+            //var thing1 = root[0];
 
             for (int i = 0; i < root.GetArrayLength(); i++)
             {
@@ -55,7 +103,6 @@ namespace Exercise_Tracker.Classes
                 TrainingSession trainingSession = new TrainingSession(id, sessionName, sessionDescription, sessionSets, sessionReps, active);
 
                 listOfTrainingSessions.Add(trainingSession);
-
             }
 
 

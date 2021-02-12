@@ -85,8 +85,6 @@ namespace Exercise_Tracker.Forms
 
             string clientAsJson = JsonConvert.SerializeObject(client);
 
-            // MessageBox.Show(clientAsJson);
-
             APIRequests request = new APIRequests();
 
             string url = $"{request.singleClientDetailEndpoint}{clientId}";

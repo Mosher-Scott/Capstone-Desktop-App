@@ -56,6 +56,13 @@ namespace Exercise_Tracker.Classes
             active = exerciseActive;
         }
 
+        public Exercise(string id, string exerciseName, string exerciseInstructions)
+        {
+            exercise_id = id;
+            name = exerciseName;
+            instruction = exerciseInstructions;
+        }
+
         /// <summary>
         /// Insert a new exercise into the databse
         /// </summary>

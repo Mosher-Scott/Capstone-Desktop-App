@@ -32,6 +32,11 @@ namespace Exercise_Tracker.Classes
 
         public static List<Workout> listOfClientWorkouts = new List<Workout>();
 
+        public Client()
+        {
+
+        }
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -141,8 +146,6 @@ namespace Exercise_Tracker.Classes
 
                 }
             }
-            
-
         }
 
         public static void GetClientTrainingSessions(int clientId)
@@ -158,6 +161,10 @@ namespace Exercise_Tracker.Classes
 
         }
 
+        /// <summary>
+        /// Gets the workout history for a given client ID
+        /// </summary>
+        /// <param name="clientId">ID of the client you are getting the workout history for</param>
         public static void GetWorkoutHistory(int clientId)
         {
             Workout.GetWorkoutHistoryForClient(clientId);

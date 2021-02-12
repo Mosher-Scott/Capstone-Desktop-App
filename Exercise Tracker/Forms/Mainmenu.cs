@@ -24,16 +24,24 @@ namespace Exercise_Tracker.Forms
             Thread muscleGroups = new Thread(() => MuscleGroup.GetMusclegroups());
             Thread exercises = new Thread(() => Exercise.GetExercises());
             Thread clients = new Thread(() => Client.GetClients());
+            Thread trainingSessions = new Thread(() => TrainingSession.GetAllTrainingSessions());
 
             exercises.Start();
             muscleGroups.Start();
             clients.Start();
+            trainingSessions.Start();
 
             exercises.Join();
             muscleGroups.Join();
             clients.Join();
+            trainingSessions.Join();
 
             buttonClientManagement.Enabled = true;
+            buttonClientManagement.BackColor = Color.Bisque;
+            buttonClientManagement.Enabled = true;
+            buttonExerciseManagement.BackColor = Color.Bisque;
+            buttonSessionManagement.Enabled = true;
+            buttonSessionManagement.BackColor = Color.Bisque;
 
         }
 

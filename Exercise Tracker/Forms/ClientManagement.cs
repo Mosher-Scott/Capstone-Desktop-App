@@ -1,4 +1,5 @@
 ﻿using Exercise_Tracker.Classes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -151,12 +152,7 @@ namespace Exercise_Tracker.Forms
 
         private void buttonDeleteClient_Click(object sender, EventArgs e)
         {
-            int clientId = GetClientIdFromDropdown();
-
-            if (clientId != 0)
-            {
-
-            }
+            GetClientInformation();
         }
 
         private void GetClientTrainingSessions(int id)
@@ -165,7 +161,47 @@ namespace Exercise_Tracker.Forms
 
         }
 
+        private void GetClientInformation()
+        {
+            int clientId = GetClientIdFromDropdown();
 
+            if (clientId == 0)
+            {
+                MessageBox.Show("Please pick a client");
+            }
+            else
+            {
+                Client client = new Client();
+                client.active = "false";
 
+                string clientAsJson = JsonConvert.SerializeObject(client);
+
+                APIRequests request = new APIRequests();
+
+                string url = $"{request.singleClientDetailEndpoint}{clientId}";
+
+                string response = request.SendPostRequest(url, clientAsJson);
+
+                MessageBox.Show(response);
+            }
+        }
+
+        private void buttonRefreshClient_Click(object sender, EventArgs e)
+        {
+            GetClientInformation();
+        }
+
+        private void buttonEditWorkout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonModifyAssignedSessions_Click(object sender, EventArgs e)
+        {
+            int clientId = GetClientIdFromDropdown();
+            ModifyAssignedTrainingSessions form = new ModifyAssignedTrainingSessions(clientId);
+
+            form.Show();
+        }
     }
 }

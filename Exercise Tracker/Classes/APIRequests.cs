@@ -15,19 +15,28 @@ namespace Exercise_Tracker.Classes
         public static Logger logger = LogManager.GetCurrentClassLogger();
         public SecureToken savedToken;
 
-        public string allClientDetailsEndpoint = "https://frozen-meadow-69055.herokuapp.com/clients";
-        public string singleClientDetailEndpoint = "https://frozen-meadow-69055.herokuapp.com/clients/";
+        private static string devEnvironment = "http://localhost:80";
+        private static string liveEnvironment = "https://frozen-meadow-69055.herokuapp.com";
 
-        public string allMuscleGroupsEndpoint = "https://frozen-meadow-69055.herokuapp.com/musclegroups";
-        public string allTrainingSessionsEndpoint = "https://frozen-meadow-69055.herokuapp.com/trainingsessions";
+        private static string environment = devEnvironment;
 
-        public string allExercisesEndpoint = "https://frozen-meadow-69055.herokuapp.com/exercises";
+        public string allClientDetailsEndpoint = $"{environment}/clients";
+
+        public string singleClientDetailEndpoint = $"{environment}/clients/";
+
+        public string allMuscleGroupsEndpoint = $"{environment}/musclegroups";
+        public string allTrainingSessionsEndpoint = $"{environment}/trainingsessions";
+
+        public string allExercisesEndpoint = $"{environment}/exercises";
 
         public APIRequests()
         {
 
         }
 
+        /// <summary>
+        /// Gets an authorization token from the service to access the endpoints
+        /// </summary>
         public void GetAuthToken()
         {
 
@@ -52,17 +61,27 @@ namespace Exercise_Tracker.Classes
             try
             {
                 responseFromSite = JsonConvert.DeserializeObject<SecureToken>(response.Content);
-            } catch
+            } catch (Exception ex)
             {
-
+                logger.Info($"Error getting token. {ex.Message}");
             }
             
             savedToken = responseFromSite;
         }
 
-        public string GetWebsiteData(string url)
+        /// <summary>
+        /// Generic function to get data from the API endpoints.  Returns a JSON string
+        /// </summary>
+        /// <param name="url">URL of he website you want to access</param>
+        /// <returns></returns>
+        public string GetRequests(string url)
         {
             GetAuthToken();
+
+            if(savedToken.access_Token == null)
+            {
+                return "([{data: \"Could not get auth token\"}])";
+            }
 
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
@@ -74,8 +93,80 @@ namespace Exercise_Tracker.Classes
 
             return content;
         }
+
+        /// <summary>
+        /// Creates and sends a POST request with all the data in the request body.  Used mainly for sending form data to the endpoint
+        /// </summary>
+        /// <param name="url">URL you are sending the request to</param>
+        /// <param name="jsonData">The data you are sending to the API in JSON format</param>
+        /// <returns></returns>
+        public string SendPatchRequestDataInBody(string url, string jsonData)
+        {
+            GetAuthToken();
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.PATCH);
+            request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json", $"{jsonData}", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+        }
+
+        /// <summary>
+        /// For sending data to the API using a POST method
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public string SendPostRequestData(string url)
+        {
+            GetAuthToken();
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
+            //request.AddHeader("Content-Type", "application/json");
+            //request.AddParameter("application/json", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+        }
+
+        /// <summary>
+        /// For sending delete requests to the API endpoints
+        /// </summary>
+        /// <param name="url">URL you are sending the request to</param>
+        /// <returns></returns>
+        public string SendDeleteRequestData(string url)
+        {
+            GetAuthToken();
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.DELETE);
+            request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
+            //request.AddHeader("Content-Type", "application/json");
+            //request.AddParameter("application/json", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+
+
+
+
+        }
+
     } // end of class
 
+    /// <summary>
+    /// Holds the secure token data that is used for authentication
+    /// </summary>
     public class SecureToken
     {
         public string access_Token { get; set; }

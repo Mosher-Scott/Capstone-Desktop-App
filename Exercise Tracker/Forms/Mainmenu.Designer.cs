@@ -29,6 +29,7 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStartingMenu));
             this.buttonViewClients = new System.Windows.Forms.Button();
             this.buttonExerciseManagement = new System.Windows.Forms.Button();
             this.buttonSessionManagement = new System.Windows.Forms.Button();
@@ -37,7 +38,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonViewClients
             // 
-            this.buttonViewClients.Location = new System.Drawing.Point(321, 217);
+            this.buttonViewClients.Location = new System.Drawing.Point(915, 492);
             this.buttonViewClients.Name = "buttonViewClients";
             this.buttonViewClients.Size = new System.Drawing.Size(145, 71);
             this.buttonViewClients.TabIndex = 0;
@@ -48,45 +49,59 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonExerciseManagement
             // 
+            this.buttonExerciseManagement.BackColor = System.Drawing.Color.Snow;
+            this.buttonExerciseManagement.Enabled = false;
+            this.buttonExerciseManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonExerciseManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonExerciseManagement.Location = new System.Drawing.Point(71, 217);
             this.buttonExerciseManagement.Name = "buttonExerciseManagement";
             this.buttonExerciseManagement.Size = new System.Drawing.Size(212, 133);
             this.buttonExerciseManagement.TabIndex = 2;
             this.buttonExerciseManagement.Text = "Exercise Management";
-            this.buttonExerciseManagement.UseVisualStyleBackColor = true;
+            this.buttonExerciseManagement.UseVisualStyleBackColor = false;
             this.buttonExerciseManagement.Click += new System.EventHandler(this.buttonExerciseManagement_Click);
             // 
             // buttonSessionManagement
             // 
-            this.buttonSessionManagement.Location = new System.Drawing.Point(71, 367);
+            this.buttonSessionManagement.BackColor = System.Drawing.Color.LightSalmon;
+            this.buttonSessionManagement.Enabled = false;
+            this.buttonSessionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSessionManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonSessionManagement.Location = new System.Drawing.Point(71, 379);
             this.buttonSessionManagement.Name = "buttonSessionManagement";
             this.buttonSessionManagement.Size = new System.Drawing.Size(212, 133);
             this.buttonSessionManagement.TabIndex = 3;
             this.buttonSessionManagement.Text = "Training Session Management";
-            this.buttonSessionManagement.UseVisualStyleBackColor = true;
+            this.buttonSessionManagement.UseVisualStyleBackColor = false;
             this.buttonSessionManagement.Click += new System.EventHandler(this.buttonSessionManagement_Click);
             // 
             // buttonClientManagement
             // 
-            this.buttonClientManagement.Location = new System.Drawing.Point(71, 61);
+            this.buttonClientManagement.BackColor = System.Drawing.Color.LightSalmon;
+            this.buttonClientManagement.Enabled = false;
+            this.buttonClientManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonClientManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonClientManagement.Location = new System.Drawing.Point(71, 56);
             this.buttonClientManagement.Name = "buttonClientManagement";
             this.buttonClientManagement.Size = new System.Drawing.Size(212, 133);
             this.buttonClientManagement.TabIndex = 4;
             this.buttonClientManagement.Text = "Client Management";
-            this.buttonClientManagement.UseVisualStyleBackColor = true;
+            this.buttonClientManagement.UseVisualStyleBackColor = false;
             this.buttonClientManagement.Click += new System.EventHandler(this.buttonClientManagement_Click);
             // 
             // FormStartingMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 551);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(1260, 694);
             this.Controls.Add(this.buttonClientManagement);
             this.Controls.Add(this.buttonSessionManagement);
             this.Controls.Add(this.buttonExerciseManagement);
             this.Controls.Add(this.buttonViewClients);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStartingMenu";
-            this.Text = "MainMenu";
+            this.Text = "Main Menu";
             this.ResumeLayout(false);
 
         }

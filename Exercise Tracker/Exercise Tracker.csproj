@@ -110,13 +110,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\APIRequests.cs" />
+    <Compile Include="Classes\AssignedTrainingSessions.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\ClientData.cs" />
     <Compile Include="Classes\ClientDataForm.cs" />
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Exercise.cs" />
     <Compile Include="Classes\MuscleGroup.cs" />
-    <Compile Include="Classes\TrainingSessions.cs" />
+    <Compile Include="Classes\TrainingSession.cs" />
+    <Compile Include="Classes\Workout.cs" />
     <Compile Include="Classes\WorkoutData.cs" />
     <Compile Include="Classes\WorkoutHistory.cs" />
     <Compile Include="Forms\AddNewTrainingSession.cs">
@@ -137,11 +139,11 @@
     <Compile Include="Forms\CreateNewExercise.Designer.cs">
       <DependentUpon>CreateNewExercise.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditClient.cs">
+    <Compile Include="Forms\EditClientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditClient.Designer.cs">
-      <DependentUpon>EditClient.cs</DependentUpon>
+    <Compile Include="Forms\EditClientDetails.Designer.cs">
+      <DependentUpon>EditClientDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ExerciseManagement.cs">
       <SubType>Form</SubType>
@@ -154,6 +156,18 @@
     </Compile>
     <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyAssignedTrainingSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyAssignedTrainingSessions.Designer.cs">
+      <DependentUpon>ModifyAssignedTrainingSessions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TrainingSessionManagement.cs">
       <SubType>Form</SubType>
@@ -184,14 +198,20 @@
     <EmbeddedResource Include="Forms\CreateNewExercise.resx">
       <DependentUpon>CreateNewExercise.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditClient.resx">
-      <DependentUpon>EditClient.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditClientDetails.resx">
+      <DependentUpon>EditClientDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExerciseManagement.resx">
       <DependentUpon>ExerciseManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyAssignedTrainingSessions.resx">
+      <DependentUpon>ModifyAssignedTrainingSessions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TrainingSessionManagement.resx">
       <DependentUpon>TrainingSessionManagement.cs</DependentUpon>

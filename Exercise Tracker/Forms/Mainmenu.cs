@@ -17,15 +17,32 @@ namespace Exercise_Tracker.Forms
         public FormStartingMenu()
         {
             InitializeComponent();
-            //ClientDataForm.GetAllClients();
+
+            // For testing
+            //Workout.GetWorkoutHistoryForClient(1);
 
             Thread muscleGroups = new Thread(() => MuscleGroup.GetMusclegroups());
             Thread exercises = new Thread(() => Exercise.GetExercises());
-            // Get clients
+            Thread clients = new Thread(() => Client.GetClients());
+            Thread trainingSessions = new Thread(() => TrainingSession.GetAllTrainingSessions())
 
             exercises.Start();
-
             muscleGroups.Start();
+            clients.Start();
+            trainingSessions.Start();
+
+            exercises.Join();
+            muscleGroups.Join();
+            clients.Join();
+            trainingSessions.Join();
+
+            buttonClientManagement.Enabled = true;
+            buttonClientManagement.BackColor = Color.Bisque;
+            buttonClientManagement.Enabled = true;
+            buttonExerciseManagement.BackColor = Color.Bisque;
+            buttonExerciseManagement.Enabled = true;
+            buttonSessionManagement.Enabled = true;
+            buttonSessionManagement.BackColor = Color.Bisque;
 
 
             exercises.Join();
@@ -35,7 +52,7 @@ namespace Exercise_Tracker.Forms
 
         private void buttonViewClients_Click(object sender, EventArgs e)
         {
-            FormViewClient form = new FormViewClient();
+            test form = new test();
             form.Show();
         }
 

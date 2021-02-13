@@ -53,6 +53,7 @@ namespace Exercise_Tracker.Forms
             this.buttonClose.TabIndex = 1;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // ViewClientWorkout
             // 
@@ -64,6 +65,7 @@ namespace Exercise_Tracker.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewClientWorkout";
             this.Text = "View Client Workout";
+            this.Load += new System.EventHandler(this.ViewClientWorkout_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

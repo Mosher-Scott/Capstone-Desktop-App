@@ -20,5 +20,15 @@ namespace Exercise_Tracker.Forms
 
 
         }
+
+        private void ViewClientWorkout_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

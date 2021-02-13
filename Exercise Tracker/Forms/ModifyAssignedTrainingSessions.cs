@@ -30,6 +30,10 @@ namespace Exercise_Tracker.Forms
         public Dictionary<int, int> trainingSessionsToremove = new Dictionary<int, int>();
         public static Logger logger = LogManager.GetCurrentClassLogger();
 
+        /// <summary>
+        /// Opening the form
+        /// </summary>
+        /// <param name="clientIdToModify">ID of the client you are modifing training sessions for</param>
         public ModifyAssignedTrainingSessions(int clientIdToModify)
         {
 
@@ -47,6 +51,9 @@ namespace Exercise_Tracker.Forms
 
         }
 
+        /// <summary>
+        /// Adds the values within TrianingSession.listOfTrainingSessions to a differnt list. This new list will be used to look for any changes
+        /// </summary>
         private void SetOriginalTrainingSessionList()
         {
             foreach(var item in TrainingSession.listOfTrainingSessions)
@@ -66,7 +73,11 @@ namespace Exercise_Tracker.Forms
             comboBoxAllTrainingSessions.ValueMember = "Key";
         }
 
-
+        /// <summary>
+        /// When the user selects a training session from the dropdown, this will populate the table with specific information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ViewTrainingSessionDetails(object sender, EventArgs e)
         {
 
@@ -134,25 +145,44 @@ namespace Exercise_Tracker.Forms
 
         }
 
+        /// <summary>
+        /// When the user wants to save their changes to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSaveChanges_Click(object sender, EventArgs e)
         {
+            var removedCount = AssignedTrainingSessions.newTrainingSessionList.Count;
+            logger.Info(removedCount);
+            var newCount = AssignedTrainingSessions.newTrainingSessionList.Count;
+            logger.Info(newCount);
+
             // Compare lists to find any added training sessions
             CheckForNewSessions();
+
+            removedCount = AssignedTrainingSessions.newTrainingSessionList.Count;
+            logger.Info(removedCount);
+            newCount = AssignedTrainingSessions.newTrainingSessionList.Count;
+            logger.Info(newCount);
 
             // Now see what was removed
             CheckForDeletedSessions();
 
-            // If new, send POST request to update client training sessions with userid and session id
-            string sessionsToAdd = JsonConvert.SerializeObject(trainingSessionsToAdd);
+            logger.Info($"New Training Sessions: {AssignedTrainingSessions.newTrainingSessionList.Count}");
 
-            logger.Info("Training sessions to be added");
-            logger.Info(sessionsToAdd);
+            logger.Info($"Removed Training Sessions: {AssignedTrainingSessions.removedTrainingSessionList.Count}");
 
             // If session did exist, and was removed, set DELETE request
-            logger.Info("Training Sessions To Remove");
-            string sessionsToRemove = JsonConvert.SerializeObject(trainingSessionsToAdd);
-            logger.Info(sessionsToRemove);
-            
+            AssignedTrainingSessions.RemoveTrainingSessionsFromDatabase();
+
+            // If new, send POST request to update client training sessions with userid and session id
+            AssignedTrainingSessions.AddNewTrainingSessionsToDatabase();
+
+            // TODO: Check if all changes were made successfully.  If they were, close the form
+            MessageBox.Show("Successfully saved your changes");
+
+            this.Close();
+
         }
 
         /// <summary>
@@ -163,22 +193,31 @@ namespace Exercise_Tracker.Forms
             // Check each item in the original training session list
             for(int i = 0; i < originalTrainingSessions.Count; i++)
             {
+                var originalId = originalTrainingSessions[i].sessionId;
                 bool needsToBeDeleted = true;
 
                 for(int j = 0; j < TrainingSession.listOfTrainingSessions.Count; j++)
                 {
+                    var currentList = TrainingSession.listOfTrainingSessions[j].sessionId;
                     // If there is a match, break out of this for loop
                     if (originalTrainingSessions[i].sessionId == TrainingSession.listOfTrainingSessions[j].sessionId)
                     {
                         needsToBeDeleted = false;
-                        continue;
+                        break;
                     }
                 }
 
-                // If a session needs to be removed, add it to the list
+                // If a session isn't in the original list, then it needs to be removed
                 if(needsToBeDeleted)
-                {
-                    trainingSessionsToremove.Add(Convert.ToInt32(originalTrainingSessions[i].sessionId), clientId);
+                {    
+                    AssignedTrainingSessions session = new AssignedTrainingSessions(clientId, Convert.ToInt32(TrainingSession.listOfTrainingSessions[i].sessionId));
+
+                    AssignedTrainingSessions.removedTrainingSessionList.Add(session);
+
+                    var removedCount = AssignedTrainingSessions.newTrainingSessionList.Count;
+                    logger.Info(removedCount);
+                    var newCount = AssignedTrainingSessions.newTrainingSessionList.Count;
+                    logger.Info(newCount);
                 }
             } // End of for loop
         }
@@ -203,19 +242,30 @@ namespace Exercise_Tracker.Forms
                     if (TrainingSession.listOfTrainingSessions[i].sessionId == originalTrainingSessions[j].sessionId)
                     {
                         newSessionAdded = false;
-                        break;
+                        continue;
                     }
                     // If the session isn't found in the original array, then it is new and newSessionAddd stays as true
                 }
 
+                // Now add the new session to the list
                 if (newSessionAdded)
                 {
-                    trainingSessionsToAdd.Add(Convert.ToInt32(TrainingSession.listOfTrainingSessions[i].sessionId), clientId);
+                    AssignedTrainingSessions session = new AssignedTrainingSessions(clientId, Convert.ToInt32(TrainingSession.listOfTrainingSessions[i].sessionId));
+
+                    AssignedTrainingSessions.newTrainingSessionList.Add(session);
+                    var count = AssignedTrainingSessions.newTrainingSessionList.Count;
+                    logger.Info(count);
+
                 }
             } // End of main for loop for adding sessions
 
         }
 
+        /// <summary>
+        /// Deleting a specific row in the datatable the user has selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonDeleteRow_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dataGridViewTrainingSessions.SelectedRows)
@@ -237,6 +287,11 @@ namespace Exercise_Tracker.Forms
                 dataGridViewTrainingSessions.DataSource = TrainingSession.listOfTrainingSessions;
                 
             }
+        }
+
+        private void buttonCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     } // End of class
 

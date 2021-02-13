@@ -106,7 +106,7 @@ namespace Exercise_Tracker.Classes
             exerciseListForDropdown.Add("0", "Choose Exercise");
             APIRequests request = new APIRequests();
 
-            string response = request.GetWebsiteData(request.allExercisesEndpoint);
+            string response = request.GetRequests(request.allExercisesEndpoint);
 
             ParseWebResponse(response);
         }

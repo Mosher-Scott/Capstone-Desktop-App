@@ -38,7 +38,7 @@ namespace Exercise_Tracker.Classes
 
             string url = $"{request.singleClientDetailEndpoint}{clientId}/workouthistory";
             //logger.Debug(url);
-            string response = request.GetWebsiteData(url);
+            string response = request.GetRequests(url);
 
             ParseWebResponse(response);
 

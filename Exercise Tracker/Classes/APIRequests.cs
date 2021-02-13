@@ -74,7 +74,7 @@ namespace Exercise_Tracker.Classes
         /// </summary>
         /// <param name="url">URL of he website you want to access</param>
         /// <returns></returns>
-        public string GetWebsiteData(string url)
+        public string GetRequests(string url)
         {
             GetAuthToken();
 
@@ -94,11 +94,17 @@ namespace Exercise_Tracker.Classes
             return content;
         }
 
-        public string SendPostRequest(string url, string jsonData)
+        /// <summary>
+        /// Creates and sends a POST request with all the data in the request body.  Used mainly for sending form data to the endpoint
+        /// </summary>
+        /// <param name="url">URL you are sending the request to</param>
+        /// <param name="jsonData">The data you are sending to the API in JSON format</param>
+        /// <returns></returns>
+        public string SendPatchRequestDataInBody(string url, string jsonData)
         {
             GetAuthToken();
 
-            var client = new RestClient("http://localhost:80/clients/");
+            var client = new RestClient(url);
             client.Timeout = -1;
             var request = new RestRequest(Method.PATCH);
             request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
@@ -108,6 +114,52 @@ namespace Exercise_Tracker.Classes
             IRestResponse response = client.Execute(request);
 
             return response.Content;
+        }
+
+        /// <summary>
+        /// For sending data to the API using a POST method
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public string SendPostRequestData(string url)
+        {
+            GetAuthToken();
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
+            //request.AddHeader("Content-Type", "application/json");
+            //request.AddParameter("application/json", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+        }
+
+        /// <summary>
+        /// For sending delete requests to the API endpoints
+        /// </summary>
+        /// <param name="url">URL you are sending the request to</param>
+        /// <returns></returns>
+        public string SendDeleteRequestData(string url)
+        {
+            GetAuthToken();
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.DELETE);
+            request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
+            //request.AddHeader("Content-Type", "application/json");
+            //request.AddParameter("application/json", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+
+
+
+
         }
 
     } // end of class

@@ -45,7 +45,7 @@ namespace Exercise_Tracker.Classes
 
             trainingSessionDictionaryForDropdown.Add("0", "Choose Training Session");
 
-            string response = request.GetWebsiteData(request.allTrainingSessionsEndpoint);
+            string response = request.GetRequests(request.allTrainingSessionsEndpoint);
 
             ParseWebResponseToAddToDictionary(response);
         }

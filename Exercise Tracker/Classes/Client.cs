@@ -90,7 +90,7 @@ namespace Exercise_Tracker.Classes
             clientDictionaryForDropdown.Add("0", "Choose Client");
             APIRequests request = new APIRequests();
 
-            string response = request.GetWebsiteData(request.allClientDetailsEndpoint);
+            string response = request.GetRequests(request.allClientDetailsEndpoint);
 
             ParseWebResponse(response);
 
@@ -155,7 +155,7 @@ namespace Exercise_Tracker.Classes
             // Use the singleClientDetailEndpoint endpoint, and append {id}/trainingsessions to the URL
             string url = $"{request.singleClientDetailEndpoint}{clientId}/trainingsessions";
 
-            var response = request.GetWebsiteData(url);
+            var response = request.GetRequests(url);
 
             TrainingSession.ParseTrainingSessionData(response);
 

@@ -47,6 +47,7 @@ namespace Exercise_Tracker.Forms
             this.buttonAddSession = new System.Windows.Forms.Button();
             this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.buttonDeleteRow = new System.Windows.Forms.Button();
+            this.buttonCloseForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrainingSessions)).BeginInit();
             this.groupBoxSessionInfo.SuspendLayout();
             this.SuspendLayout();
@@ -211,13 +212,23 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonDeleteRow
             // 
-            this.buttonDeleteRow.Location = new System.Drawing.Point(981, 779);
+            this.buttonDeleteRow.Location = new System.Drawing.Point(978, 779);
             this.buttonDeleteRow.Name = "buttonDeleteRow";
-            this.buttonDeleteRow.Size = new System.Drawing.Size(142, 87);
+            this.buttonDeleteRow.Size = new System.Drawing.Size(165, 87);
             this.buttonDeleteRow.TabIndex = 10;
             this.buttonDeleteRow.Text = "Delete Selected Row";
             this.buttonDeleteRow.UseVisualStyleBackColor = true;
             this.buttonDeleteRow.Click += new System.EventHandler(this.buttonDeleteRow_Click);
+            // 
+            // buttonCloseForm
+            // 
+            this.buttonCloseForm.Location = new System.Drawing.Point(1179, 778);
+            this.buttonCloseForm.Name = "buttonCloseForm";
+            this.buttonCloseForm.Size = new System.Drawing.Size(137, 88);
+            this.buttonCloseForm.TabIndex = 11;
+            this.buttonCloseForm.Text = "Finished";
+            this.buttonCloseForm.UseVisualStyleBackColor = true;
+            this.buttonCloseForm.Click += new System.EventHandler(this.buttonCloseForm_Click);
             // 
             // ModifyAssignedTrainingSessions
             // 
@@ -225,6 +236,7 @@ namespace Exercise_Tracker.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1852, 1541);
+            this.Controls.Add(this.buttonCloseForm);
             this.Controls.Add(this.buttonDeleteRow);
             this.Controls.Add(this.buttonSaveChanges);
             this.Controls.Add(this.buttonAddSession);
@@ -264,5 +276,6 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Button buttonAddSession;
         private System.Windows.Forms.Button buttonSaveChanges;
         private System.Windows.Forms.Button buttonDeleteRow;
+        private System.Windows.Forms.Button buttonCloseForm;
     }
 }

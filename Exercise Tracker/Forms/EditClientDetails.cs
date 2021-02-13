@@ -89,8 +89,9 @@ namespace Exercise_Tracker.Forms
 
             string url = $"{request.singleClientDetailEndpoint}{clientId}";
 
-            string response = request.SendPostRequest(url, clientAsJson);
+            string response = request.SendPatchRequestDataInBody(url, clientAsJson);
 
+            // TODO: Change this to show either a generic success or error message
             MessageBox.Show(response);
 
         }

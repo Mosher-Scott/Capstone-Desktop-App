@@ -36,7 +36,7 @@ namespace Exercise_Tracker.Classes
             muscleGroupDictionary.Add("0", "Choose Muscle Group");
             APIRequests request = new APIRequests();
 
-            string response = request.GetWebsiteData(request.allMuscleGroupsEndpoint);
+            string response = request.GetRequests(request.allMuscleGroupsEndpoint);
 
             ParseWebResponse(response);
 

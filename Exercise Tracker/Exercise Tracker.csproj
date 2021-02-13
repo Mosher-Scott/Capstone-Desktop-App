@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\APIRequests.cs" />
+    <Compile Include="Classes\AssignedTrainingSessions.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\ClientData.cs" />
     <Compile Include="Classes\ClientDataForm.cs" />

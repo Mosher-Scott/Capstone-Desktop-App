@@ -180,7 +180,7 @@ namespace Exercise_Tracker.Forms
 
                 string url = $"{request.singleClientDetailEndpoint}{clientId}";
 
-                string response = request.SendPostRequest(url, clientAsJson);
+                string response = request.SendPatchRequestDataInBody(url, clientAsJson);
 
                 MessageBox.Show(response);
             }

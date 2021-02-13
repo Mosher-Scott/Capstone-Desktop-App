@@ -187,6 +187,12 @@
     <Compile Include="Forms\RecordWorkout.Designer.cs">
       <DependentUpon>RecordWorkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ViewClientWorkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewClientWorkout.Designer.cs">
+      <DependentUpon>ViewClientWorkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddNewTrainingSession.resx">
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RecordWorkout.resx">
       <DependentUpon>RecordWorkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewClientWorkout.resx">
+      <DependentUpon>ViewClientWorkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

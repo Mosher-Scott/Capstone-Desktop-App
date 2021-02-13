@@ -193,7 +193,17 @@ namespace Exercise_Tracker.Forms
 
         private void buttonEditWorkout_Click(object sender, EventArgs e)
         {
+            int workoutId = 0;
+            int clientId = GetClientIdFromDropdown();
+            foreach (DataGridViewRow item in this.dataGridViewWorkoutHistory.SelectedRows)
+            {
+                // TODO: Be able to select the session to remove it
+                string workoutIdFromGrid = Convert.ToString(item.Cells[0].Value);
 
+                workoutId = Convert.ToInt32(workoutIdFromGrid);
+            }
+
+            ViewClientWorkout form = new ViewClientWorkout(clientId, workoutId);
         }
 
         private void buttonModifyAssignedSessions_Click(object sender, EventArgs e)

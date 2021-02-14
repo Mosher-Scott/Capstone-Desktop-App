@@ -248,5 +248,10 @@ namespace Exercise_Tracker.Forms
             AddClient form = new AddClient();
             form.Show();
         }
+
+        private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

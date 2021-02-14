@@ -43,7 +43,7 @@ namespace Exercise_Tracker.Forms
             // buttonViewClients
             // 
             this.buttonViewClients.Location = new System.Drawing.Point(343, 206);
-            this.buttonViewClients.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.buttonViewClients.Margin = new System.Windows.Forms.Padding(1);
             this.buttonViewClients.Name = "buttonViewClients";
             this.buttonViewClients.Size = new System.Drawing.Size(54, 30);
             this.buttonViewClients.TabIndex = 0;
@@ -54,12 +54,12 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonExerciseManagement
             // 
-            this.buttonExerciseManagement.BackColor = System.Drawing.Color.Snow;
+            this.buttonExerciseManagement.BackColor = System.Drawing.Color.LightGreen;
             this.buttonExerciseManagement.Enabled = false;
             this.buttonExerciseManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExerciseManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonExerciseManagement.Location = new System.Drawing.Point(21, 106);
-            this.buttonExerciseManagement.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.buttonExerciseManagement.Margin = new System.Windows.Forms.Padding(1);
             this.buttonExerciseManagement.Name = "buttonExerciseManagement";
             this.buttonExerciseManagement.Size = new System.Drawing.Size(80, 56);
             this.buttonExerciseManagement.TabIndex = 2;
@@ -69,12 +69,12 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonSessionManagement
             // 
-            this.buttonSessionManagement.BackColor = System.Drawing.Color.LightSalmon;
+            this.buttonSessionManagement.BackColor = System.Drawing.Color.LightGreen;
             this.buttonSessionManagement.Enabled = false;
             this.buttonSessionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSessionManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonSessionManagement.Location = new System.Drawing.Point(21, 174);
-            this.buttonSessionManagement.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.buttonSessionManagement.Margin = new System.Windows.Forms.Padding(1);
             this.buttonSessionManagement.Name = "buttonSessionManagement";
             this.buttonSessionManagement.Size = new System.Drawing.Size(80, 56);
             this.buttonSessionManagement.TabIndex = 3;
@@ -84,12 +84,12 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonClientManagement
             // 
-            this.buttonClientManagement.BackColor = System.Drawing.Color.LightSalmon;
+            this.buttonClientManagement.BackColor = System.Drawing.Color.LightGreen;
             this.buttonClientManagement.Enabled = false;
             this.buttonClientManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClientManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonClientManagement.Location = new System.Drawing.Point(21, 38);
-            this.buttonClientManagement.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.buttonClientManagement.Margin = new System.Windows.Forms.Padding(1);
             this.buttonClientManagement.Name = "buttonClientManagement";
             this.buttonClientManagement.Size = new System.Drawing.Size(80, 56);
             this.buttonClientManagement.TabIndex = 4;
@@ -119,7 +119,7 @@ namespace Exercise_Tracker.Forms
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -136,7 +136,7 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "FormStartingMenu";
             this.Text = "Main Menu";
             this.menuStrip1.ResumeLayout(false);

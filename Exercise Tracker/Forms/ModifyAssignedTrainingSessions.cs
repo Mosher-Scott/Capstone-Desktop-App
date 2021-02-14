@@ -172,6 +172,7 @@ namespace Exercise_Tracker.Forms
 
             logger.Info($"Removed Training Sessions: {AssignedTrainingSessions.removedTrainingSessionList.Count}");
 
+            
             // If session did exist, and was removed, set DELETE request
             AssignedTrainingSessions.RemoveTrainingSessionsFromDatabase();
 
@@ -290,6 +291,16 @@ namespace Exercise_Tracker.Forms
         }
 
         private void buttonCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }

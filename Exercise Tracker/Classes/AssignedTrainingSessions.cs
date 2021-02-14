@@ -29,6 +29,7 @@ namespace Exercise_Tracker.Classes
         /// </summary>
         public static void AddNewTrainingSessionsToDatabase()
         {
+            // Change this to check all
             foreach(var item in AssignedTrainingSessions.newTrainingSessionList)
             {
                 // Handle this differently, so if there is an error a flag will be raised
@@ -52,6 +53,7 @@ namespace Exercise_Tracker.Classes
         {
             foreach(var item in AssignedTrainingSessions.removedTrainingSessionList)
             {
+                
                 // Handle this differently, so if there is an error a flag will be raised
                 logger.Info($"clientId: {item.clientId}, sessionId: {item.sessionId}");
                 APIRequests request = new APIRequests();

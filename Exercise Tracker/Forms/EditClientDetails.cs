@@ -68,7 +68,7 @@ namespace Exercise_Tracker.Forms
 
         private void buttonSaveEdits_Click(object sender, EventArgs e)
         {
-            // TODO: Create This
+
             string clientId = labelClientIdText.Text;
             string firstName = textBoxFirstName.Text;
             string lastName = textBoxLastName.Text;
@@ -94,6 +94,16 @@ namespace Exercise_Tracker.Forms
             // TODO: Change this to show either a generic success or error message
             MessageBox.Show(response);
 
+        }
+
+        private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -19,6 +19,9 @@ namespace Exercise_Tracker.Classes
 
         public string active { get; set; }
 
+        // Used specifically for when a client does an exercise
+        
+
         public static Dictionary<string, string> exerciseListForDropdown = new Dictionary<string, string>();
 
         public static List<Exercise> exerciseList = new List<Exercise>();

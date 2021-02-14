@@ -138,5 +138,9 @@ namespace Exercise_Tracker
             }
         }
 
+        private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     } // end of class
 }

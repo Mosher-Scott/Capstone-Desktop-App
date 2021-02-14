@@ -23,6 +23,7 @@ namespace Exercise_Tracker.Classes
         public string allClientDetailsEndpoint = $"{environment}/clients";
 
         public string singleClientDetailEndpoint = $"{environment}/clients/";
+        public string getSpecificWorkoutHistoryItem = $"{environment}/clients/workouthistory/";
 
         public string allMuscleGroupsEndpoint = $"{environment}/musclegroups";
         public string allTrainingSessionsEndpoint = $"{environment}/trainingsessions";
@@ -95,11 +96,11 @@ namespace Exercise_Tracker.Classes
         }
 
         /// <summary>
-        /// Creates and sends a POST request with all the data in the request body.  Used mainly for sending form data to the endpoint
+        /// Creates and sends a PATCH request with all the data in the request body.  Used mainly for sending form data to the endpoint
         /// </summary>
         /// <param name="url">URL you are sending the request to</param>
         /// <param name="jsonData">The data you are sending to the API in JSON format</param>
-        /// <returns></returns>
+        /// <returns>Response from the web server as a string</returns>
         public string SendPatchRequestDataInBody(string url, string jsonData)
         {
             GetAuthToken();
@@ -110,6 +111,30 @@ namespace Exercise_Tracker.Classes
             request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
             request.AddHeader("Content-Type", "application/json");
             request.AddParameter("application/json", $"{jsonData}", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+        }
+
+        /// <summary>
+        /// Creates and sends a POST request with all the data in the request body.  Used mainly for sending form data to the endpoint
+        /// </summary>
+        /// <param name="url">URL you are sending the request to</param>
+        /// <param name="jsonData">The data you are sending to the API in JSON format</param>
+        /// <returns>Response from the web server as a string</returns>
+        public string SendPOSTRequestDataInBody(string url, string jsonData)
+        {
+            GetAuthToken();
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json", $"{jsonData}", ParameterType.RequestBody);
+
+            logger.Info(request);
 
             IRestResponse response = client.Execute(request);
 

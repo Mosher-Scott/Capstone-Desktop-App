@@ -121,6 +121,13 @@
     <Compile Include="Classes\Workout.cs" />
     <Compile Include="Classes\WorkoutData.cs" />
     <Compile Include="Classes\WorkoutHistory.cs" />
+    <Compile Include="Classes\WorkoutHistoryExercises.cs" />
+    <Compile Include="Forms\AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddNewTrainingSession.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +202,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddNewTrainingSession.resx">
       <DependentUpon>AddNewTrainingSession.cs</DependentUpon>
     </EmbeddedResource>

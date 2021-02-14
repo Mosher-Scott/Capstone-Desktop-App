@@ -55,6 +55,14 @@ namespace Exercise_Tracker.Forms
         /// <param name="e"></param>
         private void buttonGetClientInfo_Click(object sender, EventArgs e)
         {
+            GetClientInformation();
+        }
+
+        /// <summary>
+        /// Finds the information on the client from the client list
+        /// </summary>
+        private void GetClientInformation()
+        {
             // Clear the lists
             TrainingSession.listOfTrainingSessions.Clear();
             Workout.listOfWorkouts.Clear();
@@ -116,10 +124,12 @@ namespace Exercise_Tracker.Forms
                 dataGridViewWorkoutHistory.DataSource = Workout.listOfWorkouts;
 
             }
-
         }
 
-        // Gets the int from the dropdown for the given client
+        /// <summary>
+        /// Gets the int from the dropdown for the given client
+        /// </summary>
+        /// <returns>An int that is the client ID</returns>
         private int GetClientIdFromDropdown()
         {
             int id = Convert.ToInt32(comboBoxClientNames.SelectedValue);
@@ -150,18 +160,30 @@ namespace Exercise_Tracker.Forms
 
         }
 
+        /// <summary>
+        /// What happens when the user clicks the "delete" button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonDeleteClient_Click(object sender, EventArgs e)
         {
-            GetClientInformation();
+            MarkClientAsInactive();
         }
 
+        /// <summary>
+        /// Gets all training sessions for a specific client
+        /// </summary>
+        /// <param name="id">ID of the client you are gettign training sessions for</param>
         private void GetClientTrainingSessions(int id)
         {
             Client.GetClientTrainingSessions(id);
 
         }
 
-        private void GetClientInformation()
+        /// <summary>
+        /// Marks a given client as inactive in the system
+        /// </summary>
+        private void MarkClientAsInactive()
         {
             int clientId = GetClientIdFromDropdown();
 
@@ -194,6 +216,7 @@ namespace Exercise_Tracker.Forms
         private void buttonEditWorkout_Click(object sender, EventArgs e)
         {
             int workoutId = 0;
+
             int clientId = GetClientIdFromDropdown();
             foreach (DataGridViewRow item in this.dataGridViewWorkoutHistory.SelectedRows)
             {
@@ -204,6 +227,7 @@ namespace Exercise_Tracker.Forms
             }
 
             ViewClientWorkout form = new ViewClientWorkout(clientId, workoutId);
+            form.Show();
         }
 
         private void buttonModifyAssignedSessions_Click(object sender, EventArgs e)
@@ -211,6 +235,17 @@ namespace Exercise_Tracker.Forms
             int clientId = GetClientIdFromDropdown();
             ModifyAssignedTrainingSessions form = new ModifyAssignedTrainingSessions(clientId);
 
+            form.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonAddClient_Click(object sender, EventArgs e)
+        {
+            AddClient form = new AddClient();
             form.Show();
         }
     }

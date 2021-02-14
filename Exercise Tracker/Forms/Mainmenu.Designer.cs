@@ -34,13 +34,18 @@ namespace Exercise_Tracker.Forms
             this.buttonExerciseManagement = new System.Windows.Forms.Button();
             this.buttonSessionManagement = new System.Windows.Forms.Button();
             this.buttonClientManagement = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonViewClients
             // 
-            this.buttonViewClients.Location = new System.Drawing.Point(915, 492);
+            this.buttonViewClients.Location = new System.Drawing.Point(343, 206);
+            this.buttonViewClients.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonViewClients.Name = "buttonViewClients";
-            this.buttonViewClients.Size = new System.Drawing.Size(145, 71);
+            this.buttonViewClients.Size = new System.Drawing.Size(54, 30);
             this.buttonViewClients.TabIndex = 0;
             this.buttonViewClients.Text = "View Client Workouts";
             this.buttonViewClients.UseVisualStyleBackColor = true;
@@ -53,9 +58,10 @@ namespace Exercise_Tracker.Forms
             this.buttonExerciseManagement.Enabled = false;
             this.buttonExerciseManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExerciseManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonExerciseManagement.Location = new System.Drawing.Point(71, 217);
+            this.buttonExerciseManagement.Location = new System.Drawing.Point(21, 106);
+            this.buttonExerciseManagement.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonExerciseManagement.Name = "buttonExerciseManagement";
-            this.buttonExerciseManagement.Size = new System.Drawing.Size(212, 133);
+            this.buttonExerciseManagement.Size = new System.Drawing.Size(80, 56);
             this.buttonExerciseManagement.TabIndex = 2;
             this.buttonExerciseManagement.Text = "Exercise Management";
             this.buttonExerciseManagement.UseVisualStyleBackColor = false;
@@ -67,9 +73,10 @@ namespace Exercise_Tracker.Forms
             this.buttonSessionManagement.Enabled = false;
             this.buttonSessionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSessionManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonSessionManagement.Location = new System.Drawing.Point(71, 379);
+            this.buttonSessionManagement.Location = new System.Drawing.Point(21, 174);
+            this.buttonSessionManagement.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonSessionManagement.Name = "buttonSessionManagement";
-            this.buttonSessionManagement.Size = new System.Drawing.Size(212, 133);
+            this.buttonSessionManagement.Size = new System.Drawing.Size(80, 56);
             this.buttonSessionManagement.TabIndex = 3;
             this.buttonSessionManagement.Text = "Training Session Management";
             this.buttonSessionManagement.UseVisualStyleBackColor = false;
@@ -81,28 +88,61 @@ namespace Exercise_Tracker.Forms
             this.buttonClientManagement.Enabled = false;
             this.buttonClientManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClientManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonClientManagement.Location = new System.Drawing.Point(71, 56);
+            this.buttonClientManagement.Location = new System.Drawing.Point(21, 38);
+            this.buttonClientManagement.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.buttonClientManagement.Name = "buttonClientManagement";
-            this.buttonClientManagement.Size = new System.Drawing.Size(212, 133);
+            this.buttonClientManagement.Size = new System.Drawing.Size(80, 56);
             this.buttonClientManagement.TabIndex = 4;
             this.buttonClientManagement.Text = "Client Management";
             this.buttonClientManagement.UseVisualStyleBackColor = false;
             this.buttonClientManagement.Click += new System.EventHandler(this.buttonClientManagement_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(472, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // FormStartingMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1260, 694);
+            this.ClientSize = new System.Drawing.Size(472, 291);
             this.Controls.Add(this.buttonClientManagement);
             this.Controls.Add(this.buttonSessionManagement);
             this.Controls.Add(this.buttonExerciseManagement);
             this.Controls.Add(this.buttonViewClients);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "FormStartingMenu";
             this.Text = "Main Menu";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,5 +152,8 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Button buttonExerciseManagement;
         private System.Windows.Forms.Button buttonSessionManagement;
         private System.Windows.Forms.Button buttonClientManagement;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }

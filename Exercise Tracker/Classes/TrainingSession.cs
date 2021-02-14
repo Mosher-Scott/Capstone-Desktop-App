@@ -87,7 +87,10 @@ namespace Exercise_Tracker.Classes
 
         }
 
-
+        /// <summary>
+        /// Takes a list of training sesions in JSON format, and parses into individual sessions, and adds each to a list
+        /// </summary>
+        /// <param name="jsondata">A list of training sessions in JSON format</param>
         public static void ParseTrainingSessionData(string jsondata)
         {
             // logger.Info(jsondata);
@@ -111,8 +114,6 @@ namespace Exercise_Tracker.Classes
 
                 listOfTrainingSessions.Add(trainingSession);
             }
-
-
         }
 
 

@@ -12,10 +12,33 @@ namespace Exercise_Tracker.Classes
     {
         public static Logger logger = LogManager.GetCurrentClassLogger();
 
+        public string id { get; set; }
+        public string sessionName { get; set; }
+        public string sessionDescription { get; set; }
 
+        public string sessionDate { get; set; }
 
+        // Exercises
+        
 
+        public WorkoutHistory(string workoutId, string workoutName, string workoutDescription, string date)
+        {
+            id = workoutId;
+            sessionName = workoutName;
+            sessionDescription = workoutDescription;
 
+            DateTime regDate = DateTime.Parse(date);
+
+            sessionDate = regDate.Date.ToString("MM-dd-yyyy");
+
+        }
+
+        public static void GetWorkoutInformation(int id)
+        {
+
+        }
+
+        #region DB Methods
         /// <summary>
         /// Inserts the cliendId and SessionId into the client_workout_history table
         /// </summary>
@@ -96,6 +119,8 @@ namespace Exercise_Tracker.Classes
                 return -99;
             }
         }
+
+        #endregion
 
     } // End of class
 }

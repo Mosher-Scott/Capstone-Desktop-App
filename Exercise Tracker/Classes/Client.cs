@@ -25,6 +25,7 @@ namespace Exercise_Tracker.Classes
         public string phone { get; set; }
         public string email { get; set; }
         public string registration_date { get; set; }
+        public string password { get; set; }
 
         public static Dictionary<string, string> clientDictionaryForDropdown = new Dictionary<string, string>();
 

@@ -63,27 +63,34 @@ namespace Exercise_Tracker.Forms
             this.labelClientFirstName = new System.Windows.Forms.Label();
             this.buttonRefreshClient = new System.Windows.Forms.Button();
             this.buttonModifyAssignedSessions = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonAddClient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrainingSessions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkoutHistory)).BeginInit();
             this.groupBoxClientDetails.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelClientNames
             // 
             this.labelClientNames.AutoSize = true;
             this.labelClientNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientNames.Location = new System.Drawing.Point(33, 62);
+            this.labelClientNames.Location = new System.Drawing.Point(7, 35);
+            this.labelClientNames.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelClientNames.Name = "labelClientNames";
-            this.labelClientNames.Size = new System.Drawing.Size(207, 32);
+            this.labelClientNames.Size = new System.Drawing.Size(85, 13);
             this.labelClientNames.TabIndex = 7;
             this.labelClientNames.Text = "Choose Client";
             // 
             // comboBoxClientNames
             // 
             this.comboBoxClientNames.FormattingEnabled = true;
-            this.comboBoxClientNames.Location = new System.Drawing.Point(39, 99);
+            this.comboBoxClientNames.Location = new System.Drawing.Point(10, 50);
+            this.comboBoxClientNames.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxClientNames.Name = "comboBoxClientNames";
-            this.comboBoxClientNames.Size = new System.Drawing.Size(345, 39);
+            this.comboBoxClientNames.Size = new System.Drawing.Size(140, 21);
             this.comboBoxClientNames.TabIndex = 6;
             this.comboBoxClientNames.SelectedIndexChanged += new System.EventHandler(this.buttonGetClientInfo_Click);
             // 
@@ -91,9 +98,10 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelClientTrainingSessions.AutoSize = true;
             this.labelClientTrainingSessions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientTrainingSessions.Location = new System.Drawing.Point(33, 850);
+            this.labelClientTrainingSessions.Location = new System.Drawing.Point(7, 350);
+            this.labelClientTrainingSessions.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelClientTrainingSessions.Name = "labelClientTrainingSessions";
-            this.labelClientTrainingSessions.Size = new System.Drawing.Size(393, 32);
+            this.labelClientTrainingSessions.Size = new System.Drawing.Size(162, 13);
             this.labelClientTrainingSessions.TabIndex = 12;
             this.labelClientTrainingSessions.Text = "Assigned Training Sessions";
             // 
@@ -104,12 +112,13 @@ namespace Exercise_Tracker.Forms
             this.dataGridViewTrainingSessions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewTrainingSessions.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTrainingSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTrainingSessions.Location = new System.Drawing.Point(39, 898);
+            this.dataGridViewTrainingSessions.Location = new System.Drawing.Point(10, 369);
+            this.dataGridViewTrainingSessions.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridViewTrainingSessions.Name = "dataGridViewTrainingSessions";
             this.dataGridViewTrainingSessions.ReadOnly = true;
             this.dataGridViewTrainingSessions.RowHeadersWidth = 102;
             this.dataGridViewTrainingSessions.RowTemplate.Height = 40;
-            this.dataGridViewTrainingSessions.Size = new System.Drawing.Size(2354, 382);
+            this.dataGridViewTrainingSessions.Size = new System.Drawing.Size(942, 153);
             this.dataGridViewTrainingSessions.TabIndex = 11;
             // 
             // buttonEditClient
@@ -117,9 +126,10 @@ namespace Exercise_Tracker.Forms
             this.buttonEditClient.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonEditClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonEditClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEditClient.Location = new System.Drawing.Point(39, 738);
+            this.buttonEditClient.Location = new System.Drawing.Point(10, 305);
+            this.buttonEditClient.Margin = new System.Windows.Forms.Padding(1);
             this.buttonEditClient.Name = "buttonEditClient";
-            this.buttonEditClient.Size = new System.Drawing.Size(164, 76);
+            this.buttonEditClient.Size = new System.Drawing.Size(66, 30);
             this.buttonEditClient.TabIndex = 13;
             this.buttonEditClient.Text = "Edit Client";
             this.buttonEditClient.UseVisualStyleBackColor = false;
@@ -130,9 +140,10 @@ namespace Exercise_Tracker.Forms
             this.buttonDeleteClient.BackColor = System.Drawing.Color.PaleVioletRed;
             this.buttonDeleteClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteClient.Location = new System.Drawing.Point(229, 737);
+            this.buttonDeleteClient.Location = new System.Drawing.Point(86, 305);
+            this.buttonDeleteClient.Margin = new System.Windows.Forms.Padding(1);
             this.buttonDeleteClient.Name = "buttonDeleteClient";
-            this.buttonDeleteClient.Size = new System.Drawing.Size(210, 76);
+            this.buttonDeleteClient.Size = new System.Drawing.Size(84, 30);
             this.buttonDeleteClient.TabIndex = 14;
             this.buttonDeleteClient.Text = "Make Inactive";
             this.buttonDeleteClient.UseVisualStyleBackColor = false;
@@ -145,21 +156,23 @@ namespace Exercise_Tracker.Forms
             this.dataGridViewWorkoutHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewWorkoutHistory.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewWorkoutHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewWorkoutHistory.Location = new System.Drawing.Point(29, 1460);
+            this.dataGridViewWorkoutHistory.Location = new System.Drawing.Point(6, 594);
+            this.dataGridViewWorkoutHistory.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridViewWorkoutHistory.Name = "dataGridViewWorkoutHistory";
             this.dataGridViewWorkoutHistory.ReadOnly = true;
             this.dataGridViewWorkoutHistory.RowHeadersWidth = 102;
             this.dataGridViewWorkoutHistory.RowTemplate.Height = 40;
-            this.dataGridViewWorkoutHistory.Size = new System.Drawing.Size(2340, 441);
+            this.dataGridViewWorkoutHistory.Size = new System.Drawing.Size(936, 176);
             this.dataGridViewWorkoutHistory.TabIndex = 15;
             // 
             // labelWorkoutHistory
             // 
             this.labelWorkoutHistory.AutoSize = true;
             this.labelWorkoutHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWorkoutHistory.Location = new System.Drawing.Point(29, 1411);
+            this.labelWorkoutHistory.Location = new System.Drawing.Point(6, 574);
+            this.labelWorkoutHistory.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelWorkoutHistory.Name = "labelWorkoutHistory";
-            this.labelWorkoutHistory.Size = new System.Drawing.Size(230, 32);
+            this.labelWorkoutHistory.Size = new System.Drawing.Size(98, 13);
             this.labelWorkoutHistory.TabIndex = 16;
             this.labelWorkoutHistory.Text = "Workout History";
             // 
@@ -168,9 +181,10 @@ namespace Exercise_Tracker.Forms
             this.buttonDeleteWorkout.BackColor = System.Drawing.Color.PaleVioletRed;
             this.buttonDeleteWorkout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonDeleteWorkout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteWorkout.Location = new System.Drawing.Point(246, 1922);
+            this.buttonDeleteWorkout.Location = new System.Drawing.Point(92, 779);
+            this.buttonDeleteWorkout.Margin = new System.Windows.Forms.Padding(1);
             this.buttonDeleteWorkout.Name = "buttonDeleteWorkout";
-            this.buttonDeleteWorkout.Size = new System.Drawing.Size(230, 76);
+            this.buttonDeleteWorkout.Size = new System.Drawing.Size(92, 30);
             this.buttonDeleteWorkout.TabIndex = 20;
             this.buttonDeleteWorkout.Text = "Delete Workout";
             this.buttonDeleteWorkout.UseVisualStyleBackColor = false;
@@ -180,9 +194,10 @@ namespace Exercise_Tracker.Forms
             this.buttonEditWorkout.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonEditWorkout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonEditWorkout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEditWorkout.Location = new System.Drawing.Point(28, 1922);
+            this.buttonEditWorkout.Location = new System.Drawing.Point(5, 779);
+            this.buttonEditWorkout.Margin = new System.Windows.Forms.Padding(1);
             this.buttonEditWorkout.Name = "buttonEditWorkout";
-            this.buttonEditWorkout.Size = new System.Drawing.Size(187, 76);
+            this.buttonEditWorkout.Size = new System.Drawing.Size(75, 30);
             this.buttonEditWorkout.TabIndex = 19;
             this.buttonEditWorkout.Text = "View Workout";
             this.buttonEditWorkout.UseVisualStyleBackColor = false;
@@ -211,9 +226,11 @@ namespace Exercise_Tracker.Forms
             this.groupBoxClientDetails.Controls.Add(this.labelLastName);
             this.groupBoxClientDetails.Controls.Add(this.labelFirstNameText);
             this.groupBoxClientDetails.Controls.Add(this.labelClientFirstName);
-            this.groupBoxClientDetails.Location = new System.Drawing.Point(39, 171);
+            this.groupBoxClientDetails.Location = new System.Drawing.Point(10, 78);
+            this.groupBoxClientDetails.Margin = new System.Windows.Forms.Padding(1);
             this.groupBoxClientDetails.Name = "groupBoxClientDetails";
-            this.groupBoxClientDetails.Size = new System.Drawing.Size(941, 547);
+            this.groupBoxClientDetails.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBoxClientDetails.Size = new System.Drawing.Size(376, 219);
             this.groupBoxClientDetails.TabIndex = 21;
             this.groupBoxClientDetails.TabStop = false;
             this.groupBoxClientDetails.Text = "Client Info";
@@ -221,9 +238,10 @@ namespace Exercise_Tracker.Forms
             // labelPhoneText
             // 
             this.labelPhoneText.AutoSize = true;
-            this.labelPhoneText.Location = new System.Drawing.Point(180, 389);
+            this.labelPhoneText.Location = new System.Drawing.Point(72, 156);
+            this.labelPhoneText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelPhoneText.Name = "labelPhoneText";
-            this.labelPhoneText.Size = new System.Drawing.Size(84, 31);
+            this.labelPhoneText.Size = new System.Drawing.Size(37, 13);
             this.labelPhoneText.TabIndex = 19;
             this.labelPhoneText.Text = "          ";
             // 
@@ -231,18 +249,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(66, 389);
+            this.labelPhone.Location = new System.Drawing.Point(26, 156);
+            this.labelPhone.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(112, 32);
+            this.labelPhone.Size = new System.Drawing.Size(47, 13);
             this.labelPhone.TabIndex = 18;
             this.labelPhone.Text = "Phone:";
             // 
             // labelStateText
             // 
             this.labelStateText.AutoSize = true;
-            this.labelStateText.Location = new System.Drawing.Point(184, 238);
+            this.labelStateText.Location = new System.Drawing.Point(74, 95);
+            this.labelStateText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelStateText.Name = "labelStateText";
-            this.labelStateText.Size = new System.Drawing.Size(91, 31);
+            this.labelStateText.Size = new System.Drawing.Size(40, 13);
             this.labelStateText.TabIndex = 17;
             this.labelStateText.Text = "           ";
             // 
@@ -250,18 +270,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelState.AutoSize = true;
             this.labelState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelState.Location = new System.Drawing.Point(82, 238);
+            this.labelState.Location = new System.Drawing.Point(33, 95);
+            this.labelState.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(96, 32);
+            this.labelState.Size = new System.Drawing.Size(41, 13);
             this.labelState.TabIndex = 16;
             this.labelState.Text = "State:";
             // 
             // labelActiveText
             // 
             this.labelActiveText.AutoSize = true;
-            this.labelActiveText.Location = new System.Drawing.Point(184, 491);
+            this.labelActiveText.Location = new System.Drawing.Point(74, 196);
+            this.labelActiveText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelActiveText.Name = "labelActiveText";
-            this.labelActiveText.Size = new System.Drawing.Size(105, 31);
+            this.labelActiveText.Size = new System.Drawing.Size(46, 13);
             this.labelActiveText.TabIndex = 15;
             this.labelActiveText.Text = "             ";
             // 
@@ -269,18 +291,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelActive.AutoSize = true;
             this.labelActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActive.Location = new System.Drawing.Point(70, 491);
+            this.labelActive.Location = new System.Drawing.Point(28, 196);
+            this.labelActive.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelActive.Name = "labelActive";
-            this.labelActive.Size = new System.Drawing.Size(108, 32);
+            this.labelActive.Size = new System.Drawing.Size(47, 13);
             this.labelActive.TabIndex = 14;
             this.labelActive.Text = "Active:";
             // 
             // labelRegistrationDateText
             // 
             this.labelRegistrationDateText.AutoSize = true;
-            this.labelRegistrationDateText.Location = new System.Drawing.Point(184, 443);
+            this.labelRegistrationDateText.Location = new System.Drawing.Point(74, 177);
+            this.labelRegistrationDateText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelRegistrationDateText.Name = "labelRegistrationDateText";
-            this.labelRegistrationDateText.Size = new System.Drawing.Size(77, 31);
+            this.labelRegistrationDateText.Size = new System.Drawing.Size(34, 13);
             this.labelRegistrationDateText.TabIndex = 13;
             this.labelRegistrationDateText.Text = "         ";
             // 
@@ -288,18 +312,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelRegistrationDate.AutoSize = true;
             this.labelRegistrationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegistrationDate.Location = new System.Drawing.Point(27, 443);
+            this.labelRegistrationDate.Location = new System.Drawing.Point(11, 177);
+            this.labelRegistrationDate.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelRegistrationDate.Name = "labelRegistrationDate";
-            this.labelRegistrationDate.Size = new System.Drawing.Size(151, 32);
+            this.labelRegistrationDate.Size = new System.Drawing.Size(65, 13);
             this.labelRegistrationDate.TabIndex = 12;
             this.labelRegistrationDate.Text = "Reg Date:";
             // 
             // labelEmailText
             // 
             this.labelEmailText.AutoSize = true;
-            this.labelEmailText.Location = new System.Drawing.Point(184, 334);
+            this.labelEmailText.Location = new System.Drawing.Point(74, 134);
+            this.labelEmailText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelEmailText.Name = "labelEmailText";
-            this.labelEmailText.Size = new System.Drawing.Size(84, 31);
+            this.labelEmailText.Size = new System.Drawing.Size(37, 13);
             this.labelEmailText.TabIndex = 11;
             this.labelEmailText.Text = "          ";
             // 
@@ -307,18 +333,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(77, 334);
+            this.labelEmail.Location = new System.Drawing.Point(31, 134);
+            this.labelEmail.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(101, 32);
+            this.labelEmail.Size = new System.Drawing.Size(41, 13);
             this.labelEmail.TabIndex = 10;
             this.labelEmail.Text = "Email:";
             // 
             // labelZipCodeText
             // 
             this.labelZipCodeText.AutoSize = true;
-            this.labelZipCodeText.Location = new System.Drawing.Point(184, 286);
+            this.labelZipCodeText.Location = new System.Drawing.Point(74, 114);
+            this.labelZipCodeText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelZipCodeText.Name = "labelZipCodeText";
-            this.labelZipCodeText.Size = new System.Drawing.Size(98, 31);
+            this.labelZipCodeText.Size = new System.Drawing.Size(43, 13);
             this.labelZipCodeText.TabIndex = 9;
             this.labelZipCodeText.Text = "            ";
             // 
@@ -326,18 +354,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelZipCode.AutoSize = true;
             this.labelZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelZipCode.Location = new System.Drawing.Point(45, 286);
+            this.labelZipCode.Location = new System.Drawing.Point(18, 114);
+            this.labelZipCode.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelZipCode.Name = "labelZipCode";
-            this.labelZipCode.Size = new System.Drawing.Size(133, 32);
+            this.labelZipCode.Size = new System.Drawing.Size(57, 13);
             this.labelZipCode.TabIndex = 8;
             this.labelZipCode.Text = "Zipcode:";
             // 
             // labelCityText
             // 
             this.labelCityText.AutoSize = true;
-            this.labelCityText.Location = new System.Drawing.Point(184, 190);
+            this.labelCityText.Location = new System.Drawing.Point(74, 76);
+            this.labelCityText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelCityText.Name = "labelCityText";
-            this.labelCityText.Size = new System.Drawing.Size(105, 31);
+            this.labelCityText.Size = new System.Drawing.Size(46, 13);
             this.labelCityText.TabIndex = 7;
             this.labelCityText.Text = "             ";
             // 
@@ -345,18 +375,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelCity.AutoSize = true;
             this.labelCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.Location = new System.Drawing.Point(101, 190);
+            this.labelCity.Location = new System.Drawing.Point(40, 76);
+            this.labelCity.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(77, 32);
+            this.labelCity.Size = new System.Drawing.Size(32, 13);
             this.labelCity.TabIndex = 6;
             this.labelCity.Text = "City:";
             // 
             // labelAddressText
             // 
             this.labelAddressText.AutoSize = true;
-            this.labelAddressText.Location = new System.Drawing.Point(184, 142);
+            this.labelAddressText.Location = new System.Drawing.Point(74, 57);
+            this.labelAddressText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelAddressText.Name = "labelAddressText";
-            this.labelAddressText.Size = new System.Drawing.Size(98, 31);
+            this.labelAddressText.Size = new System.Drawing.Size(43, 13);
             this.labelAddressText.TabIndex = 5;
             this.labelAddressText.Text = "            ";
             // 
@@ -364,18 +396,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(43, 142);
+            this.labelAddress.Location = new System.Drawing.Point(17, 57);
+            this.labelAddress.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(135, 32);
+            this.labelAddress.Size = new System.Drawing.Size(56, 13);
             this.labelAddress.TabIndex = 4;
             this.labelAddress.Text = "Address:";
             // 
             // labelLastNameText
             // 
             this.labelLastNameText.AutoSize = true;
-            this.labelLastNameText.Location = new System.Drawing.Point(184, 94);
+            this.labelLastNameText.Location = new System.Drawing.Point(74, 38);
+            this.labelLastNameText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelLastNameText.Name = "labelLastNameText";
-            this.labelLastNameText.Size = new System.Drawing.Size(119, 31);
+            this.labelLastNameText.Size = new System.Drawing.Size(52, 13);
             this.labelLastNameText.TabIndex = 3;
             this.labelLastNameText.Text = "               ";
             // 
@@ -383,18 +417,20 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(9, 94);
+            this.labelLastName.Location = new System.Drawing.Point(4, 38);
+            this.labelLastName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(169, 32);
+            this.labelLastName.Size = new System.Drawing.Size(71, 13);
             this.labelLastName.TabIndex = 2;
             this.labelLastName.Text = "Last Name:";
             // 
             // labelFirstNameText
             // 
             this.labelFirstNameText.AutoSize = true;
-            this.labelFirstNameText.Location = new System.Drawing.Point(184, 46);
+            this.labelFirstNameText.Location = new System.Drawing.Point(74, 18);
+            this.labelFirstNameText.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelFirstNameText.Name = "labelFirstNameText";
-            this.labelFirstNameText.Size = new System.Drawing.Size(35, 31);
+            this.labelFirstNameText.Size = new System.Drawing.Size(16, 13);
             this.labelFirstNameText.TabIndex = 1;
             this.labelFirstNameText.Text = "   ";
             // 
@@ -402,9 +438,10 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelClientFirstName.AutoSize = true;
             this.labelClientFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientFirstName.Location = new System.Drawing.Point(7, 46);
+            this.labelClientFirstName.Location = new System.Drawing.Point(3, 18);
+            this.labelClientFirstName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelClientFirstName.Name = "labelClientFirstName";
-            this.labelClientFirstName.Size = new System.Drawing.Size(171, 32);
+            this.labelClientFirstName.Size = new System.Drawing.Size(71, 13);
             this.labelClientFirstName.TabIndex = 0;
             this.labelClientFirstName.Text = "First Name:";
             // 
@@ -413,11 +450,12 @@ namespace Exercise_Tracker.Forms
             this.buttonRefreshClient.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonRefreshClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonRefreshClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRefreshClient.Location = new System.Drawing.Point(471, 737);
+            this.buttonRefreshClient.Location = new System.Drawing.Point(170, 44);
+            this.buttonRefreshClient.Margin = new System.Windows.Forms.Padding(1);
             this.buttonRefreshClient.Name = "buttonRefreshClient";
-            this.buttonRefreshClient.Size = new System.Drawing.Size(164, 76);
+            this.buttonRefreshClient.Size = new System.Drawing.Size(66, 30);
             this.buttonRefreshClient.TabIndex = 22;
-            this.buttonRefreshClient.Text = "Refresh Client";
+            this.buttonRefreshClient.Text = "Refresh";
             this.buttonRefreshClient.UseVisualStyleBackColor = false;
             this.buttonRefreshClient.Click += new System.EventHandler(this.buttonRefreshClient_Click);
             // 
@@ -426,21 +464,62 @@ namespace Exercise_Tracker.Forms
             this.buttonModifyAssignedSessions.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonModifyAssignedSessions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonModifyAssignedSessions.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonModifyAssignedSessions.Location = new System.Drawing.Point(39, 1297);
+            this.buttonModifyAssignedSessions.Location = new System.Drawing.Point(10, 529);
+            this.buttonModifyAssignedSessions.Margin = new System.Windows.Forms.Padding(1);
             this.buttonModifyAssignedSessions.Name = "buttonModifyAssignedSessions";
-            this.buttonModifyAssignedSessions.Size = new System.Drawing.Size(370, 76);
+            this.buttonModifyAssignedSessions.Size = new System.Drawing.Size(148, 30);
             this.buttonModifyAssignedSessions.TabIndex = 23;
             this.buttonModifyAssignedSessions.Text = "Modify Assigned Sessions";
             this.buttonModifyAssignedSessions.UseVisualStyleBackColor = false;
             this.buttonModifyAssignedSessions.Click += new System.EventHandler(this.buttonModifyAssignedSessions_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1115, 24);
+            this.menuStrip1.TabIndex = 24;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // buttonAddClient
+            // 
+            this.buttonAddClient.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonAddClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddClient.Location = new System.Drawing.Point(182, 305);
+            this.buttonAddClient.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonAddClient.Name = "buttonAddClient";
+            this.buttonAddClient.Size = new System.Drawing.Size(66, 30);
+            this.buttonAddClient.TabIndex = 25;
+            this.buttonAddClient.Text = "Add Client";
+            this.buttonAddClient.UseVisualStyleBackColor = false;
+            this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
+            // 
             // ClientManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(2450, 1868);
+            this.ClientSize = new System.Drawing.Size(1132, 625);
+            this.Controls.Add(this.buttonAddClient);
             this.Controls.Add(this.buttonModifyAssignedSessions);
             this.Controls.Add(this.buttonRefreshClient);
             this.Controls.Add(this.groupBoxClientDetails);
@@ -454,14 +533,19 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.dataGridViewTrainingSessions);
             this.Controls.Add(this.labelClientNames);
             this.Controls.Add(this.comboBoxClientNames);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "ClientManagement";
             this.Text = "Client Management";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrainingSessions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkoutHistory)).EndInit();
             this.groupBoxClientDetails.ResumeLayout(false);
             this.groupBoxClientDetails.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,5 +585,9 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Button buttonRefreshClient;
         private System.Windows.Forms.Button buttonModifyAssignedSessions;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button buttonAddClient;
     }
 }

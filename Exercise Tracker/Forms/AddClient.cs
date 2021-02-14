@@ -56,6 +56,10 @@ namespace Exercise_Tracker.Forms
             AddClientToDatabase(clientAsJson);
         }
 
+        /// <summary>
+        /// Creates the API request to add a new client to the database, and handles the response
+        /// </summary>
+        /// <param name="client">Client as a JSON string to be added to the system</param>
         private void AddClientToDatabase(string client)
         {
             APIRequests request = new APIRequests();
@@ -65,6 +69,14 @@ namespace Exercise_Tracker.Forms
             string response = request.SendPOSTRequestDataInBody(url, client);
 
             logger.Info(response);
+
+            if (response.Contains("Successfully added new client"))
+            {
+                MessageBox.Show("Successfully added client to the system");
+            } else
+            {
+                MessageBox.Show("Something went wrong");
+            }
         }
 
         private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)

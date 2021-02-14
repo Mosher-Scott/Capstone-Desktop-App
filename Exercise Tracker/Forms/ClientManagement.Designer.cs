@@ -453,9 +453,9 @@ namespace Exercise_Tracker.Forms
             this.buttonRefreshClient.Location = new System.Drawing.Point(170, 44);
             this.buttonRefreshClient.Margin = new System.Windows.Forms.Padding(1);
             this.buttonRefreshClient.Name = "buttonRefreshClient";
-            this.buttonRefreshClient.Size = new System.Drawing.Size(66, 30);
+            this.buttonRefreshClient.Size = new System.Drawing.Size(77, 30);
             this.buttonRefreshClient.TabIndex = 22;
-            this.buttonRefreshClient.Text = "Refresh";
+            this.buttonRefreshClient.Text = "Refresh List";
             this.buttonRefreshClient.UseVisualStyleBackColor = false;
             this.buttonRefreshClient.Click += new System.EventHandler(this.buttonRefreshClient_Click);
             // 
@@ -503,12 +503,12 @@ namespace Exercise_Tracker.Forms
             this.buttonAddClient.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonAddClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddClient.Location = new System.Drawing.Point(182, 305);
+            this.buttonAddClient.Location = new System.Drawing.Point(261, 44);
             this.buttonAddClient.Margin = new System.Windows.Forms.Padding(1);
             this.buttonAddClient.Name = "buttonAddClient";
-            this.buttonAddClient.Size = new System.Drawing.Size(66, 30);
+            this.buttonAddClient.Size = new System.Drawing.Size(90, 30);
             this.buttonAddClient.TabIndex = 25;
-            this.buttonAddClient.Text = "Add Client";
+            this.buttonAddClient.Text = "Add New Client";
             this.buttonAddClient.UseVisualStyleBackColor = false;
             this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
             // 

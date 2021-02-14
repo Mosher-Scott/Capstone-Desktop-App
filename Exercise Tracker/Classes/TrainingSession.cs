@@ -93,27 +93,34 @@ namespace Exercise_Tracker.Classes
         /// <param name="jsondata">A list of training sessions in JSON format</param>
         public static void ParseTrainingSessionData(string jsondata)
         {
-            // logger.Info(jsondata);
+            logger.Info(jsondata);
 
-            var doc = JsonDocument.Parse(jsondata);
-            JsonElement root = doc.RootElement;
-
-            //var thing1 = root[0];
-
-            for (int i = 0; i < root.GetArrayLength(); i++)
+            if (jsondata.Contains("No training sessions found for client"))
             {
 
-                string id = root[i].GetProperty("id").ToString();
-                string sessionName = root[i].GetProperty("sessionname").ToString();
-                string sessionDescription = root[i].GetProperty("sessiondescription").ToString();
-                string sessionSets = root[i].GetProperty("sessionsets").ToString();
-                string sessionReps = root[i].GetProperty("sessionreps").ToString();
-                string active = root[i].GetProperty("active").ToString();
+            } else
+            {
+                var doc = JsonDocument.Parse(jsondata);
+                JsonElement root = doc.RootElement;
 
-                TrainingSession trainingSession = new TrainingSession(id, sessionName, sessionDescription, sessionSets, sessionReps, active);
+                //var thing1 = root[0];
 
-                listOfTrainingSessions.Add(trainingSession);
+                for (int i = 0; i < root.GetArrayLength(); i++)
+                {
+
+                    string id = root[i].GetProperty("id").ToString();
+                    string sessionName = root[i].GetProperty("sessionname").ToString();
+                    string sessionDescription = root[i].GetProperty("sessiondescription").ToString();
+                    string sessionSets = root[i].GetProperty("sessionsets").ToString();
+                    string sessionReps = root[i].GetProperty("sessionreps").ToString();
+                    string active = root[i].GetProperty("active").ToString();
+
+                    TrainingSession trainingSession = new TrainingSession(id, sessionName, sessionDescription, sessionSets, sessionReps, active);
+
+                    listOfTrainingSessions.Add(trainingSession);
+                }
             }
+            
         }
 
 

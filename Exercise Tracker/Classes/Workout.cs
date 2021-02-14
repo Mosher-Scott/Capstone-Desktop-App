@@ -50,33 +50,42 @@ namespace Exercise_Tracker.Classes
         /// <param name="response">JSON string that needs to be parsed.</param>
         public static void ParseWebResponse(string response)
         {
- 
-            dynamic workouts = JsonConvert.DeserializeObject(response);
-
-
-            // TODO: Handle different responses
-
-            // Loop through each workout, such as id, name, description, etc
-            foreach(var item in workouts)
+            if(response.Contains("No workout history found for client"))
             {
-                // Training Session Details
-                //logger.Info(item);
-                string id = item["workoutid"].ToString();
-                string date = item["sessiondate"].ToString();
-                string name = item["trainingsessionname"].ToString();
 
-                Workout workout = new Workout(id, date, name);
+            } else
+            {
+                dynamic workouts = JsonConvert.DeserializeObject(response);
 
-                Workout.listOfWorkouts.Add(workout);
 
-                // Now loop through the workout_details array and parse the data
-                //foreach(var exercise in item["workout_details"])
-                //{
-                //    logger.Info(exercise.exercise_name);
-                //}
-                //logger.Info(item["exerciseDetails"]);
+                // TODO: Handle different responses
+
+                // Loop through each workout, such as id, name, description, etc
+                foreach (var item in workouts)
+                {
+                    // Training Session Details
+                    //logger.Info(item);
+                    string id = item["workoutid"].ToString();
+                    string date = item["sessiondate"].ToString();
+                    string name = item["trainingsessionname"].ToString();
+
+                    Workout workout = new Workout(id, date, name);
+
+                    Workout.listOfWorkouts.Add(workout);
+
+                    // Now loop through the workout_details array and parse the data
+                    //foreach(var exercise in item["workout_details"])
+                    //{
+                    //    logger.Info(exercise.exercise_name);
+                    //}
+                    //logger.Info(item["exerciseDetails"]);
+                }
             }
 
         }
-    }
+
+
+
+
+    } // End of class
 }

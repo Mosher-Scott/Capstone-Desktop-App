@@ -29,6 +29,7 @@ namespace Exercise_Tracker.Classes
         public string allTrainingSessionsEndpoint = $"{environment}/trainingsessions";
 
         public string allExercisesEndpoint = $"{environment}/exercises";
+        public string singleExercisesEndpoint = $"{environment}/exercises/";
 
         public APIRequests()
         {

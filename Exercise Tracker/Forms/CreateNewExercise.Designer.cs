@@ -29,6 +29,7 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewExercise));
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxInstructionInput = new System.Windows.Forms.TextBox();
             this.labelInstructions = new System.Windows.Forms.Label();
@@ -39,18 +40,23 @@ namespace Exercise_Tracker.Forms
             this.labelName = new System.Windows.Forms.Label();
             this.labelMuscleGroup = new System.Windows.Forms.Label();
             this.checkBoxActive = new System.Windows.Forms.CheckBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(52, 95);
+            this.textBoxName.Location = new System.Drawing.Point(22, 123);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(534, 38);
             this.textBoxName.TabIndex = 1;
             // 
             // textBoxInstructionInput
             // 
-            this.textBoxInstructionInput.Location = new System.Drawing.Point(52, 386);
+            this.textBoxInstructionInput.Location = new System.Drawing.Point(22, 414);
             this.textBoxInstructionInput.Multiline = true;
             this.textBoxInstructionInput.Name = "textBoxInstructionInput";
             this.textBoxInstructionInput.Size = new System.Drawing.Size(1124, 365);
@@ -60,7 +66,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelInstructions.AutoSize = true;
             this.labelInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInstructions.Location = new System.Drawing.Point(46, 351);
+            this.labelInstructions.Location = new System.Drawing.Point(16, 379);
             this.labelInstructions.Name = "labelInstructions";
             this.labelInstructions.Size = new System.Drawing.Size(172, 32);
             this.labelInstructions.TabIndex = 2;
@@ -68,7 +74,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(52, 783);
+            this.buttonSave.Location = new System.Drawing.Point(22, 811);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(183, 101);
             this.buttonSave.TabIndex = 4;
@@ -78,7 +84,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(273, 783);
+            this.buttonCancel.Location = new System.Drawing.Point(243, 811);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(183, 101);
             this.buttonCancel.TabIndex = 5;
@@ -89,7 +95,7 @@ namespace Exercise_Tracker.Forms
             // comboBoxMuscleGroups
             // 
             this.comboBoxMuscleGroups.FormattingEnabled = true;
-            this.comboBoxMuscleGroups.Location = new System.Drawing.Point(52, 210);
+            this.comboBoxMuscleGroups.Location = new System.Drawing.Point(22, 238);
             this.comboBoxMuscleGroups.Name = "comboBoxMuscleGroups";
             this.comboBoxMuscleGroups.Size = new System.Drawing.Size(381, 39);
             this.comboBoxMuscleGroups.TabIndex = 6;
@@ -98,7 +104,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelCategories.AutoSize = true;
             this.labelCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategories.Location = new System.Drawing.Point(525, 163);
+            this.labelCategories.Location = new System.Drawing.Point(495, 191);
             this.labelCategories.Name = "labelCategories";
             this.labelCategories.Size = new System.Drawing.Size(0, 32);
             this.labelCategories.TabIndex = 7;
@@ -106,18 +112,20 @@ namespace Exercise_Tracker.Forms
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(46, 55);
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Location = new System.Drawing.Point(16, 83);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(90, 32);
+            this.labelName.Size = new System.Drawing.Size(94, 32);
             this.labelName.TabIndex = 8;
             this.labelName.Text = "Name";
             // 
             // labelMuscleGroup
             // 
             this.labelMuscleGroup.AutoSize = true;
-            this.labelMuscleGroup.Location = new System.Drawing.Point(46, 163);
+            this.labelMuscleGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMuscleGroup.Location = new System.Drawing.Point(16, 191);
             this.labelMuscleGroup.Name = "labelMuscleGroup";
-            this.labelMuscleGroup.Size = new System.Drawing.Size(191, 32);
+            this.labelMuscleGroup.Size = new System.Drawing.Size(203, 32);
             this.labelMuscleGroup.TabIndex = 9;
             this.labelMuscleGroup.Text = "Muscle Group";
             // 
@@ -127,19 +135,56 @@ namespace Exercise_Tracker.Forms
             this.checkBoxActive.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxActive.Checked = true;
             this.checkBoxActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxActive.Location = new System.Drawing.Point(52, 280);
+            this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxActive.Location = new System.Drawing.Point(22, 308);
             this.checkBoxActive.Name = "checkBoxActive";
-            this.checkBoxActive.Size = new System.Drawing.Size(131, 36);
+            this.checkBoxActive.Size = new System.Drawing.Size(137, 36);
             this.checkBoxActive.TabIndex = 10;
             this.checkBoxActive.Text = "Active";
             this.checkBoxActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.closeFormToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1365, 60);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 56);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // closeFormToolStripMenuItem
+            // 
+            this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 56);
+            this.closeFormToolStripMenuItem.Text = "Close Form";
+            this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
+            // 
             // CreateNewExercise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 931);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(1365, 1087);
             this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.labelMuscleGroup);
             this.Controls.Add(this.labelName);
@@ -150,8 +195,13 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.textBoxInstructionInput);
             this.Controls.Add(this.labelInstructions);
             this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "CreateNewExercise";
             this.Text = "Add New Workout";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +218,9 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelMuscleGroup;
         private System.Windows.Forms.CheckBox checkBoxActive;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeFormToolStripMenuItem;
     }
 }

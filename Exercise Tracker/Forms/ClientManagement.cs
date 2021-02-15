@@ -253,5 +253,6 @@ namespace Exercise_Tracker.Forms
         {
             this.Close();
         }
+
     }
 }

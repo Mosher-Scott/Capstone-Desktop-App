@@ -46,7 +46,29 @@ namespace Exercise_Tracker.Forms
 
         private void buttonEditExercise_Click(object sender, EventArgs e)
         {
+            int exerciseId = 1;
+            EditExercise form = new EditExercise(exerciseId);
+        }
+
+        private void ExerciseDropdown_Changed(object sender, EventArgs e)
+        {
+            int exerciseId;
+            try
+            {
+                exerciseId = Convert.ToInt32(comboBoxExercises.SelectedValue);
+            } catch 
+            {
+                exerciseId = 0;
+            }
+
+            Exercise.GetSingleExercise(exerciseId);
+
+            // TODO: Debug why the exercise isn't showing up
+            dataGridViewExercises.DataSource = Exercise.singleExerciseList;
 
         }
-    }
+
+
+
+    } // End of class
 }

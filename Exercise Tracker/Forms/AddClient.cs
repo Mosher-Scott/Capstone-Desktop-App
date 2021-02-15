@@ -51,7 +51,7 @@ namespace Exercise_Tracker.Forms
 
             string clientAsJson = JsonConvert.SerializeObject(newClient);
 
-            logger.Info(clientAsJson);
+            //logger.Info(clientAsJson);
 
             AddClientToDatabase(clientAsJson);
         }

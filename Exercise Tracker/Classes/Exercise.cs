@@ -26,6 +26,8 @@ namespace Exercise_Tracker.Classes
 
         public static List<Exercise> exerciseList = new List<Exercise>();
 
+        public static List<Exercise> singleExerciseList = new List<Exercise>();
+
         public static Logger logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
@@ -104,6 +106,9 @@ namespace Exercise_Tracker.Classes
             }
         }
 
+        /// <summary>
+        /// Gets a list of all exercises in the database
+        /// </summary>
         public static void GetExercises()
         {
             exerciseListForDropdown.Add("0", "Choose Exercise");
@@ -130,11 +135,19 @@ namespace Exercise_Tracker.Classes
                 var doc = JsonDocument.Parse(response);
                 JsonElement root = doc.RootElement;
 
-                var groups = root.EnumerateArray();
+                // var groups = root.EnumerateArray();
 
-                var u1 = root[0];
-                var u2 = root[1];
+                //var u1 = root[0];
+                //var u2 = root[1];
+                var count = 0;
+                try
+                {
+                    count = root.GetArrayLength();
+                } catch
+                {
 
+                }
+                
                 for (int i = 0; i < root.GetArrayLength(); i++)
                 {
                     string exerciseId = root[i].GetProperty("exercise_id").ToString();
@@ -145,17 +158,41 @@ namespace Exercise_Tracker.Classes
                     string muscleGroupName = root[i].GetProperty("muscle_group_name").ToString();
                     //logger.Error($"{itemId}, {name}, {instruction}, {active}");
 
-                    // Add to the dictionary to populate the dropdown lists
-                    exerciseListForDropdown.Add(exerciseId, name);
-
                     // Create an Exercise, and add it to the list
                     Exercise newExercise = new Exercise(exerciseId, name, muscleGroupId, muscleGroupName, instruction, active);
 
-                    exerciseList.Add(newExercise);
+                    if (count != 1)
+                    {
+                        // Add to the dictionary to populate the dropdown lists
+                        exerciseListForDropdown.Add(exerciseId, name);
+
+                        exerciseList.Add(newExercise);
+                    } 
+                    // We are assuming the user picked 1 exercise
+                    else if (count == 1)
+                    {
+
+                        singleExerciseList.Add(newExercise);
+                    }
+                    
 
                 }
             }
         }
+
+        public static void GetSingleExercise(int id)
+        {
+            APIRequests request = new APIRequests();
+
+            string url = $"{request.singleExercisesEndpoint}{id}";
+
+            string response = request.GetRequests(url);
+
+            Exercise.ParseWebResponse(response);
+
+        }
+
+       
 
     } // End of class
 }

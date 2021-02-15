@@ -56,6 +56,7 @@ namespace Exercise_Tracker.Forms
             this.comboBoxExercises.Name = "comboBoxExercises";
             this.comboBoxExercises.Size = new System.Drawing.Size(576, 39);
             this.comboBoxExercises.TabIndex = 3;
+            this.comboBoxExercises.SelectedIndexChanged += new System.EventHandler(this.ExerciseDropdown_Changed);
             // 
             // labelExercises
             // 
@@ -76,7 +77,7 @@ namespace Exercise_Tracker.Forms
             this.dataGridViewExercises.ReadOnly = true;
             this.dataGridViewExercises.RowHeadersWidth = 102;
             this.dataGridViewExercises.RowTemplate.Height = 40;
-            this.dataGridViewExercises.Size = new System.Drawing.Size(1478, 558);
+            this.dataGridViewExercises.Size = new System.Drawing.Size(2408, 558);
             this.dataGridViewExercises.TabIndex = 5;
             // 
             // buttonDeleteExercise
@@ -156,7 +157,7 @@ namespace Exercise_Tracker.Forms
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1586, 49);
+            this.menuStrip1.Size = new System.Drawing.Size(2504, 49);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -213,7 +214,7 @@ namespace Exercise_Tracker.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1586, 1587);
+            this.ClientSize = new System.Drawing.Size(2504, 1587);
             this.Controls.Add(this.comboBoxMuscleGroups);
             this.Controls.Add(this.buttonSaveEdits);
             this.Controls.Add(this.buttonAddNew);

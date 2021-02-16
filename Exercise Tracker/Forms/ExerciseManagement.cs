@@ -78,7 +78,7 @@ namespace Exercise_Tracker.Forms
             comboBoxMuscleGroups.DisplayMember = "Value";
             comboBoxMuscleGroups.ValueMember = "Key";
             comboBoxMuscleGroups.SelectedValue = Exercise.singleExerciseList[0].muscle_group_name;
-            comboBoxMuscleGroups.SelectedIndex = Convert.ToInt32(Exercise.singleExerciseList[0].muscle_group_id);
+            comboBoxMuscleGroups.SelectedIndex = Convert.ToInt32(Exercise.singleExerciseList[0].musclegroup);
 
             if (Exercise.singleExerciseList[0].active == "True")
             {
@@ -134,6 +134,7 @@ namespace Exercise_Tracker.Forms
 
             SendPatchExerciseRequest(editedExercise, exerciseId);
 
+            // TODO: Clear text boxes and other variables once the request is completed successfully
         }
 
         /// <summary>
@@ -152,9 +153,5 @@ namespace Exercise_Tracker.Forms
             // TODO: Change this to show either a generic success or error message
             MessageBox.Show(response);
         }
-
-
-
-
     } // End of class
 }

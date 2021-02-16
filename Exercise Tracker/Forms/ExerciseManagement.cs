@@ -1,4 +1,5 @@
 ﻿using Exercise_Tracker.Classes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,14 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace Exercise_Tracker.Forms
 {
     public partial class ExerciseManagement : Form
     {
+        public static Logger logger = LogManager.GetCurrentClassLogger();
+
         public ExerciseManagement()
         {
             InitializeComponent();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
             PopulateDropdownMenu();
         }
 
@@ -44,29 +50,109 @@ namespace Exercise_Tracker.Forms
             form.Show();
         }
 
-        private void buttonEditExercise_Click(object sender, EventArgs e)
-        {
-            int exerciseId = 1;
-            EditExercise form = new EditExercise(exerciseId);
-        }
-
-        private void ExerciseDropdown_Changed(object sender, EventArgs e)
+        private int GetExericseIdFromDropdown()
         {
             int exerciseId;
             try
             {
                 exerciseId = Convert.ToInt32(comboBoxExercises.SelectedValue);
-            } catch 
+            }
+            catch
             {
                 exerciseId = 0;
             }
 
+            return exerciseId;
+        }
+
+        /// <summary>
+        /// When the user wants to edit an exercise fill out the details in the form below it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonEditExercise_Click(object sender, EventArgs e)
+        {
+            int exerciseId = GetExericseIdFromDropdown();
+
+            comboBoxMuscleGroups.DataSource = new BindingSource(MuscleGroup.muscleGroupDictionary, null);
+            comboBoxMuscleGroups.DisplayMember = "Value";
+            comboBoxMuscleGroups.ValueMember = "Key";
+            comboBoxMuscleGroups.SelectedValue = Exercise.singleExerciseList[0].muscle_group_name;
+            comboBoxMuscleGroups.SelectedIndex = Convert.ToInt32(Exercise.singleExerciseList[0].muscle_group_id);
+
+            if (Exercise.singleExerciseList[0].active == "True")
+            {
+                checkBoxActive.Checked = true;
+            }
+
+            textBoxName.Text = Exercise.singleExerciseList[0].name;
+            textBoxInstructionInput.Text = Exercise.singleExerciseList[0].instruction;
+            
+        }
+
+        /// <summary>
+        /// When the user picks a new exercise from the dropdown menu, update the data in the grid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExerciseDropdown_Changed(object sender, EventArgs e)
+        {
+            int exerciseId = GetExericseIdFromDropdown();
+
             Exercise.GetSingleExercise(exerciseId);
 
-            // TODO: Debug why the exercise isn't showing up
-            dataGridViewExercises.DataSource = Exercise.singleExerciseList;
+            var count = Exercise.singleExerciseList.Count;
+
+            if (count == 0)
+            {
+
+            } else
+            {
+                dataGridViewExercises.DataSource = "";
+                dataGridViewExercises.DataSource = Exercise.singleExerciseList;
+            }
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void buttonSaveEdits_Click(object sender, EventArgs e)
+        {
+            string exerciseId = Exercise.singleExerciseList[0].exercise_id;
+            string exerciseName = textBoxName.Text;
+            string muscleGroupId = (string)comboBoxMuscleGroups.SelectedValue;
+            string exerciseInstructions = textBoxInstructionInput.Text;
+            string active = checkBoxActive.Checked.ToString();
+
+            Exercise exercise = new Exercise(exerciseId, exerciseName, muscleGroupId, exerciseInstructions, active);
+
+            string editedExercise = JsonConvert.SerializeObject(exercise);
+
+            logger.Info(editedExercise);
+
+            SendPatchExerciseRequest(editedExercise, exerciseId);
+
+        }
+
+        /// <summary>
+        /// Sending the patch request to the server for editing an exercise
+        /// </summary>
+        /// <param name="exercise"></param>
+        /// <param name="exerciseId"></param>
+        private void SendPatchExerciseRequest(string exercise, string exerciseId) {
+
+            APIRequests request = new APIRequests();
+
+            string url = $"{request.singleExercisesEndpoint}{exerciseId}";
+
+            string response = request.SendPatchRequestDataInBody(url, exercise);
+
+            // TODO: Change this to show either a generic success or error message
+            MessageBox.Show(response);
+        }
+
 
 
 

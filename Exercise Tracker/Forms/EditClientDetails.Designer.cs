@@ -48,7 +48,7 @@ namespace Exercise_Tracker.Forms
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.checkBoxActive = new System.Windows.Forms.CheckBox();
-            this.labelClientId = new System.Windows.Forms.Label();
+            this.labelExerciseId = new System.Windows.Forms.Label();
             this.labelClientIdText = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +60,7 @@ namespace Exercise_Tracker.Forms
             // buttonSaveEdits
             // 
             this.buttonSaveEdits.Location = new System.Drawing.Point(20, 306);
-            this.buttonSaveEdits.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.buttonSaveEdits.Margin = new System.Windows.Forms.Padding(1);
             this.buttonSaveEdits.Name = "buttonSaveEdits";
             this.buttonSaveEdits.Size = new System.Drawing.Size(50, 31);
             this.buttonSaveEdits.TabIndex = 1;
@@ -71,7 +71,7 @@ namespace Exercise_Tracker.Forms
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(87, 306);
-            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 31);
             this.button1.TabIndex = 2;
@@ -170,7 +170,7 @@ namespace Exercise_Tracker.Forms
             // textBoxFirstName
             // 
             this.textBoxFirstName.Location = new System.Drawing.Point(83, 55);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(180, 20);
             this.textBoxFirstName.TabIndex = 28;
@@ -178,7 +178,7 @@ namespace Exercise_Tracker.Forms
             // textBoxLastName
             // 
             this.textBoxLastName.Location = new System.Drawing.Point(83, 81);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(180, 20);
             this.textBoxLastName.TabIndex = 29;
@@ -186,7 +186,7 @@ namespace Exercise_Tracker.Forms
             // textBoxAddress
             // 
             this.textBoxAddress.Location = new System.Drawing.Point(83, 107);
-            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(180, 20);
             this.textBoxAddress.TabIndex = 30;
@@ -194,7 +194,7 @@ namespace Exercise_Tracker.Forms
             // textBoxCity
             // 
             this.textBoxCity.Location = new System.Drawing.Point(83, 133);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(180, 20);
             this.textBoxCity.TabIndex = 31;
@@ -202,7 +202,7 @@ namespace Exercise_Tracker.Forms
             // textBoxState
             // 
             this.textBoxState.Location = new System.Drawing.Point(83, 159);
-            this.textBoxState.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxState.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxState.Name = "textBoxState";
             this.textBoxState.Size = new System.Drawing.Size(180, 20);
             this.textBoxState.TabIndex = 32;
@@ -210,7 +210,7 @@ namespace Exercise_Tracker.Forms
             // textBoxZipCode
             // 
             this.textBoxZipCode.Location = new System.Drawing.Point(83, 185);
-            this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxZipCode.Name = "textBoxZipCode";
             this.textBoxZipCode.Size = new System.Drawing.Size(180, 20);
             this.textBoxZipCode.TabIndex = 33;
@@ -218,7 +218,7 @@ namespace Exercise_Tracker.Forms
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(83, 211);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(180, 20);
             this.textBoxEmail.TabIndex = 34;
@@ -226,7 +226,7 @@ namespace Exercise_Tracker.Forms
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(83, 237);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(180, 20);
             this.textBoxPhone.TabIndex = 35;
@@ -237,23 +237,23 @@ namespace Exercise_Tracker.Forms
             this.checkBoxActive.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxActive.Location = new System.Drawing.Point(35, 265);
-            this.checkBoxActive.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.checkBoxActive.Margin = new System.Windows.Forms.Padding(1);
             this.checkBoxActive.Name = "checkBoxActive";
             this.checkBoxActive.Size = new System.Drawing.Size(62, 17);
             this.checkBoxActive.TabIndex = 36;
             this.checkBoxActive.Text = "Active";
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
-            // labelClientId
+            // labelExerciseId
             // 
-            this.labelClientId.AutoSize = true;
-            this.labelClientId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientId.Location = new System.Drawing.Point(22, 33);
-            this.labelClientId.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.labelClientId.Name = "labelClientId";
-            this.labelClientId.Size = new System.Drawing.Size(60, 13);
-            this.labelClientId.TabIndex = 37;
-            this.labelClientId.Text = "Client ID:";
+            this.labelExerciseId.AutoSize = true;
+            this.labelExerciseId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExerciseId.Location = new System.Drawing.Point(22, 33);
+            this.labelExerciseId.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelExerciseId.Name = "labelExerciseId";
+            this.labelExerciseId.Size = new System.Drawing.Size(76, 13);
+            this.labelExerciseId.TabIndex = 37;
+            this.labelExerciseId.Text = "Exercise ID:";
             // 
             // labelClientIdText
             // 
@@ -288,7 +288,7 @@ namespace Exercise_Tracker.Forms
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -306,7 +306,7 @@ namespace Exercise_Tracker.Forms
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(445, 398);
             this.Controls.Add(this.labelClientIdText);
-            this.Controls.Add(this.labelClientId);
+            this.Controls.Add(this.labelExerciseId);
             this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxEmail);
@@ -328,7 +328,7 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.buttonSaveEdits);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "EditClientDetails";
             this.Text = "Edit Client";
             this.menuStrip1.ResumeLayout(false);
@@ -358,7 +358,7 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.CheckBox checkBoxActive;
-        private System.Windows.Forms.Label labelClientId;
+        private System.Windows.Forms.Label labelExerciseId;
         private System.Windows.Forms.Label labelClientIdText;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

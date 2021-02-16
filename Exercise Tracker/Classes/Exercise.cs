@@ -1,6 +1,7 @@
 ﻿using NLog;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,22 @@ namespace Exercise_Tracker.Classes
 {
     public class Exercise
     {
+        [DisplayName("ID")]
         public string exercise_id { get; set; }
+
+        [DisplayName("Name")]
         public string name { get; set; }
+
+        [DisplayName("Muscle Group")]
         public string muscle_group_name { get; set; }
-        public string muscle_group_id { get; set; }
+
+        [DisplayName("Muscle Group ID")]
+        public string musclegroup { get; set; }
+
+        [DisplayName("Instructions")]
         public string instruction { get; set; }
 
+        [DisplayName("Active?")]
         public string active { get; set; }
 
         // Used specifically for when a client does an exercise
@@ -40,7 +51,24 @@ namespace Exercise_Tracker.Classes
         {
             name = exerciseName;
             muscle_group_name = exerciseMuscleGroupName;
-            muscle_group_id = exerciseMuscleGroupId;
+            musclegroup = exerciseMuscleGroupId;
+            instruction = exerciseInstructions;
+            exercise_id = exerciseId;
+            active = exerciseActive;
+        }
+
+        /// <summary>
+        /// Constructor for editing an exising exercise
+        /// </summary>
+        /// <param name="exerciseId"></param>
+        /// <param name="exerciseName"></param>
+        /// <param name="exerciseMuscleGroupId"></param>
+        /// <param name="exerciseInstructions"></param>
+        /// <param name="exerciseActive"></param>
+        public Exercise(string exerciseId, string exerciseName, string exerciseMuscleGroupId, string exerciseInstructions, string exerciseActive)
+        {
+            name = exerciseName;
+            musclegroup = exerciseMuscleGroupId;
             instruction = exerciseInstructions;
             exercise_id = exerciseId;
             active = exerciseActive;
@@ -56,7 +84,7 @@ namespace Exercise_Tracker.Classes
         public Exercise(string exerciseName, string exerciseMuscleId, string exerciseInstructions, string exerciseActive)
         {
             name = exerciseName;
-            muscle_group_id = exerciseMuscleId;
+            musclegroup = exerciseMuscleId;
             instruction = exerciseInstructions;
             active = exerciseActive;
         }
@@ -87,7 +115,7 @@ namespace Exercise_Tracker.Classes
                 SqlCommand command = new SqlCommand(query, connection);
 
                 command.Parameters.AddWithValue("@name", this.name);
-                command.Parameters.AddWithValue("@muscleGroupId", this.muscle_group_id);
+                command.Parameters.AddWithValue("@muscleGroupId", this.musclegroup);
                 command.Parameters.AddWithValue("@instructions", this.instruction);
                 command.Parameters.AddWithValue("@active", this.active);
 
@@ -171,7 +199,7 @@ namespace Exercise_Tracker.Classes
                     // We are assuming the user picked 1 exercise
                     else if (count == 1)
                     {
-
+                        singleExerciseList.Clear();
                         singleExerciseList.Add(newExercise);
                     }
                     

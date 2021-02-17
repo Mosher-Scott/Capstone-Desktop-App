@@ -118,6 +118,7 @@
     <Compile Include="Classes\Exercise.cs" />
     <Compile Include="Classes\MuscleGroup.cs" />
     <Compile Include="Classes\TrainingSession.cs" />
+    <Compile Include="Classes\TrainingSessionExercise.cs" />
     <Compile Include="Classes\Workout.cs" />
     <Compile Include="Classes\WorkoutData.cs" />
     <Compile Include="Classes\WorkoutHistory.cs" />

@@ -29,6 +29,7 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewTrainingSession));
             this.labelExercises = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -43,14 +44,19 @@ namespace Exercise_Tracker.Forms
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dataGridViewExerciseList = new System.Windows.Forms.DataGridView();
             this.comboBoxExercises = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExerciseList)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelExercises
             // 
             this.labelExercises.AutoSize = true;
             this.labelExercises.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExercises.Location = new System.Drawing.Point(1224, 87);
+            this.labelExercises.Location = new System.Drawing.Point(36, 776);
             this.labelExercises.Name = "labelExercises";
             this.labelExercises.Size = new System.Drawing.Size(147, 32);
             this.labelExercises.TabIndex = 15;
@@ -58,21 +64,25 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(355, 915);
+            this.buttonCancel.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonCancel.Location = new System.Drawing.Point(420, 1085);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(227, 126);
             this.buttonCancel.TabIndex = 13;
             this.buttonCancel.Text = "Cancel Without Saving";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(133, 928);
+            this.buttonSave.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonSave.Location = new System.Drawing.Point(198, 1098);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(183, 101);
             this.buttonSave.TabIndex = 12;
             this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxInstructionInput
             // 
@@ -157,28 +167,69 @@ namespace Exercise_Tracker.Forms
             // dataGridViewExerciseList
             // 
             this.dataGridViewExerciseList.AllowUserToAddRows = false;
+            this.dataGridViewExerciseList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewExerciseList.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewExerciseList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExerciseList.Location = new System.Drawing.Point(1239, 194);
+            this.dataGridViewExerciseList.Location = new System.Drawing.Point(198, 836);
             this.dataGridViewExerciseList.Name = "dataGridViewExerciseList";
             this.dataGridViewExerciseList.ReadOnly = true;
             this.dataGridViewExerciseList.RowHeadersWidth = 102;
             this.dataGridViewExerciseList.RowTemplate.Height = 40;
-            this.dataGridViewExerciseList.Size = new System.Drawing.Size(1153, 496);
+            this.dataGridViewExerciseList.Size = new System.Drawing.Size(3112, 225);
             this.dataGridViewExerciseList.TabIndex = 23;
             // 
             // comboBoxExercises
             // 
             this.comboBoxExercises.FormattingEnabled = true;
-            this.comboBoxExercises.Location = new System.Drawing.Point(1386, 80);
+            this.comboBoxExercises.Location = new System.Drawing.Point(198, 769);
             this.comboBoxExercises.Name = "comboBoxExercises";
             this.comboBoxExercises.Size = new System.Drawing.Size(533, 39);
             this.comboBoxExercises.TabIndex = 24;
+            this.comboBoxExercises.SelectedIndexChanged += new System.EventHandler(this.ExerciseDropdown_Changed);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.closeFormToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(3383, 49);
+            this.menuStrip1.TabIndex = 26;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // closeFormToolStripMenuItem
+            // 
+            this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
+            this.closeFormToolStripMenuItem.Text = "Close Form";
+            this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
             // 
             // AddNewTrainingSession
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2447, 1065);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(3383, 1524);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.comboBoxExercises);
             this.Controls.Add(this.dataGridViewExerciseList);
             this.Controls.Add(this.checkBox1);
@@ -193,9 +244,12 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelSessionName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddNewTrainingSession";
             this.Text = "AddNewTrainingSession";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExerciseList)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +271,9 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DataGridView dataGridViewExerciseList;
         private System.Windows.Forms.ComboBox comboBoxExercises;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeFormToolStripMenuItem;
     }
 }

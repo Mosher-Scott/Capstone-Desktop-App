@@ -139,6 +139,8 @@ namespace Exercise_Tracker.Classes
         /// </summary>
         public static void GetExercises()
         {
+            exerciseListForDropdown.Clear();
+
             exerciseListForDropdown.Add("0", "Choose Exercise");
             APIRequests request = new APIRequests();
 
@@ -182,7 +184,7 @@ namespace Exercise_Tracker.Classes
                     string name = root[i].GetProperty("name").ToString();
                     string instruction = root[i].GetProperty("instruction").ToString();
                     string active = root[i].GetProperty("active").ToString();
-                    string muscleGroupId = root[i].GetProperty("muscle_group_id").ToString();
+                    string muscleGroupId = root[i].GetProperty("musclegroup").ToString();
                     string muscleGroupName = root[i].GetProperty("muscle_group_name").ToString();
                     //logger.Error($"{itemId}, {name}, {instruction}, {active}");
 
@@ -202,8 +204,6 @@ namespace Exercise_Tracker.Classes
                         singleExerciseList.Clear();
                         singleExerciseList.Add(newExercise);
                     }
-                    
-
                 }
             }
         }

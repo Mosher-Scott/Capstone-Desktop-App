@@ -26,7 +26,9 @@ namespace Exercise_Tracker.Classes
         public string getSpecificWorkoutHistoryItem = $"{environment}/clients/workouthistory/";
 
         public string allMuscleGroupsEndpoint = $"{environment}/musclegroups";
+
         public string allTrainingSessionsEndpoint = $"{environment}/trainingsessions";
+        public string singlegTrainingSessionEndpoint = $"{environment}/trainingsessions/";
 
         public string allExercisesEndpoint = $"{environment}/exercises";
         public string singleExercisesEndpoint = $"{environment}/exercises/";

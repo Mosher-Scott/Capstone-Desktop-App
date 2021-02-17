@@ -25,7 +25,6 @@ namespace Exercise_Tracker.Classes
 
         public static List<TrainingSession> listOfAllTrainingSessions = new List<TrainingSession>();
 
-
         public static Dictionary<string, string> trainingSessionDictionaryForDropdown = new Dictionary<string, string>();
 
 
@@ -39,8 +38,12 @@ namespace Exercise_Tracker.Classes
             this.active = active;
         }
 
+        /// <summary>
+        /// Runs the method to get all training sessions from the API endpoints
+        /// </summary>
         public static void GetAllTrainingSessions()
         {
+            trainingSessionDictionaryForDropdown.Clear();
             APIRequests request = new APIRequests();
 
             trainingSessionDictionaryForDropdown.Add("0", "Choose Training Session");
@@ -50,6 +53,10 @@ namespace Exercise_Tracker.Classes
             ParseWebResponseToAddToDictionary(response);
         }
 
+        /// <summary>
+        /// Parses the response received from the API endpoints
+        /// </summary>
+        /// <param name="response"></param>
         private static void ParseWebResponseToAddToDictionary(string response)
         {
             dynamic trainingSessions = JsonConvert.DeserializeObject(response);
@@ -77,7 +84,6 @@ namespace Exercise_Tracker.Classes
                     TrainingSession trainingSession = new TrainingSession(id, name, description, sets, reps, active);
 
                     TrainingSession.listOfAllTrainingSessions.Add(trainingSession);
-
 
                     // Add names and ID's to the dropdown list
                     TrainingSession.trainingSessionDictionaryForDropdown.Add(id, name);
@@ -121,6 +127,66 @@ namespace Exercise_Tracker.Classes
                 }
             }
             
+        }
+
+        /// <summary>
+        /// Gets information on all exercises assigned to a specific training session
+        /// </summary>
+        /// <param name="id">ID of the training session you are getting information for</param>
+        public static void GetTrainingSessionExercises(int id)
+        {
+            TrainingSessionExercise.trainingSessionExerciseList.Clear();
+
+            APIRequests request = new APIRequests();
+
+            string url = $"{request.singlegTrainingSessionEndpoint}{id}\\exercises";
+
+            string response = request.GetRequests(url);
+
+            ParseTrainingSessionExercises(response);
+        }
+
+        /// <summary>
+        /// Parses the response received from the API
+        /// </summary>
+        /// <param name="response">A string of JSON data</param>
+        public static void ParseTrainingSessionExercises(string response)
+        {
+            if (response == "")
+            {
+                // TODO: Handle this
+            }
+            else
+            {
+                dynamic trainingSessionExercises = JsonConvert.DeserializeObject(response);
+
+                logger.Info(trainingSessionExercises);
+                var count = 1;
+                try
+                {
+                    count = trainingSessionExercises.Count;
+                }
+                catch
+                {
+
+                }
+
+                if (count > 0) {
+                    foreach(var item in trainingSessionExercises)
+                    {
+                        string exerciseId = item["id"].ToString();
+                        string name = item["exercise_name"].ToString();
+                        string instruction = item["instruction"].ToString();
+                        string muscleGroupName = item["muscle_group"].ToString();
+                        //logger.Error($"{itemIdtrainingSessionExercises {name}, {instruction}, {active}");
+
+                        // Create an Exercise, and add it to the list
+                        TrainingSessionExercise newExercise = new TrainingSessionExercise(exerciseId, name, muscleGroupName, instruction);
+
+                        TrainingSessionExercise.trainingSessionExerciseList.Add(newExercise);
+                    }
+                } 
+            }
         }
 
 

@@ -153,5 +153,44 @@ namespace Exercise_Tracker.Forms
             // TODO: Change this to show either a generic success or error message
             MessageBox.Show(response);
         }
+
+        private void buttonDeleteExercise_Click(object sender, EventArgs e)
+        {
+            MarkExericiseAsInactive();
+        }
+
+        private void MarkExericiseAsInactive()
+        {
+            int exerciseId = GetExericseIdFromDropdown();
+
+            if (exerciseId == 0)
+            {
+                MessageBox.Show("Please pick an exercise from the dropdown");
+            } else
+            {
+                APIRequests request = new APIRequests();
+
+                string url = $"{request.singleExercisesEndpoint}{exerciseId}";
+
+                string response = request.SendDeleteRequestData(url);
+
+                if(response.Contains("Successfully marked the exercise inactive"))
+                {
+                    MessageBox.Show("Successfully marked the exercise inactive");
+
+                    // Now clear the table
+                    dataGridViewExercises.DataSource = "";
+
+                    // Refresh the dropdown
+                    Exercise.GetExercises();
+
+                    PopulateDropdownMenu();
+
+                } else
+                {
+                    MessageBox.Show("Sorry, couldn't mark the exercise as inactive");
+                }
+            }
+        }
     } // End of class
 }

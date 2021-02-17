@@ -29,6 +29,7 @@ namespace Exercise_Tracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddClient));
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxZipCode = new System.Windows.Forms.TextBox();
@@ -58,76 +59,75 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(86, 209);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxPhone.Location = new System.Drawing.Point(220, 513);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(180, 20);
+            this.textBoxPhone.Size = new System.Drawing.Size(473, 38);
             this.textBoxPhone.TabIndex = 56;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(86, 183);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxEmail.Location = new System.Drawing.Point(220, 451);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(180, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(473, 38);
             this.textBoxEmail.TabIndex = 55;
             // 
             // textBoxZipCode
             // 
-            this.textBoxZipCode.Location = new System.Drawing.Point(86, 157);
-            this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxZipCode.Location = new System.Drawing.Point(220, 389);
+            this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxZipCode.Name = "textBoxZipCode";
-            this.textBoxZipCode.Size = new System.Drawing.Size(180, 20);
+            this.textBoxZipCode.Size = new System.Drawing.Size(473, 38);
             this.textBoxZipCode.TabIndex = 54;
             // 
             // textBoxState
             // 
-            this.textBoxState.Location = new System.Drawing.Point(86, 131);
-            this.textBoxState.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxState.Location = new System.Drawing.Point(220, 327);
+            this.textBoxState.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxState.Name = "textBoxState";
-            this.textBoxState.Size = new System.Drawing.Size(180, 20);
+            this.textBoxState.Size = new System.Drawing.Size(473, 38);
             this.textBoxState.TabIndex = 53;
             // 
             // textBoxCity
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(86, 105);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxCity.Location = new System.Drawing.Point(220, 265);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(180, 20);
+            this.textBoxCity.Size = new System.Drawing.Size(473, 38);
             this.textBoxCity.TabIndex = 52;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(86, 79);
-            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxAddress.Location = new System.Drawing.Point(220, 203);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(180, 20);
+            this.textBoxAddress.Size = new System.Drawing.Size(473, 38);
             this.textBoxAddress.TabIndex = 51;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(86, 53);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxLastName.Location = new System.Drawing.Point(220, 141);
+            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(180, 20);
+            this.textBoxLastName.Size = new System.Drawing.Size(473, 38);
             this.textBoxLastName.TabIndex = 50;
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(86, 27);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxFirstName.Location = new System.Drawing.Point(220, 79);
+            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(180, 20);
+            this.textBoxFirstName.Size = new System.Drawing.Size(473, 38);
             this.textBoxFirstName.TabIndex = 49;
             // 
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(36, 211);
-            this.labelPhone.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelPhone.Location = new System.Drawing.Point(87, 518);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(47, 13);
+            this.labelPhone.Size = new System.Drawing.Size(112, 32);
             this.labelPhone.TabIndex = 48;
             this.labelPhone.Text = "Phone:";
             // 
@@ -135,10 +135,9 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelState.AutoSize = true;
             this.labelState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelState.Location = new System.Drawing.Point(42, 134);
-            this.labelState.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelState.Location = new System.Drawing.Point(103, 335);
             this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(41, 13);
+            this.labelState.Size = new System.Drawing.Size(96, 32);
             this.labelState.TabIndex = 47;
             this.labelState.Text = "State:";
             // 
@@ -146,10 +145,9 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(40, 187);
-            this.labelEmail.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelEmail.Location = new System.Drawing.Point(98, 461);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(41, 13);
+            this.labelEmail.Size = new System.Drawing.Size(101, 32);
             this.labelEmail.TabIndex = 46;
             this.labelEmail.Text = "Email:";
             // 
@@ -157,10 +155,9 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelZipCode.AutoSize = true;
             this.labelZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelZipCode.Location = new System.Drawing.Point(28, 160);
-            this.labelZipCode.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelZipCode.Location = new System.Drawing.Point(66, 397);
             this.labelZipCode.Name = "labelZipCode";
-            this.labelZipCode.Size = new System.Drawing.Size(57, 13);
+            this.labelZipCode.Size = new System.Drawing.Size(133, 32);
             this.labelZipCode.TabIndex = 45;
             this.labelZipCode.Text = "Zipcode:";
             // 
@@ -168,10 +165,9 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelCity.AutoSize = true;
             this.labelCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.Location = new System.Drawing.Point(50, 107);
-            this.labelCity.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelCity.Location = new System.Drawing.Point(124, 270);
             this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(32, 13);
+            this.labelCity.Size = new System.Drawing.Size(77, 32);
             this.labelCity.TabIndex = 44;
             this.labelCity.Text = "City:";
             // 
@@ -179,10 +175,9 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(27, 82);
-            this.labelAddress.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelAddress.Location = new System.Drawing.Point(63, 211);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(56, 13);
+            this.labelAddress.Size = new System.Drawing.Size(135, 32);
             this.labelAddress.TabIndex = 43;
             this.labelAddress.Text = "Address:";
             // 
@@ -190,10 +185,9 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(14, 56);
-            this.labelLastName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelLastName.Location = new System.Drawing.Point(28, 149);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(71, 13);
+            this.labelLastName.Size = new System.Drawing.Size(169, 32);
             this.labelLastName.TabIndex = 42;
             this.labelLastName.Text = "Last Name:";
             // 
@@ -201,61 +195,65 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelClientFirstName.AutoSize = true;
             this.labelClientFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientFirstName.Location = new System.Drawing.Point(13, 29);
-            this.labelClientFirstName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelClientFirstName.Location = new System.Drawing.Point(26, 84);
             this.labelClientFirstName.Name = "labelClientFirstName";
-            this.labelClientFirstName.Size = new System.Drawing.Size(71, 13);
+            this.labelClientFirstName.Size = new System.Drawing.Size(171, 32);
             this.labelClientFirstName.TabIndex = 41;
             this.labelClientFirstName.Text = "First Name:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 268);
-            this.button1.Margin = new System.Windows.Forms.Padding(1);
+            this.button1.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(220, 654);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 31);
+            this.button1.Size = new System.Drawing.Size(210, 74);
             this.button1.TabIndex = 40;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Cancel/Close";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // buttonSaveEdits
             // 
-            this.buttonSaveEdits.Location = new System.Drawing.Point(19, 268);
-            this.buttonSaveEdits.Margin = new System.Windows.Forms.Padding(1);
+            this.buttonSaveEdits.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonSaveEdits.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSaveEdits.Location = new System.Drawing.Point(42, 654);
+            this.buttonSaveEdits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSaveEdits.Name = "buttonSaveEdits";
-            this.buttonSaveEdits.Size = new System.Drawing.Size(50, 31);
+            this.buttonSaveEdits.Size = new System.Drawing.Size(133, 74);
             this.buttonSaveEdits.TabIndex = 39;
             this.buttonSaveEdits.Text = "Save";
-            this.buttonSaveEdits.UseVisualStyleBackColor = true;
+            this.buttonSaveEdits.UseVisualStyleBackColor = false;
             this.buttonSaveEdits.Click += new System.EventHandler(this.buttonSaveEdits_Click);
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(86, 236);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(1);
+            this.textBoxPassword.Location = new System.Drawing.Point(220, 578);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(180, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(473, 38);
             this.textBoxPassword.TabIndex = 59;
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(18, 239);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelPassword.Location = new System.Drawing.Point(39, 585);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(65, 13);
+            this.labelPassword.Size = new System.Drawing.Size(156, 32);
             this.labelPassword.TabIndex = 58;
             this.labelPassword.Text = "Password:";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.closeFormToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(1134, 55);
             this.menuStrip1.TabIndex = 60;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -264,28 +262,28 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 54);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // closeFormToolStripMenuItem
             // 
             this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
-            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
             this.closeFormToolStripMenuItem.Text = "Close Form";
             this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
             // 
             // AddClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1134, 861);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxPhone);
@@ -307,7 +305,9 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSaveEdits);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "AddClient";
             this.Text = "Add New Client";
             this.menuStrip1.ResumeLayout(false);

@@ -11,12 +11,11 @@ namespace Exercise_Tracker.Classes
     public class Client
     {
 
-        public static Logger logger = LogManager.GetCurrentClassLogger(); 
+        public static Logger logger = LogManager.GetCurrentClassLogger();
+        
         public string client_id { get; set; }
-
         public string firstName { get; set; }
         public string lastName { get; set; }
-
         public string active { get; set; }
         public string address { get; set; }
         public string city { get; set; }
@@ -84,10 +83,11 @@ namespace Exercise_Tracker.Classes
         }
 
         /// <summary>
-        /// Gets client information from the API
+        /// Clears clientDictionaryForDropdown, gets client information from the API
         /// </summary>
         public static void GetClients()
         {
+            clientDictionaryForDropdown.Clear();
             clientDictionaryForDropdown.Add("0", "Choose Client");
             APIRequests request = new APIRequests();
 

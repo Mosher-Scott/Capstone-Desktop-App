@@ -6,17 +6,59 @@ using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text.Json;
+using System.Collections.Generic;
 
 namespace Test_App
 {
     class Program
     {
+
+        public static List<Car> garage = new List<Car>();
+
         static void Main(string[] args)
         {
 
             //stuff();
             //testEndpoint();
-            Workouts();
+            //Workouts();
+
+            CarAssignment();
+        }
+
+        public static void CarAssignment()
+        {
+            Console.WriteLine("Adding a new car with the following attributes: Nickname - Old Faithful. Color - green, Type - suv, Maker - Jeep, Year made - 1996");
+            Car car1 = new Car("Old Faithful", "green", "suv", "Jeep", 1996);
+
+            Console.WriteLine("Congrats! You just got a new car!");
+
+            garage.Add(car1);
+            Console.WriteLine("You've added car 1 to your garage");
+
+            Car car2 = new Car("Mid Life Crisis", "red", "sports car", "Ferrari", 2005);
+
+            Console.WriteLine("Adding a new car with the following attributes: Nickname - Mid Life Crisis. Color - red, Type - sports car, Maker - Ferrari, Year made - 2005");
+
+            garage.Add(car2);
+            Console.WriteLine("You've added car 2 to your garage");
+
+            Console.WriteLine(" ");
+            Console.WriteLine("What can you do with your cars?");
+
+            Console.WriteLine(" ");
+            Console.WriteLine("Get a summary of your car");
+            car1.CarSummary();
+            car2.CarSummary();
+
+            Console.WriteLine(" ");
+            Console.WriteLine("Now use your cars!");
+            car1.MoveForward();
+            car2.MoveForward();
+            car2.Brake();
+
+            car2.Crash();
+
+
         }
 
         public static void testEndpoint()
@@ -24,7 +66,7 @@ namespace Test_App
             Console.WriteLine("Now checking endpoint");
             APIRequests token = new APIRequests();
 
-            string jsonData = token.GetWebsiteData("https://frozen-meadow-69055.herokuapp.com/clients/1/workouthistory");
+            string jsonData = token.GetRequests("https://frozen-meadow-69055.herokuapp.com/clients/1/workouthistory");
 
 
             try

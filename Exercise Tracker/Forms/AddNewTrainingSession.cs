@@ -97,5 +97,27 @@ namespace Exercise_Tracker.Forms
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Adds a new exercise to the training session list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonAddExercise_Click(object sender, EventArgs e)
+        {
+            // Clear TrainingSessionExercises.trainingSessionExerciseList
+
+            // Get exercise id from the dropdown
+
+            // Search the exercise list for those exercises
+
+            // Create a new TrainingSessionExercise
+
+            // Add new exercise to TrainingSessionExercises.trainingSessionExerciseList 
+
+            // Add training session info to training_session and get the resulting training session
+
+            // For each exercise, add it 
+        }
     }
 }

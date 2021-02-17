@@ -111,6 +111,7 @@
   <ItemGroup>
     <Compile Include="Classes\APIRequests.cs" />
     <Compile Include="Classes\AssignedTrainingSessions.cs" />
+    <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\ClientData.cs" />
     <Compile Include="Classes\ClientDataForm.cs" />
@@ -201,11 +202,17 @@
     <Compile Include="Forms\RecordWorkout.Designer.cs">
       <DependentUpon>RecordWorkout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ViewClientWorkout.cs">
+    <Compile Include="Forms\ViewClientWorkout OLD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ViewClientWorkout.Designer.cs">
-      <DependentUpon>ViewClientWorkout.cs</DependentUpon>
+    <Compile Include="Forms\ViewClientWorkout OLD.Designer.cs">
+      <DependentUpon>ViewClientWorkout OLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewWorkoutDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewWorkoutDetails.Designer.cs">
+      <DependentUpon>ViewWorkoutDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -248,8 +255,11 @@
     <EmbeddedResource Include="Forms\RecordWorkout.resx">
       <DependentUpon>RecordWorkout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ViewClientWorkout.resx">
-      <DependentUpon>ViewClientWorkout.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ViewClientWorkout OLD.resx">
+      <DependentUpon>ViewClientWorkout OLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewWorkoutDetails.resx">
+      <DependentUpon>ViewWorkoutDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

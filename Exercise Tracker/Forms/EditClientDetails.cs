@@ -91,8 +91,14 @@ namespace Exercise_Tracker.Forms
 
             string response = request.SendPatchRequestDataInBody(url, clientAsJson);
 
-            // TODO: Change this to show either a generic success or error message
-            MessageBox.Show(response);
+            if(response.Contains("Successfully modified the client"))
+            {
+                MessageBox.Show("Successfully modified the client");
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Something went wrong");
+            }
 
         }
 

@@ -48,6 +48,8 @@ namespace Exercise_Tracker.Forms
             exercises.Join();
             muscleGroups.Join();
 
+            // TODO: Add text to the form so if no clients, sessions, or anything was retrieved from the API you'd know
+
         }
 
         private void buttonViewClients_Click(object sender, EventArgs e)

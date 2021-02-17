@@ -9,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace Exercise_Tracker.Forms
 {
     public partial class ClientManagement : Form
     {
+        public static Logger logger = LogManager.GetCurrentClassLogger();
 
         public string firstName;
         public string lastName;
@@ -69,6 +71,7 @@ namespace Exercise_Tracker.Forms
 
             dataGridViewTrainingSessions.DataSource = null;
             dataGridViewWorkoutHistory.DataSource = null;
+            
 
             int id;
             try
@@ -210,6 +213,8 @@ namespace Exercise_Tracker.Forms
 
         private void buttonRefreshClient_Click(object sender, EventArgs e)
         {
+            Client.GetClients();
+            PopulateClientDropdown();
             GetClientInformation();
         }
 
@@ -217,7 +222,6 @@ namespace Exercise_Tracker.Forms
         {
             int workoutId = 0;
 
-            int clientId = GetClientIdFromDropdown();
             foreach (DataGridViewRow item in this.dataGridViewWorkoutHistory.SelectedRows)
             {
                 // TODO: Be able to select the session to remove it
@@ -226,8 +230,18 @@ namespace Exercise_Tracker.Forms
                 workoutId = Convert.ToInt32(workoutIdFromGrid);
             }
 
-            ViewClientWorkout form = new ViewClientWorkout(clientId, workoutId);
-            form.Show();
+            //ViewClientWorkout form = new ViewClientWorkout(workoutId);
+            //form.Show();
+
+            if (workoutId == 0)
+            {
+                MessageBox.Show("Please select an entire row to view the workout");
+            } else
+            {
+                ViewWorkoutDetails form2 = new ViewWorkoutDetails(workoutId);
+                form2.Show();
+            }
+
         }
 
         private void buttonModifyAssignedSessions_Click(object sender, EventArgs e)
@@ -254,5 +268,45 @@ namespace Exercise_Tracker.Forms
             this.Close();
         }
 
+        private void buttonDeleteWorkout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This will remove the workout from your history, and it cannot be recovered.");
+
+            int workoutId = 0;
+
+            foreach (DataGridViewRow item in this.dataGridViewWorkoutHistory.SelectedRows)
+            {
+                // TODO: Be able to select the session to remove it
+                string workoutIdFromGrid = Convert.ToString(item.Cells[0].Value);
+
+                workoutId = Convert.ToInt32(workoutIdFromGrid);
+            }
+
+            if(workoutId == 0)
+            {
+                MessageBox.Show("Please select an entire row");
+            } else
+            {
+                APIRequests request = new APIRequests();
+
+                string url = $"{request.getSpecificWorkoutHistoryItem}{workoutId}";
+
+                logger.Info(url);
+
+                string response = request.SendDeleteRequestData(url);
+
+                if (response.Contains("Successfully removed workout from client"))
+                {
+                    MessageBox.Show("Successfully removed workout from client");
+
+                    GetClientInformation();
+                } else
+                {
+                    MessageBox.Show("Something went wrong and workout not removed");
+                }
+
+            }
+
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace Exercise_Tracker.Forms
 
         public static Logger logger = LogManager.GetCurrentClassLogger();
 
-        public ViewClientWorkout(int clientId, int workoutId)
+        public ViewClientWorkout(int workoutId)
         {
             InitializeComponent();
 

@@ -39,6 +39,8 @@ namespace Exercise_Tracker.Classes
 
         public static List<Exercise> singleExerciseList = new List<Exercise>();
 
+        public static List<Exercise> exercisesForTrainingSession = new List<Exercise>();
+
         public static Logger logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>

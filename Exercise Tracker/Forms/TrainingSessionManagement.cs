@@ -81,7 +81,7 @@ namespace Exercise_Tracker.Forms
 
         private void buttonAddNewSession_Click(object sender, EventArgs e)
         {
-            AddNewTrainingSession form = new AddNewTrainingSession();
+            NewTrainingSession form = new NewTrainingSession();
 
             form.Show();
         }
@@ -99,6 +99,27 @@ namespace Exercise_Tracker.Forms
         private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonEditSession_Click(object sender, EventArgs e)
+        {
+            string sessionId = textBoxSessionId.Text;
+
+            if (sessionId != null || sessionId != "" || sessionId != "0")
+            {
+                string name = textBoxSessionName.Text;
+                string description = textBoxSessionDescription.Text;
+                string sets = textBoxSets.Text;
+                string reps = textBoxReps.Text;
+                bool active = checkBoxSessionActive.Checked;
+
+                ModifyTrainingSession form = new ModifyTrainingSession(sessionId, name, description, sets, reps, active);
+
+                form.Show();
+            }
+
+            
+
         }
     } // End of class
 }

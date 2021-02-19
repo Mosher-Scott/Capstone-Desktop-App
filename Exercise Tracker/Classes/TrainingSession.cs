@@ -39,6 +39,23 @@ namespace Exercise_Tracker.Classes
         }
 
         /// <summary>
+        /// For creating a new training session
+        /// </summary>
+        /// <param name="name">Name of the session</param>
+        /// <param name="description">Description of the training session</param>
+        /// <param name="sets">Number of sets to perform</param>
+        /// <param name="reps">Number of reps to perform</param>
+        /// <param name="active">Whether the session is active or not</param>
+        public TrainingSession(string name, string description, string sets, string reps, string active)
+        {
+            sessionName = name;
+            sessionDescription = description;
+            sessionSets = sets;
+            sessionReps = reps;
+            this.active = active;
+        }
+
+        /// <summary>
         /// Runs the method to get all training sessions from the API endpoints
         /// </summary>
         public static void GetAllTrainingSessions()

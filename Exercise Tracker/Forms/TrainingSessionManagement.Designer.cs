@@ -122,6 +122,7 @@ namespace Exercise_Tracker.Forms
             this.buttonEditSession.TabIndex = 11;
             this.buttonEditSession.Text = "Edit";
             this.buttonEditSession.UseVisualStyleBackColor = false;
+            this.buttonEditSession.Click += new System.EventHandler(this.buttonEditSession_Click);
             // 
             // menuStrip1
             // 
@@ -133,7 +134,7 @@ namespace Exercise_Tracker.Forms
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(3402, 52);
+            this.menuStrip1.Size = new System.Drawing.Size(3402, 49);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -142,21 +143,21 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
             this.fileToolStripMenuItem.Text = "File";
             this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 54);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // closeFormToolStripMenuItem
             // 
             this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
-            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 48);
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
             this.closeFormToolStripMenuItem.Text = "Close Form";
             this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
             // 
@@ -290,7 +291,7 @@ namespace Exercise_Tracker.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(2953, 1703);
+            this.ClientSize = new System.Drawing.Size(2953, 1746);
             this.Controls.Add(this.groupBoxSessionInfo);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.buttonEditSession);

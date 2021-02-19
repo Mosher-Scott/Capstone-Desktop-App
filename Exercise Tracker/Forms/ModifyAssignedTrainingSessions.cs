@@ -133,16 +133,11 @@ namespace Exercise_Tracker.Forms
                 {
                     TrainingSession.listOfTrainingSessions.Add(TrainingSession.listOfAllTrainingSessions[i]);
                 }
-                    
             }
-
 
             dataGridViewTrainingSessions.DataSource = null;
 
-            //TrainingSession.listOfAllTrainingSessions.Sort();
-
             dataGridViewTrainingSessions.DataSource = TrainingSession.listOfTrainingSessions;
-
         }
 
         /// <summary>

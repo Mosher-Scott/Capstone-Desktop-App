@@ -118,6 +118,7 @@
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Exercise.cs" />
     <Compile Include="Classes\MuscleGroup.cs" />
+    <Compile Include="Classes\NewTrainingSessionExercise.cs" />
     <Compile Include="Classes\TrainingSession.cs" />
     <Compile Include="Classes\TrainingSessionExercise.cs" />
     <Compile Include="Classes\Workout.cs" />
@@ -130,11 +131,11 @@
     <Compile Include="Forms\AddClient.Designer.cs">
       <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddNewTrainingSession.cs">
+    <Compile Include="Forms\AddNewTrainingSession OLD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddNewTrainingSession.Designer.cs">
-      <DependentUpon>AddNewTrainingSession.cs</DependentUpon>
+    <Compile Include="Forms\AddNewTrainingSession OLD.Designer.cs">
+      <DependentUpon>AddNewTrainingSession OLD.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClientManagement.cs">
       <SubType>Form</SubType>
@@ -160,12 +161,6 @@
     <Compile Include="Forms\EditClientDetails.Designer.cs">
       <DependentUpon>EditClientDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ExerciseManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ExerciseManagement.Designer.cs">
-      <DependentUpon>ExerciseManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +172,24 @@
     </Compile>
     <Compile Include="Forms\ModifyAssignedTrainingSessions.Designer.cs">
       <DependentUpon>ModifyAssignedTrainingSessions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExerciseManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExerciseManagement.designer.cs">
+      <DependentUpon>ExerciseManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyTrainingSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyTrainingSession.Designer.cs">
+      <DependentUpon>ModifyTrainingSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewTrainingSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewTrainingSession.Designer.cs">
+      <DependentUpon>NewTrainingSession.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\test.cs">
       <SubType>Form</SubType>
@@ -219,8 +232,8 @@
     <EmbeddedResource Include="Forms\AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddNewTrainingSession.resx">
-      <DependentUpon>AddNewTrainingSession.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddNewTrainingSession OLD.resx">
+      <DependentUpon>AddNewTrainingSession OLD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientManagement.resx">
       <DependentUpon>ClientManagement.cs</DependentUpon>
@@ -234,14 +247,20 @@
     <EmbeddedResource Include="Forms\EditClientDetails.resx">
       <DependentUpon>EditClientDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ExerciseManagement.resx">
-      <DependentUpon>ExerciseManagement.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModifyAssignedTrainingSessions.resx">
       <DependentUpon>ModifyAssignedTrainingSessions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExerciseManagement.resx">
+      <DependentUpon>ExerciseManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyTrainingSession.resx">
+      <DependentUpon>ModifyTrainingSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewTrainingSession.resx">
+      <DependentUpon>NewTrainingSession.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\test.resx">
       <DependentUpon>test.cs</DependentUpon>

@@ -33,7 +33,7 @@ namespace Exercise_Tracker.Forms
             this.labelExercises = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.textBoxInstructionInput = new System.Windows.Forms.TextBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelSessionName = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@ namespace Exercise_Tracker.Forms
             this.labelTrainingSessionSets = new System.Windows.Forms.Label();
             this.textBoxTrainingSessionReps = new System.Windows.Forms.TextBox();
             this.labelTrainingSessionReps = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxActive = new System.Windows.Forms.CheckBox();
             this.dataGridViewExerciseList = new System.Windows.Forms.DataGridView();
             this.comboBoxExercises = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -70,7 +70,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Location = new System.Drawing.Point(423, 1260);
+            this.buttonCancel.Location = new System.Drawing.Point(434, 1124);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(374, 101);
             this.buttonCancel.TabIndex = 13;
@@ -82,7 +82,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.buttonSave.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.Location = new System.Drawing.Point(200, 1260);
+            this.buttonSave.Location = new System.Drawing.Point(211, 1124);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(194, 101);
             this.buttonSave.TabIndex = 12;
@@ -90,13 +90,13 @@ namespace Exercise_Tracker.Forms
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // textBoxInstructionInput
+            // textBoxDescription
             // 
-            this.textBoxInstructionInput.Location = new System.Drawing.Point(220, 366);
-            this.textBoxInstructionInput.Multiline = true;
-            this.textBoxInstructionInput.Name = "textBoxInstructionInput";
-            this.textBoxInstructionInput.Size = new System.Drawing.Size(976, 365);
-            this.textBoxInstructionInput.TabIndex = 11;
+            this.textBoxDescription.Location = new System.Drawing.Point(220, 366);
+            this.textBoxDescription.Multiline = true;
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(976, 365);
+            this.textBoxDescription.TabIndex = 11;
             // 
             // labelDescription
             // 
@@ -158,19 +158,18 @@ namespace Exercise_Tracker.Forms
             this.labelTrainingSessionReps.TabIndex = 16;
             this.labelTrainingSessionReps.Text = "Reps";
             // 
-            // checkBox1
+            // checkBoxActive
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(122, 306);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(137, 36);
-            this.checkBox1.TabIndex = 22;
-            this.checkBox1.Text = "Active";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxActive.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxActive.Checked = true;
+            this.checkBoxActive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxActive.Location = new System.Drawing.Point(122, 306);
+            this.checkBoxActive.Name = "checkBoxActive";
+            this.checkBoxActive.Size = new System.Drawing.Size(137, 36);
+            this.checkBoxActive.TabIndex = 22;
+            this.checkBoxActive.Text = "Active";
+            this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
             // dataGridViewExerciseList
             // 
@@ -183,7 +182,7 @@ namespace Exercise_Tracker.Forms
             this.dataGridViewExerciseList.ReadOnly = true;
             this.dataGridViewExerciseList.RowHeadersWidth = 102;
             this.dataGridViewExerciseList.RowTemplate.Height = 40;
-            this.dataGridViewExerciseList.Size = new System.Drawing.Size(3306, 363);
+            this.dataGridViewExerciseList.Size = new System.Drawing.Size(3306, 218);
             this.dataGridViewExerciseList.TabIndex = 23;
             // 
             // comboBoxExercises
@@ -205,7 +204,7 @@ namespace Exercise_Tracker.Forms
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(3594, 49);
+            this.menuStrip1.Size = new System.Drawing.Size(3594, 60);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -214,7 +213,7 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 56);
             this.fileToolStripMenuItem.Text = "File";
             this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
@@ -228,7 +227,7 @@ namespace Exercise_Tracker.Forms
             // closeFormToolStripMenuItem
             // 
             this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
-            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 56);
             this.closeFormToolStripMenuItem.Text = "Close Form";
             this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
             // 
@@ -279,7 +278,7 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.comboBoxExercises);
             this.Controls.Add(this.dataGridViewExerciseList);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.textBoxTrainingSessionSets);
             this.Controls.Add(this.labelTrainingSessionSets);
             this.Controls.Add(this.textBoxTrainingSessionReps);
@@ -287,12 +286,13 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.labelExercises);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.textBoxInstructionInput);
+            this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelSessionName);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(3626, 1612);
             this.Name = "AddNewTrainingSession";
             this.Text = "New Training Session";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExerciseList)).EndInit();
@@ -309,7 +309,7 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Label labelExercises;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.TextBox textBoxInstructionInput;
+        private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelSessionName;
@@ -317,7 +317,7 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Label labelTrainingSessionSets;
         private System.Windows.Forms.TextBox textBoxTrainingSessionReps;
         private System.Windows.Forms.Label labelTrainingSessionReps;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxActive;
         private System.Windows.Forms.DataGridView dataGridViewExerciseList;
         private System.Windows.Forms.ComboBox comboBoxExercises;
         private System.Windows.Forms.MenuStrip menuStrip1;

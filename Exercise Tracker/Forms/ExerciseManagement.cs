@@ -192,5 +192,15 @@ namespace Exercise_Tracker.Forms
                 }
             }
         }
+
+        private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     } // End of class
 }

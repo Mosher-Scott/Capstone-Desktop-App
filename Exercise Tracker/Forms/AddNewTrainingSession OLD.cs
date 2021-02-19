@@ -1,4 +1,5 @@
 ﻿using Exercise_Tracker.Classes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace Exercise_Tracker.Forms
 {
     public partial class AddNewTrainingSession : Form
     {
+
+        public static Logger logger = LogManager.GetCurrentClassLogger();
+
         public AddNewTrainingSession()
         {
             InitializeComponent();
@@ -91,6 +96,43 @@ namespace Exercise_Tracker.Forms
         private void buttonSave_Click(object sender, EventArgs e)
         {
             // TODO: This
+
+            // Save user entered values as a new trainingSession
+            string name = textBoxName.Text;
+            string description = textBoxDescription.Text;
+            string sets = textBoxTrainingSessionSets.Text;
+            string reps = textBoxTrainingSessionReps.Text;
+            string active = checkBoxActive.Checked.ToString();
+
+            TrainingSession newSession = new TrainingSession(name, description, sets, reps, active);
+
+            // Convert the object to JSON
+            string jsonSession = JsonConvert.SerializeObject(newSession);
+
+            logger.Info(jsonSession);
+            // Insert it into the database
+            string sessionId = AddTrainingSessionTodatabase(jsonSession);
+
+            MessageBox.Show(sessionId);
+
+            // Get the ID back from the tool
+            // Returning JSON should contain trainingSessionId: VALUE
+
+            // For each exercise in trainingsesisonexercise
+            // Get exercise id and trainingsession ID
+            // Sent POST request to api endpoint
+            // Handle response for each request 
+        }
+
+        private string AddTrainingSessionTodatabase(string session)
+        {
+            APIRequests request = new APIRequests();
+
+            string url = request.singleClientDetailEndpoint;
+
+            string response = request.SendPOSTRequestDataInBody(url, session);
+
+            return response;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -115,9 +157,7 @@ namespace Exercise_Tracker.Forms
 
             // Add new exercise to TrainingSessionExercises.trainingSessionExerciseList 
 
-            // Add training session info to training_session and get the resulting training session
-
-            // For each exercise, add it 
+            // Refresh the datagridview each time an exercise is added
         }
     }
 }

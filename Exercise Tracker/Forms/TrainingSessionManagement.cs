@@ -113,13 +113,19 @@ namespace Exercise_Tracker.Forms
                 string reps = textBoxReps.Text;
                 bool active = checkBoxSessionActive.Checked;
 
+
                 ModifyTrainingSession form = new ModifyTrainingSession(sessionId, name, description, sets, reps, active);
 
+                form.FormClosing += new FormClosingEventHandler(ChildFormClosing);
                 form.Show();
+
             }
+        }
 
-            
-
+        // After you modify the training session, do stuff
+        private void ChildFormClosing(object sender, FormClosingEventArgs e)
+        {
+            GetSessionInformation();
         }
     } // End of class
 }

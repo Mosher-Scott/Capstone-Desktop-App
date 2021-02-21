@@ -18,9 +18,6 @@ namespace Exercise_Tracker.Forms
         {
             InitializeComponent();
 
-            // For testing
-            //Workout.GetWorkoutHistoryForClient(1);
-
             Thread muscleGroups = new Thread(() => MuscleGroup.GetMusclegroups());
             Thread exercises = new Thread(() => Exercise.GetExercises());
             Thread clients = new Thread(() => Client.GetClients());

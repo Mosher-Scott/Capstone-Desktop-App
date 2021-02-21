@@ -167,10 +167,6 @@ namespace Exercise_Tracker.Classes
                 var doc = JsonDocument.Parse(response);
                 JsonElement root = doc.RootElement;
 
-                // var groups = root.EnumerateArray();
-
-                //var u1 = root[0];
-                //var u2 = root[1];
                 var count = 0;
                 try
                 {

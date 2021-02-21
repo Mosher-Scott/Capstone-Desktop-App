@@ -232,6 +232,7 @@ namespace Exercise_Tracker.Forms
             this.buttonSave.TabIndex = 34;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxDescription
             // 

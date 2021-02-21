@@ -140,7 +140,7 @@ namespace Exercise_Tracker.Forms
                 {
                     string exerciseId = exercise.exercise_id;
 
-                    string url = $"{request.singlegTrainingSessionEndpoint}{newSessionId}/{exerciseId}";
+                    string url = $"{request.singleTrainingSessionEndpoint}{newSessionId}/{exerciseId}";
                     logger.Info("Exercise ID: " + exerciseId);
 
                    string exerciseResponse = request.SendPostRequestData(url);

@@ -26,12 +26,12 @@ namespace Exercise_Tracker.Forms
         int trainingSessionid;
 
         /// <summary>
-        /// exerciseId, sessionId
+        /// Key: exerciseId, Value: sessionId
         /// </summary>
         public Dictionary<int, int> exercisesToAdd = new Dictionary<int, int>();
 
         /// <summary>
-        /// exerciseId, sessionId
+        /// Key: exerciseId, Value: sessionId
         /// </summary>
         public Dictionary<int, int> exercisesToremove = new Dictionary<int, int>();
 
@@ -52,8 +52,11 @@ namespace Exercise_Tracker.Forms
             checkBoxActive.Checked = active;
 
             SetOriginalExercisesList();
+            exercisesToremove.Clear();
+            exercisesToremove.Clear();
 
             dataGridViewAssignedExercises.DataSource = TrainingSessionExercise.trainingSessionExerciseList;
+            dataGridViewExerciseList.DataSource = "";
         }
 
         /// <summary>
@@ -159,30 +162,80 @@ namespace Exercise_Tracker.Forms
         /// <param name="e"></param>
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            string id = textBoxSessionId.Text;
             string name = textBoxName.Text;
             string description = textBoxDescription.Text;
             string sets = textBoxTrainingSessionSets.Text;
             string reps = textBoxTrainingSessionReps.Text;
             string active = checkBoxActive.Checked.ToString();
 
-            TrainingSession newSession = new TrainingSession(name, description, sets, reps, active);
+            TrainingSession newSession = new TrainingSession(id, name, description, sets, reps, active);
 
             // Convert the object to JSON
             string jsonSession = JsonConvert.SerializeObject(newSession);
 
+            logger.Debug(jsonSession);
+
             //TODO: Finish up modifying the training session.  Make sure the methods are created first
-            // Run patch method on the training session
-            //var response = (jsonSession);
+            APIRequests request = new APIRequests();
 
-            // Check for new exercises
+            string url = $"{request.singleTrainingSessionEndpoint}{id}";
 
-            // Foreach, send patch request
+            logger.Debug(url);
 
-            // Check for removed exericses
+            // Patch the training session
+            // var response = request.SendPatchRequestDataInBody(url, jsonSession); // Removed for troubleshooting
+            var response = "Successfully";
+            
+            // Check the resulting json for results
+            if (response.Contains("Successfully"))
+            {
+                // Check for new exercises to be added to the training session
 
-            // Foreach, send delete request
+                CheckForNewSessions();
+                // Foreach, send patch request
+                foreach(var exercise in exercisesToAdd)
+                {
+                    url = $"{request.singleTrainingSessionEndpoint}{exercise.Value}/exercise/{exercise.Key}";
+
+                    var exerciseResponse = request.SendPostRequestData(url);
+
+                    if(exerciseResponse.Contains("error"))
+                    {
+                        MessageBox.Show(exerciseResponse);
+                        logger.Error(exerciseResponse);
+                    }
+  
+                }
+
+                // Check for removed exericeses
+                CheckForDeletedSessions();
+                foreach(var exercise in exercisesToremove)
+                {
+                    url = $"{request.singleTrainingSessionEndpoint}{exercise.Value}/exercise/{exercise.Key}";
+                    
+                    var exerciseResponse = request.SendDeleteRequestData(url);
+
+                    if (exerciseResponse.Contains("error"))
+                    {
+                        MessageBox.Show(exerciseResponse);
+                        logger.Error(exerciseResponse);
+                    }
+                }
+
+                MessageBox.Show("Completed modifying the training session");
+
+                this.Close();
+            } // End of if statement
+            else
+            {
+                MessageBox.Show("Couldn't modify the training session");
+            }
+  
 
             
+
+
 
         }
 
@@ -239,7 +292,7 @@ namespace Exercise_Tracker.Forms
                     string originalExerciseId = originalExercises[j].id;
 
                     // If it exists in current list and the new list, don't do anything
-                    if (TrainingSession.listOfTrainingSessions[i].sessionId == originalExercises[j].id)
+                    if (TrainingSessionExercise.trainingSessionExerciseList[i].id == originalExercises[j].id)
                     {
                         newSessionAdded = false;
                         continue;

@@ -28,7 +28,7 @@ namespace Exercise_Tracker.Classes
         public string allMuscleGroupsEndpoint = $"{environment}/musclegroups";
 
         public string allTrainingSessionsEndpoint = $"{environment}/trainingsessions";
-        public string singlegTrainingSessionEndpoint = $"{environment}/trainingsessions/";
+        public string singleTrainingSessionEndpoint = $"{environment}/trainingsessions/";
 
         public string allExercisesEndpoint = $"{environment}/exercises";
         public string singleExercisesEndpoint = $"{environment}/exercises/";

@@ -156,7 +156,7 @@ namespace Exercise_Tracker.Classes
 
             APIRequests request = new APIRequests();
 
-            string url = $"{request.singlegTrainingSessionEndpoint}{id}\\exercises";
+            string url = $"{request.singleTrainingSessionEndpoint}{id}\\exercises";
 
             string response = request.GetRequests(url);
 
@@ -177,7 +177,7 @@ namespace Exercise_Tracker.Classes
             {
                 dynamic trainingSessionExercises = JsonConvert.DeserializeObject(response);
 
-                logger.Info(trainingSessionExercises);
+               //  logger.Info(trainingSessionExercises);
                 var count = 1;
                 try
                 {

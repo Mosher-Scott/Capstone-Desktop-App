@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -16,11 +17,25 @@ namespace Exercise_Tracker.Classes
         public static Logger logger = LogManager.GetCurrentClassLogger();
 
         [JsonProperty("id")]
+        [DisplayName("ID")]
         public int id {get; set;}
+
+        [DisplayName("Name")]
         public string muscle_group_details { get; set; }
 
         public static  Dictionary<string, string> muscleGroupDictionary = new Dictionary<string, string>();
+        public static List<MuscleGroup> muscleGroupList = new List<MuscleGroup>();
+        
+        public MuscleGroup()
+        {
 
+        }
+
+        public MuscleGroup(int musclegroupid, string name)
+        {
+            id = musclegroupid;
+            muscle_group_details = name;
+        }
 
         public void SetItem(int idFromJson, string nameFromJson)
         {
@@ -33,6 +48,7 @@ namespace Exercise_Tracker.Classes
         /// </summary>
         public static void GetMusclegroups()
         {
+            muscleGroupDictionary.Clear();
             muscleGroupDictionary.Add("0", "Choose Muscle Group");
             APIRequests request = new APIRequests();
 
@@ -68,7 +84,10 @@ namespace Exercise_Tracker.Classes
                     string itemId = root[i].GetProperty("id").ToString();
                     string name = root[i].GetProperty("muscle_group_details").ToString();
 
+                    MuscleGroup muscleGroup = new MuscleGroup();
+                    muscleGroup.SetItem(Convert.ToInt32(itemId), name);
                     muscleGroupDictionary.Add(itemId, name);
+                    muscleGroupList.Add(muscleGroup);
                 }
             }
             

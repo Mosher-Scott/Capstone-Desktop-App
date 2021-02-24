@@ -184,8 +184,8 @@ namespace Exercise_Tracker.Forms
             logger.Debug(url);
 
             // Patch the training session
-            // var response = request.SendPatchRequestDataInBody(url, jsonSession); // Removed for troubleshooting
-            var response = "Successfully";
+            var response = request.SendPatchRequestDataInBody(url, jsonSession); // Removed for troubleshooting
+            //var response = "Successfully";
             
             // Check the resulting json for results
             if (response.Contains("Successfully"))
@@ -193,35 +193,45 @@ namespace Exercise_Tracker.Forms
                 // Check for new exercises to be added to the training session
 
                 CheckForNewSessions();
-                // Foreach, send patch request
-                foreach(var exercise in exercisesToAdd)
+
+                if(exercisesToAdd.Count != 0)
                 {
-                    url = $"{request.singleTrainingSessionEndpoint}{exercise.Value}/exercise/{exercise.Key}";
-
-                    var exerciseResponse = request.SendPostRequestData(url);
-
-                    if(exerciseResponse.Contains("error"))
+                    // Foreach, send patch request
+                    foreach (var exercise in exercisesToAdd)
                     {
-                        MessageBox.Show(exerciseResponse);
-                        logger.Error(exerciseResponse);
+                        url = $"{request.singleTrainingSessionEndpoint}{exercise.Value}/exercise/{exercise.Key}";
+
+                        var exerciseResponse = request.SendPostRequestData(url);
+
+                        if (exerciseResponse.Contains("error"))
+                        {
+                            MessageBox.Show(exerciseResponse);
+                            logger.Error(exerciseResponse);
+                        }
+
                     }
-  
                 }
+               
 
                 // Check for removed exericeses
                 CheckForDeletedSessions();
-                foreach(var exercise in exercisesToremove)
-                {
-                    url = $"{request.singleTrainingSessionEndpoint}{exercise.Value}/exercise/{exercise.Key}";
-                    
-                    var exerciseResponse = request.SendDeleteRequestData(url);
 
-                    if (exerciseResponse.Contains("error"))
+                if(exercisesToremove.Count != 0)
+                {
+                    foreach (var exercise in exercisesToremove)
                     {
-                        MessageBox.Show(exerciseResponse);
-                        logger.Error(exerciseResponse);
+                        url = $"{request.singleTrainingSessionEndpoint}{exercise.Value}/exercise/{exercise.Key}";
+
+                        var exerciseResponse = request.SendDeleteRequestData(url);
+
+                        if (exerciseResponse.Contains("error"))
+                        {
+                            MessageBox.Show(exerciseResponse);
+                            logger.Error(exerciseResponse);
+                        }
                     }
                 }
+                
 
                 MessageBox.Show("Completed modifying the training session");
 

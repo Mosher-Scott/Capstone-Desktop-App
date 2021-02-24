@@ -15,7 +15,7 @@ namespace Exercise_Tracker.Classes
         public static Logger logger = LogManager.GetCurrentClassLogger();
         public SecureToken savedToken;
 
-        private static string devEnvironment = "http://localhost:80";
+        private static string devEnvironment = "http://localhost:90";
         private static string liveEnvironment = "https://frozen-meadow-69055.herokuapp.com";
 
         private static string environment = devEnvironment;
@@ -43,6 +43,14 @@ namespace Exercise_Tracker.Classes
         /// </summary>
         public void GetAuthToken()
         {
+            // If there is already a token, don't worry about it
+            if (environment == devEnvironment)
+            {
+                SecureToken fakeToken = new SecureToken();
+                savedToken = fakeToken;
+                savedToken.access_Token = "a Fake Token";
+                return;
+            }
 
             var clientId = ConfigurationManager.AppSettings.Get("apiClientId");
             var clientSecret = ConfigurationManager.AppSettings.Get("apiClientSecret");
@@ -82,10 +90,10 @@ namespace Exercise_Tracker.Classes
         {
             GetAuthToken();
 
-            if(savedToken.access_Token == null)
-            {
-                return "([{data: \"Could not get auth token\"}])";
-            }
+            //if(savedToken == null)
+            //{
+            //    return "([{data: \"Could not get auth token\"}])";
+            //}
 
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
@@ -184,10 +192,6 @@ namespace Exercise_Tracker.Classes
             IRestResponse response = client.Execute(request);
 
             return response.Content;
-
-
-
-
         }
 
     } // end of class
@@ -199,7 +203,6 @@ namespace Exercise_Tracker.Classes
     {
         public string access_Token { get; set; }
         public int expires_in { get; set; }
-
         public string token_type { get; set; }
     }
 }

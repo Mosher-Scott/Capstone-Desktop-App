@@ -40,6 +40,8 @@ namespace Exercise_Tracker.Forms
             buttonExerciseManagement.Enabled = true;
             buttonSessionManagement.Enabled = true;
             buttonSessionManagement.BackColor = Color.Bisque;
+            buttonMuscleGroup.Enabled = true;
+            buttonMuscleGroup.BackColor = Color.Bisque;
 
 
             exercises.Join();
@@ -82,6 +84,13 @@ namespace Exercise_Tracker.Forms
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonMuscleGroup_Click(object sender, EventArgs e)
+        {
+            MuscleGroupManagement form = new MuscleGroupManagement();
+
+            form.Show();
         }
     }
 }

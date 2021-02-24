@@ -37,6 +37,7 @@ namespace Exercise_Tracker.Forms
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonMuscleGroup = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,12 +127,28 @@ namespace Exercise_Tracker.Forms
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // buttonMuscleGroup
+            // 
+            this.buttonMuscleGroup.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonMuscleGroup.Enabled = false;
+            this.buttonMuscleGroup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMuscleGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonMuscleGroup.Location = new System.Drawing.Point(56, 578);
+            this.buttonMuscleGroup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonMuscleGroup.Name = "buttonMuscleGroup";
+            this.buttonMuscleGroup.Size = new System.Drawing.Size(213, 134);
+            this.buttonMuscleGroup.TabIndex = 6;
+            this.buttonMuscleGroup.Text = "Muscle Group Management";
+            this.buttonMuscleGroup.UseVisualStyleBackColor = false;
+            this.buttonMuscleGroup.Click += new System.EventHandler(this.buttonMuscleGroup_Click);
+            // 
             // FormStartingMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1259, 694);
+            this.ClientSize = new System.Drawing.Size(1259, 751);
+            this.Controls.Add(this.buttonMuscleGroup);
             this.Controls.Add(this.buttonClientManagement);
             this.Controls.Add(this.buttonSessionManagement);
             this.Controls.Add(this.buttonExerciseManagement);
@@ -158,5 +175,6 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button buttonMuscleGroup;
     }
 }

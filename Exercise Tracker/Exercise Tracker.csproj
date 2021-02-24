@@ -185,6 +185,12 @@
     <Compile Include="Forms\ModifyTrainingSession.Designer.cs">
       <DependentUpon>ModifyTrainingSession.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MuscleGroupManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MuscleGroupManagement.Designer.cs">
+      <DependentUpon>MuscleGroupManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewTrainingSession.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModifyTrainingSession.resx">
       <DependentUpon>ModifyTrainingSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MuscleGroupManagement.resx">
+      <DependentUpon>MuscleGroupManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewTrainingSession.resx">
       <DependentUpon>NewTrainingSession.cs</DependentUpon>

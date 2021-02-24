@@ -34,7 +34,6 @@ namespace Exercise_Tracker.Forms
             this.comboBoxTrainingSessions = new System.Windows.Forms.ComboBox();
             this.labelTrainingSessionBox = new System.Windows.Forms.Label();
             this.buttonAddNewSession = new System.Windows.Forms.Button();
-            this.buttonEditSession = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +50,8 @@ namespace Exercise_Tracker.Forms
             this.labelSessionReps = new System.Windows.Forms.Label();
             this.checkBoxSessionActive = new System.Windows.Forms.CheckBox();
             this.groupBoxSessionInfo = new System.Windows.Forms.GroupBox();
+            this.buttonEditSession = new System.Windows.Forms.Button();
+            this.buttonRefreshPage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrainingSessionData)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBoxSessionInfo.SuspendLayout();
@@ -104,25 +105,13 @@ namespace Exercise_Tracker.Forms
             // 
             this.buttonAddNewSession.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonAddNewSession.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddNewSession.Location = new System.Drawing.Point(682, 127);
+            this.buttonAddNewSession.Location = new System.Drawing.Point(843, 127);
             this.buttonAddNewSession.Name = "buttonAddNewSession";
             this.buttonAddNewSession.Size = new System.Drawing.Size(165, 81);
             this.buttonAddNewSession.TabIndex = 10;
             this.buttonAddNewSession.Text = "Add New";
             this.buttonAddNewSession.UseVisualStyleBackColor = false;
             this.buttonAddNewSession.Click += new System.EventHandler(this.buttonAddNewSession_Click);
-            // 
-            // buttonEditSession
-            // 
-            this.buttonEditSession.BackColor = System.Drawing.Color.YellowGreen;
-            this.buttonEditSession.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEditSession.Location = new System.Drawing.Point(477, 127);
-            this.buttonEditSession.Name = "buttonEditSession";
-            this.buttonEditSession.Size = new System.Drawing.Size(165, 81);
-            this.buttonEditSession.TabIndex = 11;
-            this.buttonEditSession.Text = "Edit";
-            this.buttonEditSession.UseVisualStyleBackColor = false;
-            this.buttonEditSession.Click += new System.EventHandler(this.buttonEditSession_Click);
             // 
             // menuStrip1
             // 
@@ -285,6 +274,30 @@ namespace Exercise_Tracker.Forms
             this.groupBoxSessionInfo.TabStop = false;
             this.groupBoxSessionInfo.Text = "Session Information";
             // 
+            // buttonEditSession
+            // 
+            this.buttonEditSession.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonEditSession.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonEditSession.Location = new System.Drawing.Point(650, 127);
+            this.buttonEditSession.Name = "buttonEditSession";
+            this.buttonEditSession.Size = new System.Drawing.Size(165, 81);
+            this.buttonEditSession.TabIndex = 11;
+            this.buttonEditSession.Text = "Edit";
+            this.buttonEditSession.UseVisualStyleBackColor = false;
+            this.buttonEditSession.Click += new System.EventHandler(this.buttonEditSession_Click);
+            // 
+            // buttonRefreshPage
+            // 
+            this.buttonRefreshPage.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonRefreshPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRefreshPage.Location = new System.Drawing.Point(453, 127);
+            this.buttonRefreshPage.Name = "buttonRefreshPage";
+            this.buttonRefreshPage.Size = new System.Drawing.Size(165, 81);
+            this.buttonRefreshPage.TabIndex = 38;
+            this.buttonRefreshPage.Text = "Refresh";
+            this.buttonRefreshPage.UseVisualStyleBackColor = false;
+            this.buttonRefreshPage.Click += new System.EventHandler(this.buttonRefreshPage_Click);
+            // 
             // TrainingSessionManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -292,6 +305,7 @@ namespace Exercise_Tracker.Forms
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(2953, 1746);
+            this.Controls.Add(this.buttonRefreshPage);
             this.Controls.Add(this.groupBoxSessionInfo);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.buttonEditSession);
@@ -319,7 +333,6 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.ComboBox comboBoxTrainingSessions;
         private System.Windows.Forms.Label labelTrainingSessionBox;
         private System.Windows.Forms.Button buttonAddNewSession;
-        private System.Windows.Forms.Button buttonEditSession;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -336,5 +349,7 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.Label labelSessionReps;
         private System.Windows.Forms.CheckBox checkBoxSessionActive;
         private System.Windows.Forms.GroupBox groupBoxSessionInfo;
+        private System.Windows.Forms.Button buttonEditSession;
+        private System.Windows.Forms.Button buttonRefreshPage;
     }
 }

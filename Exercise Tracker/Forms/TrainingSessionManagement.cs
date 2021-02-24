@@ -125,6 +125,20 @@ namespace Exercise_Tracker.Forms
         // After you modify the training session, do stuff
         private void ChildFormClosing(object sender, FormClosingEventArgs e)
         {
+            TrainingSession.GetAllTrainingSessions();
+
+            PopulateDropdownMenu();
+
+            GetSessionInformation();
+        }
+
+        private void buttonRefreshPage_Click(object sender, EventArgs e)
+        {
+
+            TrainingSession.GetAllTrainingSessions();
+
+            PopulateDropdownMenu();
+
             GetSessionInformation();
         }
     } // End of class

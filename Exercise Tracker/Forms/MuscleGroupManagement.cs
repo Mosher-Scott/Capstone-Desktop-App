@@ -139,9 +139,9 @@ namespace Exercise_Tracker.Forms
             // 4. Create request, send it, and get response
             APIRequests request = new APIRequests();
 
-            string url = request.allMuscleGroupsEndpoint;
+            string url = $"{request.allMuscleGroupsEndpoint}/{muscleGroupId}/{muscleGroupName}";
 
-            var response = request.SendPOSTRequestDataInBody(url, jsonData);
+            var response = request.SendPathRequestData(url);
 
             // 5. Handle response
             if(response.Contains("Successfully"))
@@ -151,6 +151,7 @@ namespace Exercise_Tracker.Forms
                 textBoxEditName.Text = "";
 
                 ResetMuscleGroupView();
+
             } else
             {
                 MessageBox.Show("Something went wrong, and we couldn't edit the muscle group");

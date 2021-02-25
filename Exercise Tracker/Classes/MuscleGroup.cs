@@ -49,6 +49,7 @@ namespace Exercise_Tracker.Classes
         public static void GetMusclegroups()
         {
             muscleGroupDictionary.Clear();
+            muscleGroupList.Clear();
             muscleGroupDictionary.Add("0", "Choose Muscle Group");
             APIRequests request = new APIRequests();
 

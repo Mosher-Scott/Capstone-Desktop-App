@@ -38,6 +38,7 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonMuscleGroup = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonExerciseManagement
             // 
-            this.buttonExerciseManagement.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonExerciseManagement.BackColor = System.Drawing.Color.Bisque;
             this.buttonExerciseManagement.Enabled = false;
             this.buttonExerciseManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExerciseManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -70,7 +71,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonSessionManagement
             // 
-            this.buttonSessionManagement.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonSessionManagement.BackColor = System.Drawing.Color.Bisque;
             this.buttonSessionManagement.Enabled = false;
             this.buttonSessionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSessionManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -85,7 +86,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonClientManagement
             // 
-            this.buttonClientManagement.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonClientManagement.BackColor = System.Drawing.Color.Bisque;
             this.buttonClientManagement.Enabled = false;
             this.buttonClientManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClientManagement.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -129,7 +130,7 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonMuscleGroup
             // 
-            this.buttonMuscleGroup.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonMuscleGroup.BackColor = System.Drawing.Color.Bisque;
             this.buttonMuscleGroup.Enabled = false;
             this.buttonMuscleGroup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonMuscleGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -142,12 +143,27 @@ namespace Exercise_Tracker.Forms
             this.buttonMuscleGroup.UseVisualStyleBackColor = false;
             this.buttonMuscleGroup.Click += new System.EventHandler(this.buttonMuscleGroup_Click);
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonRefresh.Location = new System.Drawing.Point(333, 91);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(213, 134);
+            this.buttonRefresh.TabIndex = 7;
+            this.buttonRefresh.Text = "Retry Server Connection";
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // FormStartingMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1259, 751);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonMuscleGroup);
             this.Controls.Add(this.buttonClientManagement);
             this.Controls.Add(this.buttonSessionManagement);
@@ -176,5 +192,6 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button buttonMuscleGroup;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }

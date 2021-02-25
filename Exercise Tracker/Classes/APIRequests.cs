@@ -64,10 +64,6 @@ namespace Exercise_Tracker.Classes
 
             IRestResponse response = client.Execute(request);
 
-            var queryResult = client.Execute(request).ToString();
-
-            var content = response.Content;
-
             SecureToken responseFromSite = new SecureToken();
 
             try
@@ -128,6 +124,8 @@ namespace Exercise_Tracker.Classes
             return response.Content;
         }
 
+
+
         /// <summary>
         /// Creates and sends a POST request with all the data in the request body.  Used mainly for sending form data to the endpoint
         /// </summary>
@@ -185,6 +183,27 @@ namespace Exercise_Tracker.Classes
             var client = new RestClient(url);
             client.Timeout = -1;
             var request = new RestRequest(Method.DELETE);
+            request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
+            //request.AddHeader("Content-Type", "application/json");
+            //request.AddParameter("application/json", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+        }
+
+        /// <summary>
+        /// For sending delete requests to the API endpoints
+        /// </summary>
+        /// <param name="url">URL you are sending the request to</param>
+        /// <returns></returns>
+        public string SendPathRequestData(string url)
+        {
+            GetAuthToken();
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.PATCH);
             request.AddHeader("authorization", "Bearer " + savedToken.access_Token);
             //request.AddHeader("Content-Type", "application/json");
             //request.AddParameter("application/json", ParameterType.RequestBody);

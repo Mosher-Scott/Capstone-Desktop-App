@@ -22,7 +22,28 @@ namespace Test_App
             //testEndpoint();
             //Workouts();
 
-            CarAssignment();
+            //CarAssignment();
+
+            misc();
+        }
+
+        public static void misc()
+        {
+            Console.WriteLine("Hi Ryane, now to look at loops");
+
+            for(var i = 0; i < 100; i++)
+            {
+                if (i == 56)
+                {
+                    Console.WriteLine("Time to take a break, the stomach is full");
+                } else
+                {
+                    Console.WriteLine($"Ryane ate {i} pieces of bacon for breakfast");
+                }
+                
+            }
+
+            Console.WriteLine("Ryane ate too much bacon, and threw up");
         }
 
         public static void CarAssignment()

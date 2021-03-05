@@ -93,6 +93,7 @@ namespace Exercise_Tracker.Forms
             Application.Exit();
         }
 
+        // For each exericise add it to the database
         private void buttonSave_Click(object sender, EventArgs e)
         {
             // TODO: This

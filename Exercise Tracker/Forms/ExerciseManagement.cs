@@ -47,7 +47,15 @@ namespace Exercise_Tracker.Forms
         {
             CreateNewExercise form = new CreateNewExercise();
 
+            form.FormClosing += new FormClosingEventHandler(ChildFormClosing);
             form.Show();
+        }
+
+        private void ChildFormClosing(object sender, FormClosingEventArgs e)
+        {
+            Exercise.GetExercises();
+
+            PopulateDropdownMenu();
         }
 
         private int GetExericseIdFromDropdown()

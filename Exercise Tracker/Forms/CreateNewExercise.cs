@@ -49,6 +49,7 @@ namespace Exercise_Tracker.Forms
             string instructions = textBoxInstructionInput.Text;
             string active = checkBoxActive.Checked.ToString() ;
 
+
             Exercise newExercise = new Exercise(name, muscleGroupId, instructions, active);
 
             string exerciseAsJSON = JsonConvert.SerializeObject(newExercise);
@@ -56,6 +57,8 @@ namespace Exercise_Tracker.Forms
             //logger.Info(exerciseAsJSON);
 
             AddExerciseToDatabase(exerciseAsJSON);
+
+            this.Close();
             
         }
 
@@ -70,6 +73,7 @@ namespace Exercise_Tracker.Forms
             string url = $"{request.allExercisesEndpoint}";
 
             string response = request.SendPOSTRequestDataInBody(url, exercise);
+            logger.Info(response);
 
             if (response.Contains("Successfully added new exercise"))
             {

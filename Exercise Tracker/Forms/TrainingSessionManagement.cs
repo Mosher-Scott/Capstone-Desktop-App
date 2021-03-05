@@ -83,6 +83,7 @@ namespace Exercise_Tracker.Forms
         {
             NewTrainingSession form = new NewTrainingSession();
 
+            form.FormClosing += new FormClosingEventHandler(ChildFormClosing);
             form.Show();
         }
 

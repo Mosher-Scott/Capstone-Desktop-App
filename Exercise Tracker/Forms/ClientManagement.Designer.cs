@@ -170,7 +170,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelWorkoutHistory.AutoSize = true;
             this.labelWorkoutHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWorkoutHistory.Location = new System.Drawing.Point(1017, 134);
+            this.labelWorkoutHistory.Location = new System.Drawing.Point(1017, 146);
             this.labelWorkoutHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelWorkoutHistory.Name = "labelWorkoutHistory";
             this.labelWorkoutHistory.Size = new System.Drawing.Size(230, 32);
@@ -477,14 +477,13 @@ namespace Exercise_Tracker.Forms
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.closeFormToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2873, 60);
+            this.menuStrip1.Size = new System.Drawing.Size(2873, 49);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -493,7 +492,7 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 50);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -506,7 +505,7 @@ namespace Exercise_Tracker.Forms
             // closeFormToolStripMenuItem
             // 
             this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
-            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 50);
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
             this.closeFormToolStripMenuItem.Text = "Close Form";
             this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
             // 

@@ -54,12 +54,13 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelRequired = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(220, 513);
+            this.textBoxPhone.Location = new System.Drawing.Point(217, 575);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(473, 38);
@@ -67,7 +68,7 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(220, 451);
+            this.textBoxEmail.Location = new System.Drawing.Point(217, 513);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(473, 38);
@@ -75,7 +76,7 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxZipCode
             // 
-            this.textBoxZipCode.Location = new System.Drawing.Point(220, 389);
+            this.textBoxZipCode.Location = new System.Drawing.Point(217, 451);
             this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxZipCode.Name = "textBoxZipCode";
             this.textBoxZipCode.Size = new System.Drawing.Size(473, 38);
@@ -83,7 +84,7 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxState
             // 
-            this.textBoxState.Location = new System.Drawing.Point(220, 327);
+            this.textBoxState.Location = new System.Drawing.Point(217, 389);
             this.textBoxState.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxState.Name = "textBoxState";
             this.textBoxState.Size = new System.Drawing.Size(473, 38);
@@ -91,7 +92,7 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxCity
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(220, 265);
+            this.textBoxCity.Location = new System.Drawing.Point(217, 327);
             this.textBoxCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(473, 38);
@@ -99,7 +100,7 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(220, 203);
+            this.textBoxAddress.Location = new System.Drawing.Point(217, 265);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(473, 38);
@@ -107,7 +108,7 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(220, 141);
+            this.textBoxLastName.Location = new System.Drawing.Point(217, 203);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(473, 38);
@@ -115,7 +116,7 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(220, 79);
+            this.textBoxFirstName.Location = new System.Drawing.Point(217, 141);
             this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(473, 38);
@@ -125,7 +126,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(87, 518);
+            this.labelPhone.Location = new System.Drawing.Point(84, 580);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(112, 32);
             this.labelPhone.TabIndex = 48;
@@ -135,7 +136,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelState.AutoSize = true;
             this.labelState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelState.Location = new System.Drawing.Point(103, 335);
+            this.labelState.Location = new System.Drawing.Point(100, 397);
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(96, 32);
             this.labelState.TabIndex = 47;
@@ -145,7 +146,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(98, 461);
+            this.labelEmail.Location = new System.Drawing.Point(95, 523);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(101, 32);
             this.labelEmail.TabIndex = 46;
@@ -155,7 +156,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelZipCode.AutoSize = true;
             this.labelZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelZipCode.Location = new System.Drawing.Point(66, 397);
+            this.labelZipCode.Location = new System.Drawing.Point(63, 459);
             this.labelZipCode.Name = "labelZipCode";
             this.labelZipCode.Size = new System.Drawing.Size(133, 32);
             this.labelZipCode.TabIndex = 45;
@@ -165,7 +166,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelCity.AutoSize = true;
             this.labelCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.Location = new System.Drawing.Point(124, 270);
+            this.labelCity.Location = new System.Drawing.Point(121, 332);
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(77, 32);
             this.labelCity.TabIndex = 44;
@@ -175,7 +176,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(63, 211);
+            this.labelAddress.Location = new System.Drawing.Point(60, 273);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(135, 32);
             this.labelAddress.TabIndex = 43;
@@ -185,7 +186,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(28, 149);
+            this.labelLastName.Location = new System.Drawing.Point(25, 211);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(169, 32);
             this.labelLastName.TabIndex = 42;
@@ -195,7 +196,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelClientFirstName.AutoSize = true;
             this.labelClientFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientFirstName.Location = new System.Drawing.Point(26, 84);
+            this.labelClientFirstName.Location = new System.Drawing.Point(23, 146);
             this.labelClientFirstName.Name = "labelClientFirstName";
             this.labelClientFirstName.Size = new System.Drawing.Size(171, 32);
             this.labelClientFirstName.TabIndex = 41;
@@ -205,7 +206,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.button1.BackColor = System.Drawing.Color.PaleVioletRed;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(220, 654);
+            this.button1.Location = new System.Drawing.Point(217, 716);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(210, 74);
@@ -217,7 +218,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.buttonSaveEdits.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonSaveEdits.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSaveEdits.Location = new System.Drawing.Point(42, 654);
+            this.buttonSaveEdits.Location = new System.Drawing.Point(39, 716);
             this.buttonSaveEdits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSaveEdits.Name = "buttonSaveEdits";
             this.buttonSaveEdits.Size = new System.Drawing.Size(133, 74);
@@ -228,7 +229,7 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(220, 578);
+            this.textBoxPassword.Location = new System.Drawing.Point(217, 640);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(473, 38);
@@ -238,7 +239,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(39, 585);
+            this.labelPassword.Location = new System.Drawing.Point(36, 647);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(156, 32);
             this.labelPassword.TabIndex = 58;
@@ -246,6 +247,7 @@ namespace Exercise_Tracker.Forms
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -253,7 +255,7 @@ namespace Exercise_Tracker.Forms
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1134, 55);
+            this.menuStrip1.Size = new System.Drawing.Size(1134, 58);
             this.menuStrip1.TabIndex = 60;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -262,21 +264,32 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 54);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // closeFormToolStripMenuItem
             // 
             this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
-            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 48);
             this.closeFormToolStripMenuItem.Text = "Close Form";
             this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
+            // 
+            // labelRequired
+            // 
+            this.labelRequired.AutoSize = true;
+            this.labelRequired.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRequired.Location = new System.Drawing.Point(25, 85);
+            this.labelRequired.Name = "labelRequired";
+            this.labelRequired.Size = new System.Drawing.Size(274, 32);
+            this.labelRequired.TabIndex = 61;
+            this.labelRequired.Text = "All Fields Required";
             // 
             // AddClient
             // 
@@ -284,6 +297,7 @@ namespace Exercise_Tracker.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1134, 861);
+            this.Controls.Add(this.labelRequired);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxPhone);
@@ -342,5 +356,6 @@ namespace Exercise_Tracker.Forms
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeFormToolStripMenuItem;
+        private System.Windows.Forms.Label labelRequired;
     }
 }

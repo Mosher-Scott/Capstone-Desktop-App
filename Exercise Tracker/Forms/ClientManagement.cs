@@ -270,7 +270,15 @@ namespace Exercise_Tracker.Forms
 
         private void buttonDeleteWorkout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This will remove the workout from your history, and it cannot be recovered.");
+
+            DialogResult result1 = MessageBox.Show("This will remove the workout from your history, and it cannot be recovered.  Do you wish to continue?",
+                                       "This will delete a workout",
+                                       MessageBoxButtons.YesNo);
+
+            if(result1.ToString() == "No")
+            {
+                return;
+            }
 
             int workoutId = 0;
 
@@ -302,6 +310,7 @@ namespace Exercise_Tracker.Forms
                     GetClientInformation();
                 } else
                 {
+                    logger.Error(response);
                     MessageBox.Show("Something went wrong and workout not removed");
                 }
 

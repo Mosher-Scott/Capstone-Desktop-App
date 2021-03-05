@@ -15,10 +15,13 @@ namespace Exercise_Tracker.Classes
         public static Logger logger = LogManager.GetCurrentClassLogger();
         public SecureToken savedToken;
 
+        public DateTime expirationDate;
+        public DateTime today = DateTime.Now;
+
         private static string devEnvironment = "http://localhost:90";
         private static string liveEnvironment = "https://frozen-meadow-69055.herokuapp.com";
 
-        private static string environment = devEnvironment;
+        private static string environment = liveEnvironment;
 
         public string allClientDetailsEndpoint = $"{environment}/clients";
 
@@ -51,6 +54,12 @@ namespace Exercise_Tracker.Classes
                 savedToken.access_Token = "a Fake Token";
                 return;
             }
+
+            // Check if the saved token is valid
+            //if(expirationDate < today)
+            //{
+            //    Date
+            //}
 
             var clientId = ConfigurationManager.AppSettings.Get("apiClientId");
             var clientSecret = ConfigurationManager.AppSettings.Get("apiClientSecret");

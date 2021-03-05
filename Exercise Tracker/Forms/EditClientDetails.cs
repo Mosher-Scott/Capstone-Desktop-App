@@ -10,11 +10,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft;
 using Newtonsoft.Json;
+using NLog;
 
 namespace Exercise_Tracker.Forms
 {
     public partial class EditClientDetails : Form
     {
+
+        public static Logger logger = LogManager.GetCurrentClassLogger();
+
         public string origclientId;
         public string origfirstName;
         public string origlastName;
@@ -84,6 +88,8 @@ namespace Exercise_Tracker.Forms
             Client client = new Client(clientId, firstName, lastName, active, address, city, state, zipCode, phone, email);
 
             string clientAsJson = JsonConvert.SerializeObject(client);
+
+            //logger.Info(clientAsJson);
 
             APIRequests request = new APIRequests();
 

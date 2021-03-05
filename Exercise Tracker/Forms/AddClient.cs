@@ -37,23 +37,30 @@ namespace Exercise_Tracker.Forms
             string phone = textBoxPhone.Text;
             string password = textBoxPassword.Text;
 
-            Client newClient = new Client();
+            if (firstName == "" || lastName == "" || address == "" || city == "" || zipCode == "" || email == "" || state == "" || phone == "" || password == "")
+            {
+                MessageBox.Show("Please fill out all fields");
+                return;
+            } else
+            {
+                Client newClient = new Client();
 
-            newClient.firstName = firstName;
-            newClient.lastName = lastName;
-            newClient.address = address;
-            newClient.city = city;
-            newClient.zipcode = zipCode;
-            newClient.email = email;
-            newClient.state = state;
-            newClient.phone = phone;
-            newClient.password = password;
+                newClient.firstName = firstName;
+                newClient.lastName = lastName;
+                newClient.address = address;
+                newClient.city = city;
+                newClient.zipcode = zipCode;
+                newClient.email = email;
+                newClient.state = state;
+                newClient.phone = phone;
+                newClient.password = password;
 
-            string clientAsJson = JsonConvert.SerializeObject(newClient);
+                string clientAsJson = JsonConvert.SerializeObject(newClient);
 
-            //logger.Info(clientAsJson);
+                //logger.Info(clientAsJson);
 
-            AddClientToDatabase(clientAsJson);
+                AddClientToDatabase(clientAsJson);
+            }
         }
 
         /// <summary>
@@ -82,6 +89,11 @@ namespace Exercise_Tracker.Forms
         private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

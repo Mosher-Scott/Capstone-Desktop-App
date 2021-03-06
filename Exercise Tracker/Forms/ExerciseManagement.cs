@@ -138,7 +138,7 @@ namespace Exercise_Tracker.Forms
 
             string editedExercise = JsonConvert.SerializeObject(exercise);
 
-            logger.Info(editedExercise);
+            //logger.Info(editedExercise);
 
             SendPatchExerciseRequest(editedExercise, exerciseId);
 
@@ -148,8 +148,8 @@ namespace Exercise_Tracker.Forms
         /// <summary>
         /// Sending the patch request to the server for editing an exercise
         /// </summary>
-        /// <param name="exercise"></param>
-        /// <param name="exerciseId"></param>
+        /// <param name="exercise">Name of the exercise</param>
+        /// <param name="exerciseId">ID of the exercise being patched</param>
         private void SendPatchExerciseRequest(string exercise, string exerciseId) {
 
             APIRequests request = new APIRequests();

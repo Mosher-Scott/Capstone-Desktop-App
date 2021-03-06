@@ -24,7 +24,20 @@ namespace Test_App
 
             //CarAssignment();
 
-            misc();
+            //misc();
+
+            AuthToken();
+        }
+
+        public static void AuthToken()
+        {
+            APIRequests.environment = APIRequests.liveEnvironment;
+
+            APIRequests request = new APIRequests();
+
+            request.GetAuthToken();
+
+            Console.WriteLine(APIRequests.savedToken.access_Token.ToString());
         }
 
         public static void misc()

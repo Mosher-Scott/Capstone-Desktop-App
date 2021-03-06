@@ -13,15 +13,15 @@ namespace Exercise_Tracker.Classes
     public class APIRequests
     {
         public static Logger logger = LogManager.GetCurrentClassLogger();
-        public SecureToken savedToken;
+        public static SecureToken savedToken;
 
         public DateTime expirationDate;
         public DateTime today = DateTime.Now;
 
-        private static string devEnvironment = "http://localhost:90";
-        private static string liveEnvironment = "https://frozen-meadow-69055.herokuapp.com";
+        public static string devEnvironment = "http://localhost:90";
+        public static string liveEnvironment = "https://frozen-meadow-69055.herokuapp.com";
 
-        private static string environment = liveEnvironment;
+        public static string environment = liveEnvironment;
 
         public string allClientDetailsEndpoint = $"{environment}/clients";
 

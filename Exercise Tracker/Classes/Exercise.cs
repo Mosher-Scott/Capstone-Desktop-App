@@ -164,6 +164,12 @@ namespace Exercise_Tracker.Classes
             {
 
                 // Try something else
+
+                if (response.Contains("<!DOCTYPE html>"))
+                {
+                    return;   
+                }
+
                 var doc = JsonDocument.Parse(response);
                 JsonElement root = doc.RootElement;
 
@@ -171,11 +177,12 @@ namespace Exercise_Tracker.Classes
                 try
                 {
                     count = root.GetArrayLength();
-                } catch
+                }
+                catch
                 {
 
                 }
-                
+
                 for (int i = 0; i < root.GetArrayLength(); i++)
                 {
                     string exerciseId = root[i].GetProperty("exercise_id").ToString();
@@ -195,7 +202,7 @@ namespace Exercise_Tracker.Classes
                         exerciseListForDropdown.Add(exerciseId, name);
 
                         exerciseList.Add(newExercise);
-                    } 
+                    }
                     // We are assuming the user picked 1 exercise
                     else if (count == 1)
                     {
@@ -203,6 +210,7 @@ namespace Exercise_Tracker.Classes
                         singleExerciseList.Add(newExercise);
                     }
                 }
+
             }
         }
 

@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text.Json;
 using System.Collections.Generic;
+using NLog;
 
 namespace Test_App
 {
@@ -14,6 +15,7 @@ namespace Test_App
     {
 
         public static List<Car> garage = new List<Car>();
+        public static Logger logger = LogManager.GetCurrentClassLogger();
 
         static void Main(string[] args)
         {
@@ -26,7 +28,39 @@ namespace Test_App
 
             //misc();
 
-            AuthToken();
+            //AuthToken();
+
+            TestClientDb();
+        }
+
+        public static void TestClientDb()
+        {
+
+            APIRequests request = new APIRequests();
+
+            ClientDBPerson clientDBPerson2 = new ClientDBPerson("shanessa@t.com", "bugs", 1);
+
+            var json2 = JsonConvert.SerializeObject(clientDBPerson2);
+
+            var responseFromApi = request.SendPOSTRequestDataInBodyNoAuth("http://localhost:90/clients/testing", json2);
+
+            Console.WriteLine($"Response: {responseFromApi}");
+
+            AddClientResponse addClientResponse = new AddClientResponse(responseFromApi);
+
+            Console.WriteLine($"New Id: {addClientResponse.clientId}");
+
+            int id = Convert.ToInt32(addClientResponse.clientId);
+
+            ClientDBPerson clientDBPerson = new ClientDBPerson("shanessa@t.com", "bugs", id);
+
+            var json = JsonConvert.SerializeObject(clientDBPerson);
+
+            //logger.Info(json);
+
+            var response = request.SendPOSTRequestDataInBodyNoAuth(request.clientSiteRegUrl, json);
+
+            Console.WriteLine(response);
         }
 
         public static void AuthToken()

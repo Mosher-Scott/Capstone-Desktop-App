@@ -109,12 +109,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AddClientResponse.cs" />
     <Compile Include="Classes\APIRequests.cs" />
     <Compile Include="Classes\AssignedTrainingSessions.cs" />
     <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\ClientData.cs" />
     <Compile Include="Classes\ClientDataForm.cs" />
+    <Compile Include="Classes\ClientDBPerson.cs" />
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Exercise.cs" />
     <Compile Include="Classes\MuscleGroup.cs" />

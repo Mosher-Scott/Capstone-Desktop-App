@@ -21,7 +21,7 @@ namespace Exercise_Tracker.Classes
         public static string devEnvironment = "http://localhost:90";
         public static string liveEnvironment = "https://frozen-meadow-69055.herokuapp.com";
 
-        public static string environment = liveEnvironment;
+        public static string environment = devEnvironment;
 
         public string allClientDetailsEndpoint = $"{environment}/clients";
 
@@ -35,6 +35,8 @@ namespace Exercise_Tracker.Classes
 
         public string allExercisesEndpoint = $"{environment}/exercises";
         public string singleExercisesEndpoint = $"{environment}/exercises/";
+
+        public string clientSiteRegUrl = "http://fitness.scottmosherphotography.com/api/add-user.php";
 
         public APIRequests()
         {
@@ -152,12 +154,35 @@ namespace Exercise_Tracker.Classes
             request.AddHeader("Content-Type", "application/json");
             request.AddParameter("application/json", $"{jsonData}", ParameterType.RequestBody);
 
-            logger.Info(request);
+            //logger.Info(request);
 
             IRestResponse response = client.Execute(request);
 
             return response.Content;
         }
+
+        /// <summary>
+        /// Creates and sends a POST request with all the data in the request body.  Used mainly for sending form data to the endpoint
+        /// </summary>
+        /// <param name="url">URL you are sending the request to</param>
+        /// <param name="jsonData">The data you are sending to the API in JSON format</param>
+        /// <returns>Response from the web server as a string</returns>
+        public string SendPOSTRequestDataInBodyNoAuth(string url, string jsonData)
+        {
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json", $"{jsonData}", ParameterType.RequestBody);
+
+            //logger.Info(request);
+
+            IRestResponse response = client.Execute(request);
+
+            return response.Content;
+        }
+
 
         /// <summary>
         /// For sending data to the API using a POST method

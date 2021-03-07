@@ -75,15 +75,52 @@ namespace Exercise_Tracker.Forms
 
             string response = request.SendPOSTRequestDataInBody(url, client);
 
-            logger.Info(response);
+            //logger.Info(response);
 
             if (response.Contains("Successfully added new client"))
             {
-                MessageBox.Show("Successfully added client to the system");
+
+                bool successfullyAdded = AddClientToClientDb(response);
+
+                if (successfullyAdded)
+                {
+                    MessageBox.Show("Successfully added client to the system");
+                } else
+                {
+                    MessageBox.Show("Client succesfully added to main database, but failed to add it to the client login database");
+                }
+                
             } else
             {
                 MessageBox.Show("Something went wrong");
             }
+        }
+
+        public bool AddClientToClientDb(string responseFromApi)
+        {
+            string response = responseFromApi;
+
+            AddClientResponse addClientResponse = new AddClientResponse(response);
+
+            int id = Convert.ToInt32(addClientResponse.clientId);
+
+            ClientDBPerson clientDBPerson = new ClientDBPerson("shanessa@t.com", "bugs", id);
+
+            var json = JsonConvert.SerializeObject(clientDBPerson);
+
+            APIRequests request = new APIRequests();
+
+            var responseFromClientDb = request.SendPOSTRequestDataInBodyNoAuth(request.clientSiteRegUrl, json);
+
+            if (responseFromClientDb.Contains("success"))
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+
+           
         }
 
         private void closeFormToolStripMenuItem_Click(object sender, EventArgs e)

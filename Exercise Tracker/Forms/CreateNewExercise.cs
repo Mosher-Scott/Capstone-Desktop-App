@@ -47,14 +47,14 @@ namespace Exercise_Tracker.Forms
             string name = textBoxName.Text;
             string muscleGroupId = comboBoxMuscleGroups.SelectedValue.ToString();
             string instructions = textBoxInstructionInput.Text;
-            string active = checkBoxActive.Checked.ToString() ;
+            string active = checkBoxActive.Checked.ToString().ToLower() ;
 
 
             Exercise newExercise = new Exercise(name, muscleGroupId, instructions, active);
 
             string exerciseAsJSON = JsonConvert.SerializeObject(newExercise);
             
-            //logger.Info(exerciseAsJSON);
+            logger.Info(exerciseAsJSON);
 
             AddExerciseToDatabase(exerciseAsJSON);
 

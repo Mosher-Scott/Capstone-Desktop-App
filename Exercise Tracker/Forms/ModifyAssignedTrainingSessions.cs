@@ -169,10 +169,17 @@ namespace Exercise_Tracker.Forms
 
             
             // If session did exist, and was removed, set DELETE request
-            AssignedTrainingSessions.RemoveTrainingSessionsFromDatabase();
+            if (AssignedTrainingSessions.removedTrainingSessionList.Count > 0)
+            {
+                AssignedTrainingSessions.RemoveTrainingSessionsFromDatabase();
+            }
 
             // If new, send POST request to update client training sessions with userid and session id
-            AssignedTrainingSessions.AddNewTrainingSessionsToDatabase();
+            if (AssignedTrainingSessions.newTrainingSessionList.Count > 0)
+            {
+                AssignedTrainingSessions.AddNewTrainingSessionsToDatabase();
+            }
+          
 
             // TODO: Check if all changes were made successfully.  If they were, close the form
             MessageBox.Show("Successfully saved your changes");
@@ -206,7 +213,7 @@ namespace Exercise_Tracker.Forms
                 // If a session isn't in the original list, then it needs to be removed
                 if(needsToBeDeleted)
                 {    
-                    AssignedTrainingSessions session = new AssignedTrainingSessions(clientId, Convert.ToInt32(TrainingSession.listOfTrainingSessions[i].sessionId));
+                    AssignedTrainingSessions session = new AssignedTrainingSessions(clientId, Convert.ToInt32(originalId));
 
                     AssignedTrainingSessions.removedTrainingSessionList.Add(session);
 

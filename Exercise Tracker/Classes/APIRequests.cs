@@ -21,7 +21,7 @@ namespace Exercise_Tracker.Classes
         public static string devEnvironment = "http://localhost:90";
         public static string liveEnvironment = "https://frozen-meadow-69055.herokuapp.com";
 
-        public static string environment = liveEnvironment;
+        public static string environment = devEnvironment;
 
         public string allClientDetailsEndpoint = $"{environment}/clients";
 

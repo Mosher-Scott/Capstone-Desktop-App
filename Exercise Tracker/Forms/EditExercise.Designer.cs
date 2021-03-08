@@ -57,7 +57,7 @@ namespace Exercise_Tracker.Forms
             this.checkBoxActive.Location = new System.Drawing.Point(18, 324);
             this.checkBoxActive.Name = "checkBoxActive";
             this.checkBoxActive.Size = new System.Drawing.Size(137, 36);
-            this.checkBoxActive.TabIndex = 21;
+            this.checkBoxActive.TabIndex = 2;
             this.checkBoxActive.Text = "Active";
             this.checkBoxActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxActive.UseVisualStyleBackColor = true;
@@ -97,25 +97,27 @@ namespace Exercise_Tracker.Forms
             this.comboBoxMuscleGroups.Location = new System.Drawing.Point(18, 254);
             this.comboBoxMuscleGroups.Name = "comboBoxMuscleGroups";
             this.comboBoxMuscleGroups.Size = new System.Drawing.Size(381, 39);
-            this.comboBoxMuscleGroups.TabIndex = 17;
+            this.comboBoxMuscleGroups.TabIndex = 1;
             // 
             // buttonCancel
             // 
+            this.buttonCancel.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonCancel.Location = new System.Drawing.Point(239, 827);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(183, 101);
-            this.buttonCancel.TabIndex = 16;
+            this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.UseVisualStyleBackColor = false;
             // 
             // buttonSave
             // 
+            this.buttonSave.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonSave.Location = new System.Drawing.Point(18, 827);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(183, 101);
-            this.buttonSave.TabIndex = 15;
+            this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.UseVisualStyleBackColor = false;
             // 
             // textBoxInstructionInput
             // 
@@ -123,7 +125,7 @@ namespace Exercise_Tracker.Forms
             this.textBoxInstructionInput.Multiline = true;
             this.textBoxInstructionInput.Name = "textBoxInstructionInput";
             this.textBoxInstructionInput.Size = new System.Drawing.Size(1124, 365);
-            this.textBoxInstructionInput.TabIndex = 14;
+            this.textBoxInstructionInput.TabIndex = 3;
             // 
             // labelInstructions
             // 
@@ -140,10 +142,11 @@ namespace Exercise_Tracker.Forms
             this.textBoxName.Location = new System.Drawing.Point(18, 139);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(534, 38);
-            this.textBoxName.TabIndex = 12;
+            this.textBoxName.TabIndex = 0;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -174,7 +177,7 @@ namespace Exercise_Tracker.Forms
             this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
             this.closeFormToolStripMenuItem.Text = "Close Form";
             // 
-            // Edit_Exercise
+            // EditExercise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +195,7 @@ namespace Exercise_Tracker.Forms
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Edit_Exercise";
+            this.Name = "EditExercise";
             this.Text = "Edit Exercise";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

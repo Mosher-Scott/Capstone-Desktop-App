@@ -27,6 +27,7 @@ namespace Exercise_Tracker.Forms
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
             PopulateDropdownMenu();
+            dataGridViewExerciseList.DataSource = "";
         }
 
         private void PopulateDropdownMenu()
@@ -105,12 +106,13 @@ namespace Exercise_Tracker.Forms
             string description = textBoxDescription.Text;
             string sets = textBoxTrainingSessionSets.Text;
             string reps = textBoxTrainingSessionReps.Text;
-            string active = checkBoxActive.Checked.ToString();
+            string active = checkBoxActive.Checked.ToString().ToLower();
 
             TrainingSession newSession = new TrainingSession(name, description, sets, reps, active);
 
             // Convert the object to JSON
             string jsonSession = JsonConvert.SerializeObject(newSession);
+            logger.Info(jsonSession);
 
             // Insert it into the database. Get the ID back from the tool
             var response = AddTrainingSessionTodatabase(jsonSession);
@@ -123,14 +125,14 @@ namespace Exercise_Tracker.Forms
 
                 var newSessionId = trainingSessionResponse.trainingSessionId;
 
-                logger.Info(newSessionId);
+                //logger.Info(newSessionId);
 
                 //// Convert the training sessions
 
                 string exercisesInTrainingSession = JsonConvert.SerializeObject(Exercise.exercisesForTrainingSession);
 
-                logger.Info("New exercises");
-                logger.Info(exercisesInTrainingSession);
+                //logger.Info("New exercises");
+                //logger.Info(exercisesInTrainingSession);
 
                 APIRequests request = new APIRequests();
 
@@ -141,7 +143,7 @@ namespace Exercise_Tracker.Forms
                     string exerciseId = exercise.exercise_id;
 
                     string url = $"{request.singleTrainingSessionEndpoint}{newSessionId}/exercise/{exerciseId}";
-                    logger.Info("Exercise ID: " + exerciseId);
+                    logger.Info(url);
 
                    string exerciseResponse = request.SendPostRequestData(url);
 
@@ -162,6 +164,10 @@ namespace Exercise_Tracker.Forms
                     MessageBox.Show("Successfully created the new training session");
                     this.Close();
                 }
+            } else
+            {
+                MessageBox.Show("Something went wrong in saving the training session.");
+                logger.Error(response);
             }
 
 
@@ -208,6 +214,16 @@ namespace Exercise_Tracker.Forms
             {
                 if (Exercise.exerciseList[i].exercise_id == exerciseId.ToString())
                 {
+
+                    foreach(var exercise in Exercise.exercisesForTrainingSession)
+                    {
+                        if (exerciseId.ToString() == exercise.exercise_id)
+                        {
+                            MessageBox.Show("Exercise already in the list.");
+                            return;
+                        }
+                    }
+
                     Exercise.exercisesForTrainingSession.Add(Exercise.exerciseList[i]);
                 }
 
@@ -215,15 +231,6 @@ namespace Exercise_Tracker.Forms
 
             dataGridViewAssignedExercises.DataSource = "";
             dataGridViewAssignedExercises.DataSource = Exercise.exercisesForTrainingSession;
-
-
-            // Search the exercise list for those exercises
-
-            // Create a new TrainingSessionExercise
-
-            // Add new exercise to TrainingSessionExercises.trainingSessionExerciseList 
-
-            // Refresh the datagridview each time an exercise is added
         }
 
 

@@ -184,8 +184,7 @@ namespace Exercise_Tracker.Forms
             logger.Debug(url);
 
             // Patch the training session
-            var response = request.SendPatchRequestDataInBody(url, jsonSession); // Removed for troubleshooting
-            //var response = "Successfully";
+            var response = request.SendPatchRequestDataInBody(url, jsonSession); 
             
             // Check the resulting json for results
             if (response.Contains("Successfully"))
@@ -200,7 +199,7 @@ namespace Exercise_Tracker.Forms
                     foreach (var exercise in exercisesToAdd)
                     {
                         url = $"{request.singleTrainingSessionEndpoint}{exercise.Value}/exercise/{exercise.Key}";
-
+                        
                         var exerciseResponse = request.SendPostRequestData(url);
 
                         if (exerciseResponse.Contains("error"))

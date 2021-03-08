@@ -79,7 +79,7 @@ namespace Exercise_Tracker.Forms
             this.buttonAddExercise.Location = new System.Drawing.Point(773, 773);
             this.buttonAddExercise.Name = "buttonAddExercise";
             this.buttonAddExercise.Size = new System.Drawing.Size(231, 90);
-            this.buttonAddExercise.TabIndex = 45;
+            this.buttonAddExercise.TabIndex = 7;
             this.buttonAddExercise.Text = "Add Exercise";
             this.buttonAddExercise.UseVisualStyleBackColor = false;
             this.buttonAddExercise.Click += new System.EventHandler(this.buttonAddExercise_Click);
@@ -118,6 +118,7 @@ namespace Exercise_Tracker.Forms
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -135,7 +136,7 @@ namespace Exercise_Tracker.Forms
             this.comboBoxExercises.Location = new System.Drawing.Point(182, 787);
             this.comboBoxExercises.Name = "comboBoxExercises";
             this.comboBoxExercises.Size = new System.Drawing.Size(566, 39);
-            this.comboBoxExercises.TabIndex = 43;
+            this.comboBoxExercises.TabIndex = 6;
             this.comboBoxExercises.SelectedIndexChanged += new System.EventHandler(this.ExerciseDropdown_Changed);
             // 
             // dataGridViewExerciseList
@@ -161,7 +162,7 @@ namespace Exercise_Tracker.Forms
             this.checkBoxActive.Location = new System.Drawing.Point(94, 324);
             this.checkBoxActive.Name = "checkBoxActive";
             this.checkBoxActive.Size = new System.Drawing.Size(137, 36);
-            this.checkBoxActive.TabIndex = 41;
+            this.checkBoxActive.TabIndex = 4;
             this.checkBoxActive.Text = "Active";
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
@@ -170,7 +171,7 @@ namespace Exercise_Tracker.Forms
             this.textBoxTrainingSessionSets.Location = new System.Drawing.Point(202, 206);
             this.textBoxTrainingSessionSets.Name = "textBoxTrainingSessionSets";
             this.textBoxTrainingSessionSets.Size = new System.Drawing.Size(106, 38);
-            this.textBoxTrainingSessionSets.TabIndex = 40;
+            this.textBoxTrainingSessionSets.TabIndex = 2;
             // 
             // labelTrainingSessionSets
             // 
@@ -187,7 +188,7 @@ namespace Exercise_Tracker.Forms
             this.textBoxTrainingSessionReps.Location = new System.Drawing.Point(202, 268);
             this.textBoxTrainingSessionReps.Name = "textBoxTrainingSessionReps";
             this.textBoxTrainingSessionReps.Size = new System.Drawing.Size(106, 38);
-            this.textBoxTrainingSessionReps.TabIndex = 38;
+            this.textBoxTrainingSessionReps.TabIndex = 3;
             // 
             // labelTrainingSessionReps
             // 
@@ -216,7 +217,7 @@ namespace Exercise_Tracker.Forms
             this.buttonCancel.Location = new System.Drawing.Point(239, 1143);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(374, 101);
-            this.buttonCancel.TabIndex = 35;
+            this.buttonCancel.TabIndex = 10;
             this.buttonCancel.Text = "Cancel Without Saving";
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click_1);
@@ -228,7 +229,7 @@ namespace Exercise_Tracker.Forms
             this.buttonSave.Location = new System.Drawing.Point(16, 1143);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(194, 101);
-            this.buttonSave.TabIndex = 34;
+            this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -239,7 +240,7 @@ namespace Exercise_Tracker.Forms
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(976, 365);
-            this.textBoxDescription.TabIndex = 33;
+            this.textBoxDescription.TabIndex = 5;
             // 
             // labelDescription
             // 
@@ -256,7 +257,7 @@ namespace Exercise_Tracker.Forms
             this.textBoxName.Location = new System.Drawing.Point(202, 147);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(567, 38);
-            this.textBoxName.TabIndex = 31;
+            this.textBoxName.TabIndex = 1;
             // 
             // labelSessionName
             // 
@@ -284,7 +285,7 @@ namespace Exercise_Tracker.Forms
             this.textBoxSessionId.Location = new System.Drawing.Point(202, 90);
             this.textBoxSessionId.Name = "textBoxSessionId";
             this.textBoxSessionId.Size = new System.Drawing.Size(55, 38);
-            this.textBoxSessionId.TabIndex = 49;
+            this.textBoxSessionId.TabIndex = 0;
             // 
             // buttonDeleteRow
             // 
@@ -294,7 +295,7 @@ namespace Exercise_Tracker.Forms
             this.buttonDeleteRow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeleteRow.Name = "buttonDeleteRow";
             this.buttonDeleteRow.Size = new System.Drawing.Size(373, 86);
-            this.buttonDeleteRow.TabIndex = 50;
+            this.buttonDeleteRow.TabIndex = 8;
             this.buttonDeleteRow.Text = "Remove Selected Exercise";
             this.buttonDeleteRow.UseVisualStyleBackColor = false;
             this.buttonDeleteRow.Click += new System.EventHandler(this.buttonDeleteRow_Click);

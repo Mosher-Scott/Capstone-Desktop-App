@@ -49,24 +49,24 @@ namespace Exercise_Tracker.Forms
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(22, 123);
+            this.textBoxName.Location = new System.Drawing.Point(12, 110);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(534, 38);
             this.textBoxName.TabIndex = 1;
             // 
             // textBoxInstructionInput
             // 
-            this.textBoxInstructionInput.Location = new System.Drawing.Point(22, 414);
+            this.textBoxInstructionInput.Location = new System.Drawing.Point(12, 401);
             this.textBoxInstructionInput.Multiline = true;
             this.textBoxInstructionInput.Name = "textBoxInstructionInput";
-            this.textBoxInstructionInput.Size = new System.Drawing.Size(1124, 365);
-            this.textBoxInstructionInput.TabIndex = 3;
+            this.textBoxInstructionInput.Size = new System.Drawing.Size(1124, 165);
+            this.textBoxInstructionInput.TabIndex = 4;
             // 
             // labelInstructions
             // 
             this.labelInstructions.AutoSize = true;
             this.labelInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInstructions.Location = new System.Drawing.Point(16, 379);
+            this.labelInstructions.Location = new System.Drawing.Point(6, 366);
             this.labelInstructions.Name = "labelInstructions";
             this.labelInstructions.Size = new System.Drawing.Size(172, 32);
             this.labelInstructions.TabIndex = 2;
@@ -74,37 +74,39 @@ namespace Exercise_Tracker.Forms
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(22, 811);
+            this.buttonSave.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonSave.Location = new System.Drawing.Point(6, 602);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(183, 101);
-            this.buttonSave.TabIndex = 4;
+            this.buttonSave.TabIndex = 5;
             this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(243, 811);
+            this.buttonCancel.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonCancel.Location = new System.Drawing.Point(227, 602);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(183, 101);
-            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // comboBoxMuscleGroups
             // 
             this.comboBoxMuscleGroups.FormattingEnabled = true;
-            this.comboBoxMuscleGroups.Location = new System.Drawing.Point(22, 238);
+            this.comboBoxMuscleGroups.Location = new System.Drawing.Point(12, 225);
             this.comboBoxMuscleGroups.Name = "comboBoxMuscleGroups";
             this.comboBoxMuscleGroups.Size = new System.Drawing.Size(381, 39);
-            this.comboBoxMuscleGroups.TabIndex = 6;
+            this.comboBoxMuscleGroups.TabIndex = 2;
             // 
             // labelCategories
             // 
             this.labelCategories.AutoSize = true;
             this.labelCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategories.Location = new System.Drawing.Point(495, 191);
+            this.labelCategories.Location = new System.Drawing.Point(485, 178);
             this.labelCategories.Name = "labelCategories";
             this.labelCategories.Size = new System.Drawing.Size(0, 32);
             this.labelCategories.TabIndex = 7;
@@ -113,7 +115,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(16, 83);
+            this.labelName.Location = new System.Drawing.Point(6, 70);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(94, 32);
             this.labelName.TabIndex = 8;
@@ -123,7 +125,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelMuscleGroup.AutoSize = true;
             this.labelMuscleGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMuscleGroup.Location = new System.Drawing.Point(16, 191);
+            this.labelMuscleGroup.Location = new System.Drawing.Point(6, 178);
             this.labelMuscleGroup.Name = "labelMuscleGroup";
             this.labelMuscleGroup.Size = new System.Drawing.Size(203, 32);
             this.labelMuscleGroup.TabIndex = 9;
@@ -136,10 +138,10 @@ namespace Exercise_Tracker.Forms
             this.checkBoxActive.Checked = true;
             this.checkBoxActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxActive.Location = new System.Drawing.Point(22, 308);
+            this.checkBoxActive.Location = new System.Drawing.Point(12, 295);
             this.checkBoxActive.Name = "checkBoxActive";
             this.checkBoxActive.Size = new System.Drawing.Size(137, 36);
-            this.checkBoxActive.TabIndex = 10;
+            this.checkBoxActive.TabIndex = 3;
             this.checkBoxActive.Text = "Active";
             this.checkBoxActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxActive.UseVisualStyleBackColor = true;
@@ -153,7 +155,7 @@ namespace Exercise_Tracker.Forms
             this.closeFormToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1365, 60);
+            this.menuStrip1.Size = new System.Drawing.Size(1243, 49);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,20 +164,20 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 56);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 54);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // closeFormToolStripMenuItem
             // 
             this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
-            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 56);
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
             this.closeFormToolStripMenuItem.Text = "Close Form";
             this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
             // 
@@ -184,7 +186,7 @@ namespace Exercise_Tracker.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1365, 1087);
+            this.ClientSize = new System.Drawing.Size(1243, 747);
             this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.labelMuscleGroup);
             this.Controls.Add(this.labelName);

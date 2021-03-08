@@ -76,7 +76,7 @@ namespace Exercise_Tracker.Forms
             this.buttonAddExercise.Location = new System.Drawing.Point(789, 743);
             this.buttonAddExercise.Name = "buttonAddExercise";
             this.buttonAddExercise.Size = new System.Drawing.Size(231, 90);
-            this.buttonAddExercise.TabIndex = 45;
+            this.buttonAddExercise.TabIndex = 6;
             this.buttonAddExercise.Text = "Add Exercise";
             this.buttonAddExercise.UseVisualStyleBackColor = false;
             this.buttonAddExercise.Click += new System.EventHandler(this.buttonAddExercise_Click);
@@ -84,7 +84,7 @@ namespace Exercise_Tracker.Forms
             // closeFormToolStripMenuItem
             // 
             this.closeFormToolStripMenuItem.Name = "closeFormToolStripMenuItem";
-            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 45);
+            this.closeFormToolStripMenuItem.Size = new System.Drawing.Size(192, 56);
             this.closeFormToolStripMenuItem.Text = "Close Form";
             this.closeFormToolStripMenuItem.Click += new System.EventHandler(this.closeFormToolStripMenuItem_Click);
             // 
@@ -100,7 +100,7 @@ namespace Exercise_Tracker.Forms
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 56);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // labelAssignedExercises
@@ -115,7 +115,6 @@ namespace Exercise_Tracker.Forms
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -123,7 +122,7 @@ namespace Exercise_Tracker.Forms
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(3291, 49);
+            this.menuStrip1.Size = new System.Drawing.Size(3291, 60);
             this.menuStrip1.TabIndex = 44;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -133,7 +132,7 @@ namespace Exercise_Tracker.Forms
             this.comboBoxExercises.Location = new System.Drawing.Point(198, 757);
             this.comboBoxExercises.Name = "comboBoxExercises";
             this.comboBoxExercises.Size = new System.Drawing.Size(566, 39);
-            this.comboBoxExercises.TabIndex = 43;
+            this.comboBoxExercises.TabIndex = 5;
             this.comboBoxExercises.SelectedIndexChanged += new System.EventHandler(this.ExerciseDropdown_Changed);
             // 
             // dataGridViewExerciseList
@@ -156,11 +155,12 @@ namespace Exercise_Tracker.Forms
             this.checkBoxActive.Checked = true;
             this.checkBoxActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxActive.Location = new System.Drawing.Point(110, 294);
+            this.checkBoxActive.Location = new System.Drawing.Point(47, 286);
             this.checkBoxActive.Name = "checkBoxActive";
-            this.checkBoxActive.Size = new System.Drawing.Size(137, 36);
-            this.checkBoxActive.TabIndex = 41;
+            this.checkBoxActive.Size = new System.Drawing.Size(196, 48);
+            this.checkBoxActive.TabIndex = 3;
             this.checkBoxActive.Text = "Active";
+            this.checkBoxActive.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
             // textBoxTrainingSessionSets
@@ -168,13 +168,13 @@ namespace Exercise_Tracker.Forms
             this.textBoxTrainingSessionSets.Location = new System.Drawing.Point(218, 176);
             this.textBoxTrainingSessionSets.Name = "textBoxTrainingSessionSets";
             this.textBoxTrainingSessionSets.Size = new System.Drawing.Size(106, 38);
-            this.textBoxTrainingSessionSets.TabIndex = 40;
+            this.textBoxTrainingSessionSets.TabIndex = 1;
             // 
             // labelTrainingSessionSets
             // 
             this.labelTrainingSessionSets.AutoSize = true;
             this.labelTrainingSessionSets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTrainingSessionSets.Location = new System.Drawing.Point(123, 182);
+            this.labelTrainingSessionSets.Location = new System.Drawing.Point(128, 182);
             this.labelTrainingSessionSets.Name = "labelTrainingSessionSets";
             this.labelTrainingSessionSets.Size = new System.Drawing.Size(76, 32);
             this.labelTrainingSessionSets.TabIndex = 39;
@@ -185,13 +185,13 @@ namespace Exercise_Tracker.Forms
             this.textBoxTrainingSessionReps.Location = new System.Drawing.Point(218, 238);
             this.textBoxTrainingSessionReps.Name = "textBoxTrainingSessionReps";
             this.textBoxTrainingSessionReps.Size = new System.Drawing.Size(106, 38);
-            this.textBoxTrainingSessionReps.TabIndex = 38;
+            this.textBoxTrainingSessionReps.TabIndex = 2;
             // 
             // labelTrainingSessionReps
             // 
             this.labelTrainingSessionReps.AutoSize = true;
             this.labelTrainingSessionReps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTrainingSessionReps.Location = new System.Drawing.Point(113, 241);
+            this.labelTrainingSessionReps.Location = new System.Drawing.Point(120, 241);
             this.labelTrainingSessionReps.Name = "labelTrainingSessionReps";
             this.labelTrainingSessionReps.Size = new System.Drawing.Size(85, 32);
             this.labelTrainingSessionReps.TabIndex = 37;
@@ -201,7 +201,7 @@ namespace Exercise_Tracker.Forms
             // 
             this.labelExercises.AutoSize = true;
             this.labelExercises.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExercises.Location = new System.Drawing.Point(26, 764);
+            this.labelExercises.Location = new System.Drawing.Point(41, 760);
             this.labelExercises.Name = "labelExercises";
             this.labelExercises.Size = new System.Drawing.Size(147, 32);
             this.labelExercises.TabIndex = 36;
@@ -214,7 +214,7 @@ namespace Exercise_Tracker.Forms
             this.buttonCancel.Location = new System.Drawing.Point(255, 1113);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(374, 101);
-            this.buttonCancel.TabIndex = 35;
+            this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Cancel Without Saving";
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -226,7 +226,7 @@ namespace Exercise_Tracker.Forms
             this.buttonSave.Location = new System.Drawing.Point(32, 1113);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(194, 101);
-            this.buttonSave.TabIndex = 34;
+            this.buttonSave.TabIndex = 7;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -237,13 +237,13 @@ namespace Exercise_Tracker.Forms
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(976, 365);
-            this.textBoxDescription.TabIndex = 33;
+            this.textBoxDescription.TabIndex = 4;
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
             this.labelDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.Location = new System.Drawing.Point(25, 354);
+            this.labelDescription.Location = new System.Drawing.Point(32, 354);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(169, 32);
             this.labelDescription.TabIndex = 32;
@@ -254,13 +254,13 @@ namespace Exercise_Tracker.Forms
             this.textBoxName.Location = new System.Drawing.Point(218, 103);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(567, 38);
-            this.textBoxName.TabIndex = 31;
+            this.textBoxName.TabIndex = 0;
             // 
             // labelSessionName
             // 
             this.labelSessionName.AutoSize = true;
             this.labelSessionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSessionName.Location = new System.Drawing.Point(100, 106);
+            this.labelSessionName.Location = new System.Drawing.Point(106, 106);
             this.labelSessionName.Name = "labelSessionName";
             this.labelSessionName.Size = new System.Drawing.Size(94, 32);
             this.labelSessionName.TabIndex = 30;

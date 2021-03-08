@@ -33,7 +33,7 @@ namespace Exercise_Tracker.Classes
             foreach(var item in AssignedTrainingSessions.newTrainingSessionList)
             {
                 // Handle this differently, so if there is an error a flag will be raised
-                logger.Info($"clientId: {item.clientId}, sessionId: {item.sessionId}");
+                //logger.Info($"clientId: {item.clientId}, sessionId: {item.sessionId}");
                 APIRequests request = new APIRequests();
 
                 string url = $"{request.singleClientDetailEndpoint}{item.clientId}/trainingsessions/{item.sessionId}";
@@ -41,7 +41,7 @@ namespace Exercise_Tracker.Classes
 
                 var response = request.SendPostRequestData(url);
 
-                logger.Info(response);
+                //logger.Info(response);
 
             }
         }
@@ -55,14 +55,14 @@ namespace Exercise_Tracker.Classes
             {
                 
                 // Handle this differently, so if there is an error a flag will be raised
-                logger.Info($"clientId: {item.clientId}, sessionId: {item.sessionId}");
+                //logger.Info($"clientId: {item.clientId}, sessionId: {item.sessionId}");
                 APIRequests request = new APIRequests();
 
                 string url = $"{request.singleClientDetailEndpoint}{item.clientId}/trainingsessions/{item.sessionId}";
 
                 var response = request.SendDeleteRequestData(url);
 
-                logger.Info(response);
+                //logger.Info(response);
             }
 
 
